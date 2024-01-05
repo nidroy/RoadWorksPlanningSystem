@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DSS</name>
+    </assembly>
+    <members>
+        <member name="M:DSS.Controllers.RoadsApiController.Get">
+            <summary>
+            Получаем данные всех дорог
+            </summary>
+            <returns>Данные всех дорог</returns>
+        </member>
+        <member name="M:DSS.Controllers.RoadsApiController.Get(System.Int32)">
+            <summary>
+            Получаем данные дороги по id
+            </summary>
+            <param name="id">Идентификатор дороги</param>
+            <returns>Данные дороги</returns>
+        </member>
+        <member name="M:DSS.Controllers.RoadsApiController.Post(DSS.Models.RoadViewModel)">
+            <summary>
+            Создаем новую дорогу
+            </summary>
+            <param name="roadData">Данные новой дороги</param>
+            <returns>Идентификатор новой дороги</returns>
+        </member>
+        <member name="M:DSS.Controllers.RoadsApiController.Put(System.Int32,DSS.Models.RoadViewModel)">
+            <summary>
+            Обновляем данные дороги
+            </summary>
+            <param name="id">Идентификатор дороги</param>
+            <param name="roadData">Новые данные дороги</param>
+            <returns>Данные обновленной дороги</returns>
+        </member>
+        <member name="M:DSS.Controllers.RoadsApiController.Delete(System.Int32)">
+            <summary>
+            Удаляем дорогу
+            </summary>
+            <param name="id">Идентификатор дороги</param>
+            <returns>Данные всех оставшихся дорог</returns>
+        </member>
+        <member name="T:DSS.Migrations.FirstMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:DSS.Migrations.FirstMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DSS.Migrations.FirstMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DSS.Migrations.FirstMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

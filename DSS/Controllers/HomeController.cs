@@ -1,4 +1,5 @@
 using DSS.Models;
+using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,13 +7,13 @@ namespace DSS.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly ApplicationContext _context;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationContext context)
+        public HomeController(ApplicationContext context, ILogger<HomeController> logger)
         {
-            _logger = logger;
             _context = context;
+            _logger = logger;
         }
 
         public IActionResult Index()

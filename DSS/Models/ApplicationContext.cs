@@ -10,12 +10,12 @@ namespace DSS.Models
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             Database.EnsureDeleted();
-            Database.EnsureCreated();   // создаем базу данных при первом обращении
+            Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            List<(string, double)> roadData = new()
+            List<(string, double)> roadsData = new()
             {
                 ("18 ОП РЗ 18Р-1", 1),
                 ("18 ОП РЗ 18Р-1-1", 3),
@@ -43,7 +43,7 @@ namespace DSS.Models
 
             for (int i = 0; i < 20; i++)
             {
-                (string roadNumber, double priorityOfRoad) = roadData[i];
+                (string roadNumber, double priorityOfRoad) = roadsData[i];
                 Road road = CreateRoadModel(i + 1, roadNumber, priorityOfRoad, modelBuilder);
                 numberOfEstimates = CreateEstimateModels(numberOfEstimates, road, modelBuilder);
             }

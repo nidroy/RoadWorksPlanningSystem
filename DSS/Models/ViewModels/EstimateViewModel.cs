@@ -1,4 +1,4 @@
-﻿namespace DSS.Models
+﻿namespace DSS.Models.ViewModels
 {
     public class EstimateViewModel
     {
