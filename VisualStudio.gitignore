@@ -17,56 +17,56 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
+DSS/[Dd]ebug/
+DSS/[Dd]ebugPublic/
+DSS/[Rr]elease/
+DSS/[Rr]eleases/
+DSS/x64/
+DSS/x86/
+DSS/[Ww][Ii][Nn]32/
+DSS/[Aa][Rr][Mm]/
+DSS/[Aa][Rr][Mm]64/
+DSS/bld/
+DSS/[Bb]in/
+DSS/[Oo]bj/
+DSS/[Ll]og/
+DSS/[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
-.vs/
+DSS/.vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
 # Visual Studio 2017 auto generated files
-Generated\ Files/
+DSS/Generated\ Files/
 
 # MSTest test Results
-[Tt]est[Rr]esult*/
-[Bb]uild[Ll]og.*
+DSS/[Tt]est[Rr]esult*/
+DSS/[Bb]uild[Ll]og.*
 
 # NUnit
 *.VisualState.xml
-TestResult.xml
-nunit-*.xml
+DSS/TestResult.xml
+DSS/nunit-*.xml
 
 # Build Results of an ATL Project
-[Dd]ebugPS/
-[Rr]eleasePS/
-dlldata.c
+DSS/[Dd]ebugPS/
+DSS/[Rr]eleasePS/
+DSS/dlldata.c
 
 # Benchmark Results
-BenchmarkDotNet.Artifacts/
+DSS/BenchmarkDotNet.Artifacts/
 
 # .NET Core
-project.lock.json
-project.fragment.lock.json
-artifacts/
+DSS/project.lock.json
+DSS/project.fragment.lock.json
+DSS/artifacts/
 
 # ASP.NET Scaffolding
-ScaffoldingReadMe.txt
+DSS/ScaffoldingReadMe.txt
 
 # StyleCop
-StyleCopReport.xml
+DSS/StyleCopReport.xml
 
 # Files built by Visual Studio
 *_i.c
@@ -99,10 +99,10 @@ StyleCopReport.xml
 *.scc
 
 # Chutzpah Test files
-_Chutzpah*
+DSS/_Chutzpah*
 
 # Visual C++ cache files
-ipch/
+DSS/ipch/
 *.aps
 *.ncb
 *.opendb
@@ -122,62 +122,62 @@ ipch/
 *.e2e
 
 # TFS 2012 Local Workspace
-$tf/
+DSS/$tf/
 
 # Guidance Automation Toolkit
 *.gpState
 
 # ReSharper is a .NET coding add-in
-_ReSharper*/
+DSS/_ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
 # TeamCity is a build add-in
-_TeamCity*
+DSS/_TeamCity*
 
 # DotCover is a Code Coverage Tool
 *.dotCover
 
 # AxoCover is a Code Coverage Tool
-.axoCover/*
-!.axoCover/settings.json
+DSS/.axoCover/*
+!DSS/.axoCover/settings.json
 
 # Coverlet is a free, cross platform Code Coverage Tool
-coverage*.json
-coverage*.xml
-coverage*.info
+DSS/coverage*.json
+DSS/coverage*.xml
+DSS/coverage*.info
 
 # Visual Studio code coverage results
 *.coverage
 *.coveragexml
 
 # NCrunch
-_NCrunch_*
-.*crunch*.local.xml
-nCrunchTemp_*
+DSS/_NCrunch_*
+DSS/.*crunch*.local.xml
+DSS/nCrunchTemp_*
 
 # MightyMoose
 *.mm.*
-AutoTest.Net/
+DSS/AutoTest.Net/
 
 # Web workbench (sass)
-.sass-cache/
+DSS/.sass-cache/
 
 # Installshield output folder
-[Ee]xpress/
+DSS/[Ee]xpress/
 
 # DocProject is a documentation generator add-in
-DocProject/buildhelp/
-DocProject/Help/*.HxT
-DocProject/Help/*.HxC
-DocProject/Help/*.hhc
-DocProject/Help/*.hhk
-DocProject/Help/*.hhp
-DocProject/Help/Html2
-DocProject/Help/html
+DSS/DocProject/buildhelp/
+DSS/DocProject/Help/*.HxT
+DSS/DocProject/Help/*.HxC
+DSS/DocProject/Help/*.hhc
+DSS/DocProject/Help/*.hhk
+DSS/DocProject/Help/*.hhp
+DSS/DocProject/Help/Html2
+DSS/DocProject/Help/html
 
 # Click-Once directory
-publish/
+DSS/publish/
 
 # Publish Web Output
 *.[Pp]ublish.xml
@@ -190,7 +190,7 @@ publish/
 # Microsoft Azure Web App publish settings. Comment the next line if you want to
 # checkin your Azure Web App publish settings, but sensitive information contained
 # in these scripts will be unencrypted
-PublishScripts/
+DSS/PublishScripts/
 
 # NuGet Packages
 *.nupkg
@@ -207,18 +207,18 @@ PublishScripts/
 *.nuget.targets
 
 # Microsoft Azure Build Output
-csx/
+DSS/csx/
 *.build.csdef
 
 # Microsoft Azure Emulator
-ecf/
-rcf/
+DSS/ecf/
+DSS/rcf/
 
 # Windows Store app package directories and files
-AppPackages/
-BundleArtifacts/
-Package.StoreAssociation.xml
-_pkginfo.txt
+DSS/AppPackages/
+DSS/BundleArtifacts/
+DSS/Package.StoreAssociation.xml
+DSS/_pkginfo.txt
 *.appx
 *.appxbundle
 *.appxupload
@@ -227,18 +227,18 @@ _pkginfo.txt
 # files ending in .cache can be ignored
 *.[Cc]ache
 # but keep track of directories ending in .cache
-!?*.[Cc]ache/
+!DSS/?*.[Cc]ache/
 
 # Others
-ClientBin/
-~$*
+DSS/ClientBin/
+DSS/~$*
 *~
 *.dbmdl
 *.dbproj.schemaview
 *.jfm
 *.pfx
 *.publishsettings
-orleans.codegen.cs
+DSS/orleans.codegen.cs
 
 # Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
@@ -249,16 +249,16 @@ orleans.codegen.cs
 #bower_components/
 
 # RIA/Silverlight projects
-Generated_Code/
+DSS/Generated_Code/
 
 # Backup & report files from converting an old project file
 # to a newer Visual Studio version. Backup files are not needed,
 # because we have git ;-)
-_UpgradeReport_Files/
-Backup*/
-UpgradeLog*.XML
-UpgradeLog*.htm
-ServiceFabricBackup/
+DSS/_UpgradeReport_Files/
+DSS/Backup*/
+DSS/UpgradeLog*.XML
+DSS/UpgradeLog*.htm
+DSS/ServiceFabricBackup/
 *.rptproj.bak
 
 # SQL Server files
@@ -276,14 +276,14 @@ ServiceFabricBackup/
 *- [Bb]ackup ([0-9][0-9]).rdl
 
 # Microsoft Fakes
-FakesAssemblies/
+DSS/FakesAssemblies/
 
 # GhostDoc plugin setting file
 *.GhostDoc.xml
 
 # Node.js Tools for Visual Studio
-.ntvs_analysis.dat
-node_modules/
+DSS/.ntvs_analysis.dat
+DSS/node_modules/
 
 # Visual Studio 6 build log
 *.plg
@@ -311,20 +311,20 @@ node_modules/
 **/*.DesktopClient/ModelManifest.xml
 **/*.Server/GeneratedArtifacts
 **/*.Server/ModelManifest.xml
-_Pvt_Extensions
+DSS/_Pvt_Extensions
 
 # Paket dependency manager
-.paket/paket.exe
-paket-files/
+DSS/.paket/paket.exe
+DSS/paket-files/
 
 # FAKE - F# Make
-.fake/
+DSS/.fake/
 
 # CodeRush personal settings
-.cr/personal
+DSS/.cr/personal
 
 # Python Tools for Visual Studio (PTVS)
-__pycache__/
+DSS/__pycache__/
 *.pyc
 
 # Cake - Uncomment if you are using it
@@ -344,10 +344,10 @@ __pycache__/
 *.xsd.cs
 
 # OpenCover UI analysis results
-OpenCover/
+DSS/OpenCover/
 
 # Azure Stream Analytics local run output
-ASALocalRun/
+DSS/ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
@@ -356,36 +356,36 @@ ASALocalRun/
 *.nvuser
 
 # MFractors (Xamarin productivity tool) working folder
-.mfractor/
+DSS/.mfractor/
 
 # Local History for Visual Studio
-.localhistory/
+DSS/.localhistory/
 
 # Visual Studio History (VSHistory) files
-.vshistory/
+DSS/.vshistory/
 
 # BeatPulse healthcheck temp database
-healthchecksdb
+DSS/healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
-MigrationBackup/
+DSS/MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
-.ionide/
+DSS/.ionide/
 
 # Fody - auto-generated XML schema
-FodyWeavers.xsd
+DSS/FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+DSS/.vscode/*
+!DSS/.vscode/settings.json
+!DSS/.vscode/tasks.json
+!DSS/.vscode/launch.json
+!DSS/.vscode/extensions.json
 *.code-workspace
 
 # Local History for Visual Studio Code
-.history/
+DSS/.history/
 
 # Windows Installer files from build outputs
 *.cab
