@@ -46,7 +46,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation("RoadsApiController", "All roads have been successfully received.");
 
                 // Возвращаем успешный результат с JSON массивом дорог
-                return Ok(result);
+                return Ok(result.ToString());
             }
             catch (Exception ex)
             {
@@ -235,7 +235,7 @@ namespace DSS.Controllers.ApiControllers
                 );
 
                 // Возвращаем успешный результат с JSON массивом оставшихся дорог
-                return Ok(result);
+                return Ok(result.ToString());
             }
             catch (Exception ex)
             {

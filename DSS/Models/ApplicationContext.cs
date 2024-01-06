@@ -9,7 +9,7 @@ namespace DSS.Models
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            Database.EnsureDeleted();
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 
@@ -55,7 +55,7 @@ namespace DSS.Models
             {
                 Id = id,
                 Number = number,
-                Priority = priority,
+                Priority = Math.Round(priority, 2),
                 LinkToPassport = ""
             };
 
@@ -71,8 +71,8 @@ namespace DSS.Models
                 {
                     Id = i + numberOfEstimates,
                     Name = $"Смета {i + numberOfEstimates}",
-                    LevelOfWork = i * 0.2,
-                    Cost = i * 0.2 * 100000,
+                    LevelOfWork = Math.Round(i * 0.2, 2),
+                    Cost = Math.Round(i * 0.2 * 100000, 2),
                     Link = "",
                     RoadId = road.Id,
                 };

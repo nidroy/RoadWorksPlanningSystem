@@ -4,27 +4,62 @@
         <name>DSS</name>
     </assembly>
     <members>
-        <member name="M:DSS.Controllers.RoadsApiController.Get">
+        <member name="M:DSS.Controllers.ApiControllers.EstimatesApiController.Get">
+            <summary>
+            Получаем данные всех смет
+            </summary>
+            <returns>Данные всех смет</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.EstimatesApiController.Get(System.Int32)">
+            <summary>
+            Получаем данные сметы по id
+            </summary>
+            <param name="id">Идентификатор сметы</param>
+            <returns>Данные сметы</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.EstimatesApiController.Post(DSS.Models.ViewModels.EstimateViewModel)">
+            <summary>
+            Создаем новую смету
+            </summary>
+            <param name="estimateData">Данные новой сметы</param>
+            <returns>Идентификатор новой сметы</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.EstimatesApiController.Put(System.Int32,DSS.Models.ViewModels.EstimateViewModel)">
+            <summary>
+            Обновляем данные сметы
+            </summary>
+            <param name="id">Идентификатор сметы</param>
+            <param name="estimateData">Новые данные сметы</param>
+            <returns>Данные обновленной сметы</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.EstimatesApiController.Delete(System.Int32)">
+            <summary>
+            Удаляем смету
+            </summary>
+            <param name="id">Идентификатор сметы</param>
+            <returns>Данные всех оставшихся смет</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.RoadsApiController.Get">
             <summary>
             Получаем данные всех дорог
             </summary>
             <returns>Данные всех дорог</returns>
         </member>
-        <member name="M:DSS.Controllers.RoadsApiController.Get(System.Int32)">
+        <member name="M:DSS.Controllers.ApiControllers.RoadsApiController.Get(System.Int32)">
             <summary>
             Получаем данные дороги по id
             </summary>
             <param name="id">Идентификатор дороги</param>
             <returns>Данные дороги</returns>
         </member>
-        <member name="M:DSS.Controllers.RoadsApiController.Post(DSS.Models.RoadViewModel)">
+        <member name="M:DSS.Controllers.ApiControllers.RoadsApiController.Post(DSS.Models.ViewModels.RoadViewModel)">
             <summary>
             Создаем новую дорогу
             </summary>
             <param name="roadData">Данные новой дороги</param>
             <returns>Идентификатор новой дороги</returns>
         </member>
-        <member name="M:DSS.Controllers.RoadsApiController.Put(System.Int32,DSS.Models.RoadViewModel)">
+        <member name="M:DSS.Controllers.ApiControllers.RoadsApiController.Put(System.Int32,DSS.Models.ViewModels.RoadViewModel)">
             <summary>
             Обновляем данные дороги
             </summary>
@@ -32,7 +67,7 @@
             <param name="roadData">Новые данные дороги</param>
             <returns>Данные обновленной дороги</returns>
         </member>
-        <member name="M:DSS.Controllers.RoadsApiController.Delete(System.Int32)">
+        <member name="M:DSS.Controllers.ApiControllers.RoadsApiController.Delete(System.Int32)">
             <summary>
             Удаляем дорогу
             </summary>
