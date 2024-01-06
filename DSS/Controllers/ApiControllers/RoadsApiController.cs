@@ -1,4 +1,5 @@
-﻿using DSS.Models;
+﻿using DSS.Loggers;
+using DSS.Models;
 using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -11,12 +12,12 @@ namespace DSS.Controllers.ApiControllers
     public class RoadsApiController : ControllerBase
     {
         private readonly ApplicationContext _context;
-        private readonly ILogger<RoadsApiController> _logger;
+        private readonly ApiLogger _logger;
 
         public RoadsApiController(ApplicationContext context, ILogger<RoadsApiController> logger)
         {
             _context = context;
-            _logger = logger;
+            _logger = new ApiLogger(logger);
         }
 
         /// <summary>
@@ -151,13 +152,6 @@ namespace DSS.Controllers.ApiControllers
             {
                 _logger.LogInformation("RoadsApiController", $"Updating the road with Id {id}...");
 
-                // Проверяем входные данные на null
-                if (roadData == null)
-                {
-                    _logger.LogWarning("RoadsApiController", "Incorrect road data provided.");
-                    return BadRequest(null);
-                }
-
                 // Ищем дорогу по указанному ID в контексте данных
                 Road road = _context.Roads.FirstOrDefault(r => r.Id == id);
 
@@ -166,6 +160,13 @@ namespace DSS.Controllers.ApiControllers
                     // Возвращаем 404 Not Found, если дорога не найдена
                     _logger.LogWarning("RoadsApiController", $"The road with Id {id} was not found.");
                     return NotFound(null);
+                }
+
+                // Проверяем входные данные на null
+                if (roadData == null)
+                {
+                    _logger.LogWarning("RoadsApiController", "Incorrect road data provided.");
+                    return BadRequest(null);
                 }
 
                 // Обновляем свойства дороги на основе входных данных
@@ -197,7 +198,7 @@ namespace DSS.Controllers.ApiControllers
         /// Удаляем дорогу
         /// </summary>
         /// <param name="id">Идентификатор дороги</param>
-        /// <returns>Данные всех оставшихся дорог</returns>
+        /// <returns>Количество оставшихся дорог</returns>
         [HttpDelete("delete/{id}")]
         public IActionResult Delete(int id)
         {
@@ -224,18 +225,8 @@ namespace DSS.Controllers.ApiControllers
                 // Получаем все оставшиеся дороги из контекста данных
                 List<Road> roads = _context.Roads.ToList();
 
-                // Преобразуем список дорог в JSON массив
-                JArray result = new JArray(
-                    roads.Select(road => new JObject(
-                        new JProperty("Id", road.Id),
-                        new JProperty("Number", road.Number),
-                        new JProperty("Priority", road.Priority),
-                        new JProperty("LinkToPassport", road.LinkToPassport)
-                    ))
-                );
-
-                // Возвращаем успешный результат с JSON массивом оставшихся дорог
-                return Ok(result.ToString());
+                // Возвращаем успешный результат с количеством оставшихся дорог
+                return Ok(roads.Count);
             }
             catch (Exception ex)
             {

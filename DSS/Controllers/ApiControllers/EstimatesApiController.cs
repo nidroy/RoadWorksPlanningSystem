@@ -1,4 +1,5 @@
-﻿using DSS.Models;
+﻿using DSS.Loggers;
+using DSS.Models;
 using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -8,15 +9,15 @@ namespace DSS.Controllers.ApiControllers
 {
     [ApiController]
     [Route("api/estimates")]
-    public class EstimatesApiController : Controller
+    public class EstimatesApiController : ControllerBase
     {
         private readonly ApplicationContext _context;
-        private readonly ILogger<EstimatesApiController> _logger;
+        private readonly ApiLogger _logger;
 
         public EstimatesApiController(ApplicationContext context, ILogger<EstimatesApiController> logger)
         {
             _context = context;
-            _logger = logger;
+            _logger = new ApiLogger(logger);
         }
 
         /// <summary>
@@ -175,13 +176,6 @@ namespace DSS.Controllers.ApiControllers
             {
                 _logger.LogInformation("EstimatesApiController", $"Updating the estimate with Id {id}...");
 
-                // Проверяем входные данные на null
-                if (estimateData == null)
-                {
-                    _logger.LogWarning("EstimatesApiController", "Incorrect estimate data provided.");
-                    return BadRequest(null);
-                }
-
                 // Ищем смету по указанному ID в контексте данных
                 Estimate estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
 
@@ -199,6 +193,23 @@ namespace DSS.Controllers.ApiControllers
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
                     _logger.LogWarning("EstimatesApiController", $"The road with Id {estimate.RoadId} was not found.");
+                    return NotFound(null);
+                }
+
+                // Проверяем входные данные на null
+                if (estimateData == null)
+                {
+                    _logger.LogWarning("EstimatesApiController", "Incorrect estimate data provided.");
+                    return BadRequest(null);
+                }
+
+                // Ищем дорогу по ID дороги во входных данных
+                road = _context.Roads.FirstOrDefault(r => r.Id == estimateData.RoadId);
+
+                if (road == null)
+                {
+                    // Возвращаем 404 Not Found, если дорога не найдена
+                    _logger.LogWarning("EstimatesApiController", $"The road with Id {estimateData.RoadId} was not found.");
                     return NotFound(null);
                 }
 
@@ -233,7 +244,7 @@ namespace DSS.Controllers.ApiControllers
         /// Удаляем смету
         /// </summary>
         /// <param name="id">Идентификатор сметы</param>
-        /// <returns>Данные всех оставшихся смет</returns>
+        /// <returns>Количество оставшихся смет</returns>
         [HttpDelete("delete/{id}")]
         public IActionResult Delete(int id)
         {
@@ -270,20 +281,8 @@ namespace DSS.Controllers.ApiControllers
                 // Получаем все оставшиеся сметы из контекста данных
                 List<Estimate> estimates = _context.Estimates.ToList();
 
-                // Преобразуем список смет в JSON массив
-                JArray result = new JArray(
-                    estimates.Select(estimate => new JObject(
-                        new JProperty("Id", estimate.Id),
-                        new JProperty("Name", estimate.Name),
-                        new JProperty("LevelOfWork", estimate.LevelOfWork),
-                        new JProperty("Cost", estimate.Cost),
-                        new JProperty("Link", estimate.Link),
-                        new JProperty("RoadId", estimate.RoadId)
-                    ))
-                );
-
-                // Возвращаем успешный результат с JSON массивом оставшихся смет
-                return Ok(result.ToString());
+                // Возвращаем успешный результат с количеством оставшихся смет
+                return Ok(estimates.Count);
             }
             catch (Exception ex)
             {

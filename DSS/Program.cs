@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using DSS.Models;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using DSS.Loggers;
 
 namespace DSS
 {
@@ -11,14 +12,31 @@ namespace DSS
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // получаем строку подключения из файла конфигурации
+            // Метод для создания полного пути к файлу журнала
+            string CreateLogFilePath()
+            {
+                string logDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Logging");
+                string logFileName = $"DSS_{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.log";
+
+                return Path.Combine(logDirectory, logFileName);
+            }
+
+            string logFilePath = CreateLogFilePath();
+            builder.Logging.AddFile(logFilePath);
+
+            // Получаем строку подключения из файла конфигурации
             string connection = builder.Configuration.GetConnectionString("DefaultConnection");
 
-            // добавляем контекст ApplicationContext в качестве сервиса в приложение
+            // Добавляем контекст ApplicationContext в качестве сервиса в приложение
             builder.Services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddFilter("Microsoft", LogLevel.Warning);
+            });
 
             builder.Services.AddSwaggerGen(c =>
             {

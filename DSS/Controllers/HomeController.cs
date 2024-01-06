@@ -1,3 +1,4 @@
+using DSS.Controllers.ApiControllers;
 using DSS.Models;
 using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -7,13 +8,13 @@ namespace DSS.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ApplicationContext _context;
-        private readonly ILogger<HomeController> _logger;
+        private readonly RoadsApiController _roadsApi;
+        private readonly EstimatesApiController _estimatesApi;
 
-        public HomeController(ApplicationContext context, ILogger<HomeController> logger)
+        public HomeController(ApplicationContext context, ILogger<RoadsApiController> roadsApiLogger, ILogger<EstimatesApiController> estimatesApiLogger)
         {
-            _context = context;
-            _logger = logger;
+            _roadsApi = new RoadsApiController(context, roadsApiLogger);
+            _estimatesApi = new EstimatesApiController(context, estimatesApiLogger);
         }
 
         public IActionResult Index()
