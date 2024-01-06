@@ -39,13 +39,13 @@ namespace DSS.Models
                 ("18 ОП РЗ 18Р-2-10", 1)
             };
 
-            int numberOfEstimates = 0;
+            int estimateCount = 0;
 
             for (int i = 0; i < 20; i++)
             {
-                (string roadNumber, double priorityOfRoad) = roadsData[i];
-                Road road = CreateRoadModel(i + 1, roadNumber, priorityOfRoad, modelBuilder);
-                numberOfEstimates = CreateEstimateModels(numberOfEstimates, road, modelBuilder);
+                (string roadNumber, double roadPriority) = roadsData[i];
+                Road road = CreateRoadModel(i + 1, roadNumber, roadPriority, modelBuilder);
+                estimateCount = CreateEstimateModels(estimateCount, road, modelBuilder);
             }
         }
 
@@ -63,14 +63,14 @@ namespace DSS.Models
             return road;
         }
 
-        private int CreateEstimateModels(int numberOfEstimates, Road road, ModelBuilder modelBuilder)
+        private int CreateEstimateModels(int estimateCount, Road road, ModelBuilder modelBuilder)
         {
             for (int i = 1; i <= 20; i++)
             {
                 Estimate estimate = new()
                 {
-                    Id = i + numberOfEstimates,
-                    Name = $"Смета {i + numberOfEstimates}",
+                    Id = i + estimateCount,
+                    Name = $"Смета {i + estimateCount}",
                     LevelOfWork = Math.Round(i * 0.2, 2),
                     Cost = Math.Round(i * 0.2 * 100000, 2),
                     Link = "",
@@ -80,7 +80,7 @@ namespace DSS.Models
                 modelBuilder.Entity<Estimate>().HasData(estimate);
             }
 
-            return numberOfEstimates + 20;
+            return estimateCount + 20;
         }
     }
 }
