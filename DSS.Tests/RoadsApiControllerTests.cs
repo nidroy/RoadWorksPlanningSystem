@@ -20,7 +20,7 @@ namespace DSS.Tests
         }
 
         [Fact]
-        public void GetAllRoadsTest()
+        public void ReadAllRoadsTest()
         {
             // Arrange
             var context = _serviceProvider.GetRequiredService<ApplicationContext>();
@@ -37,7 +37,7 @@ namespace DSS.Tests
         }
 
         [Fact]
-        public void GetRoadByIdTest()
+        public void ReadRoadByIdTest()
         {
             // Arrange
             var context = _serviceProvider.GetRequiredService<ApplicationContext>();

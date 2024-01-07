@@ -29,7 +29,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("RoadsApiController", "Getting all the roads...");
+                _logger.LogInformation("RoadsApiController/Get", "Getting all the roads...");
 
                 // Получаем все дороги из контекста данных
                 List<Road> roads = _context.Roads.ToList();
@@ -44,7 +44,7 @@ namespace DSS.Controllers.ApiControllers
                     ))
                 );
 
-                _logger.LogInformation("RoadsApiController", "All roads have been successfully received.");
+                _logger.LogInformation("RoadsApiController/Get", "All roads have been successfully received.");
 
                 // Возвращаем успешный результат с JSON массивом дорог
                 return Ok(result.ToString());
@@ -52,7 +52,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("RoadsApiController", $"Error in getting all roads: {ex.Message}");
+                _logger.LogError("RoadsApiController/Get", $"Error in getting all roads: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -67,7 +67,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("RoadsApiController", $"Getting a road with Id {id}...");
+                _logger.LogInformation($"RoadsApiController/Get/{id}", $"Getting a road with Id {id}...");
 
                 // Ищем дорогу по указанному ID в контексте данных
                 Road road = _context.Roads.FirstOrDefault(r => r.Id == id);
@@ -75,14 +75,14 @@ namespace DSS.Controllers.ApiControllers
                 if (road == null)
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
-                    _logger.LogWarning("RoadsApiController", $"The road with Id {id} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"RoadsApiController/Get/{id}", $"The road with Id {id} was not found.");
+                    return NotFound($"The road with Id {id} was not found");
                 }
 
                 // Преобразуем найденную дорогу в JSON объект
                 string result = JsonConvert.SerializeObject(road, Formatting.Indented);
 
-                _logger.LogInformation("RoadsApiController", $"The road with Id {id} was successfully received.");
+                _logger.LogInformation($"RoadsApiController/Get/{id}", $"The road with Id {id} was successfully received.");
 
                 // Возвращаем успешный результат с JSON объектом дороги
                 return Ok(result);
@@ -90,7 +90,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("RoadsApiController", $"Error when getting a road with Id {id}: {ex.Message}");
+                _logger.LogError($"RoadsApiController/Get/{id}", $"Error when getting a road with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -105,13 +105,13 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("RoadsApiController", $"Creating a new road...");
+                _logger.LogInformation("RoadsApiController/Post", $"Creating a new road...");
 
                 // Проверяем входные данные на null
                 if (roadData == null)
                 {
-                    _logger.LogWarning("RoadsApiController", "Incorrect road data provided.");
-                    return BadRequest(null);
+                    _logger.LogWarning("RoadsApiController/Post", "Incorrect road data provided.");
+                    return BadRequest("Incorrect road data provided");
                 }
 
                 // Создаем новый объект Road на основе входных данных
@@ -126,7 +126,7 @@ namespace DSS.Controllers.ApiControllers
                 _context.Roads.Add(road);
                 _context.SaveChanges();
 
-                _logger.LogInformation("RoadsApiController", $"A new road with Id {road.Id} has been successfully created.");
+                _logger.LogInformation("RoadsApiController/Post", $"A new road with Id {road.Id} has been successfully created.");
 
                 // Возвращаем успешный результат с Id новой дороги
                 return Ok(road.Id);
@@ -134,7 +134,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("RoadsApiController", $"Error when creating a new road: {ex.Message}");
+                _logger.LogError("RoadsApiController/Post", $"Error when creating a new road: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -150,7 +150,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("RoadsApiController", $"Updating the road with Id {id}...");
+                _logger.LogInformation($"RoadsApiController/Put/{id}", $"Updating the road with Id {id}...");
 
                 // Ищем дорогу по указанному ID в контексте данных
                 Road road = _context.Roads.FirstOrDefault(r => r.Id == id);
@@ -158,15 +158,15 @@ namespace DSS.Controllers.ApiControllers
                 if (road == null)
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
-                    _logger.LogWarning("RoadsApiController", $"The road with Id {id} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"RoadsApiController/Put/{id}", $"The road with Id {id} was not found.");
+                    return NotFound($"The road with Id {id} was not found");
                 }
 
                 // Проверяем входные данные на null
                 if (roadData == null)
                 {
-                    _logger.LogWarning("RoadsApiController", "Incorrect road data provided.");
-                    return BadRequest(null);
+                    _logger.LogWarning($"RoadsApiController/Put/{id}", "Incorrect road data provided.");
+                    return BadRequest("Incorrect road data provided");
                 }
 
                 // Обновляем свойства дороги на основе входных данных
@@ -178,7 +178,7 @@ namespace DSS.Controllers.ApiControllers
                 _context.Roads.Update(road);
                 _context.SaveChanges();
 
-                _logger.LogInformation("RoadsApiController", $"The road with Id {id} has been successfully updated.");
+                _logger.LogInformation($"RoadsApiController/Put/{id}", $"The road with Id {id} has been successfully updated.");
 
                 // Преобразуем обновленную дорогу в JSON объект
                 string result = JsonConvert.SerializeObject(road, Formatting.Indented);
@@ -189,7 +189,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("RoadsApiController", $"Error updating the road with Id {id}: {ex.Message}");
+                _logger.LogError($"RoadsApiController/Put/{id}", $"Error updating the road with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -204,7 +204,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("RoadsApiController", $"Deleting a road with Id {id}...");
+                _logger.LogInformation($"RoadsApiController/Delete/{id}", $"Deleting a road with Id {id}...");
 
                 // Ищем дорогу по указанному ID в контексте данных
                 Road road = _context.Roads.FirstOrDefault(r => r.Id == id);
@@ -212,15 +212,15 @@ namespace DSS.Controllers.ApiControllers
                 if (road == null)
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
-                    _logger.LogWarning("RoadsApiController", $"The road with Id {id} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"RoadsApiController/Delete/{id}", $"The road with Id {id} was not found.");
+                    return NotFound($"The road with Id {id} was not found");
                 }
 
                 // Удаляем дорогу из контекста данных
                 _context.Roads.Remove(road);
                 _context.SaveChanges();
 
-                _logger.LogInformation("RoadsApiController", $"The road with Id {id} has been successfully deleted.");
+                _logger.LogInformation($"RoadsApiController/Delete/{id}", $"The road with Id {id} has been successfully deleted.");
 
                 // Получаем все оставшиеся дороги из контекста данных
                 List<Road> roads = _context.Roads.ToList();
@@ -231,7 +231,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("RoadsApiController", $"Error when deleting a road with Id {id}: {ex.Message}");
+                _logger.LogError($"RoadsApiController/Delete/{id}", $"Error when deleting a road with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }

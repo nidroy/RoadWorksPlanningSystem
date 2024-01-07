@@ -20,7 +20,7 @@ namespace DSS.Tests
         }
 
         [Fact]
-        public void GetAllEstimatesTest()
+        public void ReadAllEstimatesTest()
         {
             // Arrange
             var context = _serviceProvider.GetRequiredService<ApplicationContext>();
@@ -37,7 +37,7 @@ namespace DSS.Tests
         }
 
         [Fact]
-        public void GetEstimateByIdTest()
+        public void ReadEstimateByIdTest()
         {
             // Arrange
             var context = _serviceProvider.GetRequiredService<ApplicationContext>();

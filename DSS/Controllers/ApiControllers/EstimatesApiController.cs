@@ -29,7 +29,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("EstimatesApiController", "Getting all the estimates...");
+                _logger.LogInformation("EstimatesApiController/Get", "Getting all the estimates...");
 
                 // Получаем все сметы из контекста данных
                 List<Estimate> estimates = _context.Estimates.ToList();
@@ -46,7 +46,7 @@ namespace DSS.Controllers.ApiControllers
                     ))
                 );
 
-                _logger.LogInformation("EstimatesApiController", "All estimates have been successfully received.");
+                _logger.LogInformation("EstimatesApiController/Get", "All estimates have been successfully received.");
 
                 // Возвращаем успешный результат с JSON массивом смет
                 return Ok(result.ToString());
@@ -54,7 +54,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("EstimatesApiController", $"Error in getting all estimates: {ex.Message}");
+                _logger.LogError("EstimatesApiController/Get", $"Error in getting all estimates: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -69,7 +69,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("EstimatesApiController", $"Getting a estimate with Id {id}...");
+                _logger.LogInformation($"EstimatesApiController/Get/{id}", $"Getting a estimate with Id {id}...");
 
                 // Ищем смету по указанному ID в контексте данных
                 Estimate estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
@@ -77,8 +77,8 @@ namespace DSS.Controllers.ApiControllers
                 if (estimate == null)
                 {
                     // Возвращаем 404 Not Found, если смета не найдена
-                    _logger.LogWarning("EstimatesApiController", $"The estimate with Id {id} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"EstimatesApiController/Get/{id}", $"The estimate with Id {id} was not found.");
+                    return NotFound($"The estimate with Id {id} was not found");
                 }
 
                 // Ищем дорогу по ID дороги в сметe
@@ -87,14 +87,14 @@ namespace DSS.Controllers.ApiControllers
                 if (road == null)
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
-                    _logger.LogWarning("EstimatesApiController", $"The road with Id {estimate.RoadId} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"EstimatesApiController/Get/{id}", $"The road with Id {estimate.RoadId} was not found.");
+                    return NotFound($"The road with Id {estimate.RoadId} was not found");
                 }
 
                 // Преобразуем найденную смету в JSON объект
                 string result = JsonConvert.SerializeObject(estimate, Formatting.Indented);
 
-                _logger.LogInformation("EstimatesApiController", $"The estimate with Id {id} was successfully received.");
+                _logger.LogInformation($"EstimatesApiController/Get/{id}", $"The estimate with Id {id} was successfully received.");
 
                 // Возвращаем успешный результат с JSON объектом сметы
                 return Ok(result);
@@ -102,7 +102,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("EstimatesApiController", $"Error when getting a estimate with Id {id}: {ex.Message}");
+                _logger.LogError($"EstimatesApiController/Get/{id}", $"Error when getting a estimate with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -117,13 +117,13 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("EstimatesApiController", $"Creating a new estimate...");
+                _logger.LogInformation("EstimatesApiController/Post", $"Creating a new estimate...");
 
                 // Проверяем входные данные на null
                 if (estimateData == null)
                 {
-                    _logger.LogWarning("EstimatesApiController", "Incorrect estimate data provided.");
-                    return BadRequest(null);
+                    _logger.LogWarning("EstimatesApiController/Post", "Incorrect estimate data provided.");
+                    return BadRequest("Incorrect estimate data provided");
                 }
 
                 // Ищем дорогу по ID дороги во входных данных
@@ -132,8 +132,8 @@ namespace DSS.Controllers.ApiControllers
                 if (road == null)
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
-                    _logger.LogWarning("EstimatesApiController", $"The road with Id {estimateData.RoadId} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning("EstimatesApiController/Post", $"The road with Id {estimateData.RoadId} was not found.");
+                    return NotFound($"The road with Id {estimateData.RoadId} was not found");
                 }
 
                 // Создаем новый объект Estimate на основе входных данных
@@ -150,7 +150,7 @@ namespace DSS.Controllers.ApiControllers
                 _context.Estimates.Add(estimate);
                 _context.SaveChanges();
 
-                _logger.LogInformation("EstimatesApiController", $"A new estimate with Id {estimate.Id} has been successfully created.");
+                _logger.LogInformation("EstimatesApiController/Post", $"A new estimate with Id {estimate.Id} has been successfully created.");
 
                 // Возвращаем успешный результат с Id новой сметы
                 return Ok(estimate.Id);
@@ -158,7 +158,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("EstimatesApiController", $"Error when creating a new estimate: {ex.Message}");
+                _logger.LogError("EstimatesApiController/Post", $"Error when creating a new estimate: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -174,7 +174,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("EstimatesApiController", $"Updating the estimate with Id {id}...");
+                _logger.LogInformation($"EstimatesApiController/Put/{id}", $"Updating the estimate with Id {id}...");
 
                 // Ищем смету по указанному ID в контексте данных
                 Estimate estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
@@ -182,8 +182,8 @@ namespace DSS.Controllers.ApiControllers
                 if (estimate == null)
                 {
                     // Возвращаем 404 Not Found, если смета не найдена
-                    _logger.LogWarning("EstimatesApiController", $"The estimate with Id {id} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"EstimatesApiController/Put/{id}", $"The estimate with Id {id} was not found.");
+                    return NotFound($"The estimate with Id {id} was not found");
                 }
 
                 // Ищем дорогу по ID дороги в сметe
@@ -192,15 +192,15 @@ namespace DSS.Controllers.ApiControllers
                 if (road == null)
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
-                    _logger.LogWarning("EstimatesApiController", $"The road with Id {estimate.RoadId} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"EstimatesApiController/Put/{id}", $"The road with Id {estimate.RoadId} was not found.");
+                    return NotFound($"The road with Id {estimate.RoadId} was not found");
                 }
 
                 // Проверяем входные данные на null
                 if (estimateData == null)
                 {
-                    _logger.LogWarning("EstimatesApiController", "Incorrect estimate data provided.");
-                    return BadRequest(null);
+                    _logger.LogWarning($"EstimatesApiController/Put/{id}", "Incorrect estimate data provided.");
+                    return BadRequest("Incorrect estimate data provided");
                 }
 
                 // Ищем дорогу по ID дороги во входных данных
@@ -209,8 +209,8 @@ namespace DSS.Controllers.ApiControllers
                 if (road == null)
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
-                    _logger.LogWarning("EstimatesApiController", $"The road with Id {estimateData.RoadId} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"EstimatesApiController/Put/{id}", $"The road with Id {estimateData.RoadId} was not found.");
+                    return NotFound($"The road with Id {estimateData.RoadId} was not found");
                 }
 
                 // Обновляем свойства сметы на основе входных данных
@@ -224,7 +224,7 @@ namespace DSS.Controllers.ApiControllers
                 _context.Estimates.Update(estimate);
                 _context.SaveChanges();
 
-                _logger.LogInformation("EstimatesApiController", $"The estimate with Id {id} has been successfully updated.");
+                _logger.LogInformation($"EstimatesApiController/Put/{id}", $"The estimate with Id {id} has been successfully updated.");
 
                 // Преобразуем обновленную смету в JSON объект
                 string result = JsonConvert.SerializeObject(estimate, Formatting.Indented);
@@ -235,7 +235,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("EstimatesApiController", $"Error updating the estimate with Id {id}: {ex.Message}");
+                _logger.LogError($"EstimatesApiController/Put/{id}", $"Error updating the estimate with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -250,7 +250,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("EstimatesApiController", $"Deleting a estimate with Id {id}...");
+                _logger.LogInformation($"EstimatesApiController/Delete/{id}", $"Deleting a estimate with Id {id}...");
 
                 // Ищем смету по указанному ID в контексте данных
                 Estimate estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
@@ -258,8 +258,8 @@ namespace DSS.Controllers.ApiControllers
                 if (estimate == null)
                 {
                     // Возвращаем 404 Not Found, если смета не найдена
-                    _logger.LogWarning("EstimatesApiController", $"The estimate with Id {id} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"EstimatesApiController/Delete/{id}", $"The estimate with Id {id} was not found.");
+                    return NotFound($"The estimate with Id {id} was not found");
                 }
 
                 // Ищем дорогу по ID дороги в сметe
@@ -268,15 +268,15 @@ namespace DSS.Controllers.ApiControllers
                 if (road == null)
                 {
                     // Возвращаем 404 Not Found, если дорога не найдена
-                    _logger.LogWarning("EstimatesApiController", $"The road with Id {estimate.RoadId} was not found.");
-                    return NotFound(null);
+                    _logger.LogWarning($"EstimatesApiController/Delete/{id}", $"The road with Id {estimate.RoadId} was not found.");
+                    return NotFound($"The road with Id {estimate.RoadId} was not found");
                 }
 
                 // Удаляем смету из контекста данных
                 _context.Estimates.Remove(estimate);
                 _context.SaveChanges();
 
-                _logger.LogInformation("EstimatesApiController", $"The estimate with Id {id} has been successfully deleted.");
+                _logger.LogInformation($"EstimatesApiController/Delete/{id}", $"The estimate with Id {id} has been successfully deleted.");
 
                 // Получаем все оставшиеся сметы из контекста данных
                 List<Estimate> estimates = _context.Estimates.ToList();
@@ -287,7 +287,7 @@ namespace DSS.Controllers.ApiControllers
             catch (Exception ex)
             {
                 // В случае ошибки логируем и возвращаем 500 Internal Server Error
-                _logger.LogError("EstimatesApiController", $"Error when deleting a estimate with Id {id}: {ex.Message}");
+                _logger.LogError($"EstimatesApiController/Delete/{id}", $"Error when deleting a estimate with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
