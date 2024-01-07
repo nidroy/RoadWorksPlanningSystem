@@ -20,3 +20,31 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Стиль для таблицы */
+table {
+    border: 2px solid #444;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Стиль для заголовков таблицы (th) */
+th {
+    border: 2px solid #444;
+    background-color: #666;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Стиль для ячеек таблицы (td) */
+td {
+    border: 2px solid #444;
+    text-align: left;
+    padding: 15px;
+}
+
+/* Опциональные стили для выделения строк при наведении курсора */
+tr:hover {
+    background-color: #eee;
+}

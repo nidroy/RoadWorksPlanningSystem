@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Roads Page";
+}
+
+@model IEnumerable<Road>
+
+<h2 style="text-align: center; margin-bottom: 15px;">Дороги</h2>
+<table border="1">
+    <tr>
+        <th>Идентификационный номер дороги</th>
+        <th>Приоритет дороги</th>
+        <th>Ссылка на паспорт дороги</th>
+        <th>Операции</th>
+    </tr>
+    @foreach (var road in Model)
+    {
+        <tr>
+            <td>@road.Number</td>
+            <td>@road.Priority</td>
+            <td>@road.LinkToPassport</td>
+            <td style="text-align: center;">
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("ReadRoad", "Road", new { id = road.Id })'">Открыть</button>
+                <button type="button" class="btn btn-warning" onclick="location.href='@Url.Action("UpdateRoad", "Road", new { id = road.Id })'">Изменить</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("DeleteRoad", "Road", new { id = road.Id })'">Удалить</button>
+            </td>
+        </tr>
+    }
+</table>
+<p style="margin-top: 15px;">
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("CreateRoad", "Road")'">Добавить</button>
+</p>
