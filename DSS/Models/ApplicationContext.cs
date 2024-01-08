@@ -71,7 +71,7 @@ namespace DSS.Models
                 {
                     Id = i + estimateCount,
                     Name = $"Смета {i + estimateCount}",
-                    LevelOfWork = Math.Round(i * 0.2, 2),
+                    LevelOfWorks = Math.Round(i * 0.2, 2),
                     Cost = Math.Round(i * 0.2 * 100000, 2),
                     Link = "",
                     RoadId = road.Id,

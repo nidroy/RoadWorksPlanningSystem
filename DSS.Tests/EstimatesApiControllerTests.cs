@@ -55,7 +55,7 @@ namespace DSS.Tests
             Estimate estimate = new()
             {
                 Name = "Смета 10",
-                LevelOfWork = 0.2,
+                LevelOfWorks = 0.2,
                 Cost = 20000,
                 Link = "",
                 RoadId = road.Id
@@ -74,7 +74,7 @@ namespace DSS.Tests
 
             Assert.Equal(estimate.Id, resultEstimate.Id);
             Assert.Equal(estimate.Name, resultEstimate.Name);
-            Assert.Equal(estimate.LevelOfWork, resultEstimate.LevelOfWork);
+            Assert.Equal(estimate.LevelOfWorks, resultEstimate.LevelOfWorks);
             Assert.Equal(estimate.Cost, resultEstimate.Cost);
             Assert.Equal(estimate.Link, resultEstimate.Link);
             Assert.Equal(estimate.RoadId, resultEstimate.RoadId);
@@ -102,7 +102,7 @@ namespace DSS.Tests
             EstimateViewModel estimateData = new()
             {
                 Name = "Смета 10",
-                LevelOfWork = 0.2,
+                LevelOfWorks = 0.2,
                 Cost = 20000,
                 Link = "",
                 RoadId = road.Id,
@@ -142,7 +142,7 @@ namespace DSS.Tests
             Estimate estimate = new()
             {
                 Name = "Смета 10",
-                LevelOfWork = 0.2,
+                LevelOfWorks = 0.2,
                 Cost = 20000,
                 Link = "",
                 RoadId = road.Id
@@ -153,7 +153,7 @@ namespace DSS.Tests
             EstimateViewModel estimateData = new()
             {
                 Name = "Смета 11",
-                LevelOfWork = 0.4,
+                LevelOfWorks = 0.4,
                 Cost = 45000,
                 Link = "",
                 RoadId = road.Id
@@ -170,7 +170,7 @@ namespace DSS.Tests
 
             Assert.Equal(estimate.Id, resultEstimate.Id);
             Assert.Equal(estimateData.Name, resultEstimate.Name);
-            Assert.Equal(estimateData.LevelOfWork, resultEstimate.LevelOfWork);
+            Assert.Equal(estimateData.LevelOfWorks, resultEstimate.LevelOfWorks);
             Assert.Equal(estimateData.Cost, resultEstimate.Cost);
             Assert.Equal(estimateData.Link, resultEstimate.Link);
             Assert.Equal(estimateData.RoadId, resultEstimate.RoadId);
@@ -198,7 +198,7 @@ namespace DSS.Tests
             Estimate estimate = new()
             {
                 Name = "Смета 10",
-                LevelOfWork = 0.2,
+                LevelOfWorks = 0.2,
                 Cost = 20000,
                 Link = "",
                 RoadId = road.Id

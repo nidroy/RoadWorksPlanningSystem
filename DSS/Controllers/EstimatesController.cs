@@ -114,7 +114,7 @@ namespace DSS.Controllers
                 EstimateViewModel estimateData = new()
                 {
                     Name = estimate.Name,
-                    LevelOfWork = estimate.LevelOfWork,
+                    LevelOfWorks = estimate.LevelOfWorks,
                     Cost = estimate.Cost,
                     Link = estimate.Link,
                     RoadId = estimate.RoadId
@@ -189,7 +189,7 @@ namespace DSS.Controllers
                 EstimateViewModel estimateData = new()
                 {
                     Name = estimate.Name,
-                    LevelOfWork = estimate.LevelOfWork,
+                    LevelOfWorks = estimate.LevelOfWorks,
                     Cost = estimate.Cost,
                     Link = estimate.Link,
                     RoadId = estimate.RoadId

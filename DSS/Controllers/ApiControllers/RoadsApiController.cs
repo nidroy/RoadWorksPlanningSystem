@@ -36,12 +36,13 @@ namespace DSS.Controllers.ApiControllers
 
                 // Преобразуем список дорог в JSON массив
                 JArray result = new JArray(
-                    roads.Select(road => new JObject(
-                        new JProperty("Id", road.Id),
-                        new JProperty("Number", road.Number),
-                        new JProperty("Priority", road.Priority),
-                        new JProperty("LinkToPassport", road.LinkToPassport)
-                    ))
+                    roads.Select(road => new JObject
+                    {
+                        ["Id"] = road.Id,
+                        ["Number"] = road.Number,
+                        ["Priority"] = road.Priority,
+                        ["LinkToPassport"] = road.LinkToPassport
+                    })
                 );
 
                 _logger.LogInformation("RoadsApiController/Get", "All roads have been successfully received.");
@@ -70,7 +71,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation($"RoadsApiController/Get/{id}", $"Getting a road with Id {id}...");
 
                 // Ищем дорогу по указанному ID в контексте данных
-                Road road = _context.Roads.FirstOrDefault(r => r.Id == id);
+                Road? road = _context.Roads.FirstOrDefault(r => r.Id == id);
 
                 if (road == null)
                 {
@@ -153,7 +154,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation($"RoadsApiController/Put/{id}", $"Updating the road with Id {id}...");
 
                 // Ищем дорогу по указанному ID в контексте данных
-                Road road = _context.Roads.FirstOrDefault(r => r.Id == id);
+                Road? road = _context.Roads.FirstOrDefault(r => r.Id == id);
 
                 if (road == null)
                 {
@@ -207,7 +208,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation($"RoadsApiController/Delete/{id}", $"Deleting a road with Id {id}...");
 
                 // Ищем дорогу по указанному ID в контексте данных
-                Road road = _context.Roads.FirstOrDefault(r => r.Id == id);
+                Road? road = _context.Roads.FirstOrDefault(r => r.Id == id);
 
                 if (road == null)
                 {

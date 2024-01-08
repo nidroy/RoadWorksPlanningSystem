@@ -25,6 +25,14 @@
     </table>
 
     <div style="margin-top: 15px;">
-        <button type="submit" class="btn btn-success">Сохранить</button>
+        <button type="submit" class="btn btn-success" onclick="replacePoints()">Сохранить</button>
     </div>
 </form>
+
+<script>
+    function replacePoints() {
+        var priority = document.getElementById("Priority");
+        priority.value = priority.value.replace(/\./g, ',');
+        document.getElementById("myForm").submit();
+    }
+</script>

@@ -35,16 +35,37 @@ namespace DSS.Controllers.ApiControllers
                 List<Estimate> estimates = _context.Estimates.ToList();
 
                 // Преобразуем список смет в JSON массив
-                JArray result = new JArray(
-                    estimates.Select(estimate => new JObject(
-                        new JProperty("Id", estimate.Id),
-                        new JProperty("Name", estimate.Name),
-                        new JProperty("LevelOfWork", estimate.LevelOfWork),
-                        new JProperty("Cost", estimate.Cost),
-                        new JProperty("Link", estimate.Link),
-                        new JProperty("RoadId", estimate.RoadId)
-                    ))
-                );
+                JArray result = new JArray();
+
+                foreach (var estimate in estimates)
+                {
+                    // Ищем дорогу по ID дороги в сметe
+                    Road? road = _context.Roads.FirstOrDefault(r => r.Id == estimate.RoadId);
+
+                    if (road == null)
+                    {
+                        // Возвращаем 404 Not Found, если дорога не найдена
+                        _logger.LogWarning($"EstimatesApiController/Get", $"The road with Id {estimate.RoadId} was not found.");
+                        return NotFound($"The road with Id {estimate.RoadId} was not found");
+                    }
+
+                    result.Add(new JObject
+                    {
+                        ["Id"] = estimate.Id,
+                        ["Name"] = estimate.Name,
+                        ["LevelOfWorks"] = estimate.LevelOfWorks,
+                        ["Cost"] = estimate.Cost,
+                        ["Link"] = estimate.Link,
+                        ["RoadId"] = estimate.RoadId,
+                        ["Road"] = new JObject
+                        {
+                            ["Id"] = road.Id,
+                            ["Number"] = road.Number,
+                            ["Priority"] = road.Priority,
+                            ["LinkToPassport"] = road.LinkToPassport
+                        }
+                    });
+                }
 
                 _logger.LogInformation("EstimatesApiController/Get", "All estimates have been successfully received.");
 
@@ -72,7 +93,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation($"EstimatesApiController/Get/{id}", $"Getting a estimate with Id {id}...");
 
                 // Ищем смету по указанному ID в контексте данных
-                Estimate estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
+                Estimate? estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
 
                 if (estimate == null)
                 {
@@ -82,7 +103,7 @@ namespace DSS.Controllers.ApiControllers
                 }
 
                 // Ищем дорогу по ID дороги в сметe
-                Road road = _context.Roads.FirstOrDefault(r => r.Id == estimate.RoadId);
+                Road? road = _context.Roads.FirstOrDefault(r => r.Id == estimate.RoadId);
 
                 if (road == null)
                 {
@@ -127,7 +148,7 @@ namespace DSS.Controllers.ApiControllers
                 }
 
                 // Ищем дорогу по ID дороги во входных данных
-                Road road = _context.Roads.FirstOrDefault(r => r.Id == estimateData.RoadId);
+                Road? road = _context.Roads.FirstOrDefault(r => r.Id == estimateData.RoadId);
 
                 if (road == null)
                 {
@@ -140,7 +161,7 @@ namespace DSS.Controllers.ApiControllers
                 Estimate estimate = new()
                 {
                     Name = estimateData.Name,
-                    LevelOfWork = estimateData.LevelOfWork,
+                    LevelOfWorks = estimateData.LevelOfWorks,
                     Cost = estimateData.Cost,
                     Link = estimateData.Link,
                     RoadId = estimateData.RoadId,
@@ -177,7 +198,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation($"EstimatesApiController/Put/{id}", $"Updating the estimate with Id {id}...");
 
                 // Ищем смету по указанному ID в контексте данных
-                Estimate estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
+                Estimate? estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
 
                 if (estimate == null)
                 {
@@ -187,7 +208,7 @@ namespace DSS.Controllers.ApiControllers
                 }
 
                 // Ищем дорогу по ID дороги в сметe
-                Road road = _context.Roads.FirstOrDefault(r => r.Id == estimate.RoadId);
+                Road? road = _context.Roads.FirstOrDefault(r => r.Id == estimate.RoadId);
 
                 if (road == null)
                 {
@@ -215,7 +236,7 @@ namespace DSS.Controllers.ApiControllers
 
                 // Обновляем свойства сметы на основе входных данных
                 estimate.Name = estimateData.Name;
-                estimate.LevelOfWork = estimateData.LevelOfWork;
+                estimate.LevelOfWorks = estimateData.LevelOfWorks;
                 estimate.Cost = estimateData.Cost;
                 estimate.Link = estimateData.Link;
                 estimate.RoadId = estimateData.RoadId;
@@ -253,7 +274,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation($"EstimatesApiController/Delete/{id}", $"Deleting a estimate with Id {id}...");
 
                 // Ищем смету по указанному ID в контексте данных
-                Estimate estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
+                Estimate? estimate = _context.Estimates.FirstOrDefault(e => e.Id == id);
 
                 if (estimate == null)
                 {
@@ -263,7 +284,7 @@ namespace DSS.Controllers.ApiControllers
                 }
 
                 // Ищем дорогу по ID дороги в сметe
-                Road road = _context.Roads.FirstOrDefault(r => r.Id == estimate.RoadId);
+                Road? road = _context.Roads.FirstOrDefault(r => r.Id == estimate.RoadId);
 
                 if (road == null)
                 {
