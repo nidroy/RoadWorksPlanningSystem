@@ -105,7 +105,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("RoadsApiController/Post", $"Creating a new road...");
+                _logger.LogInformation("RoadsApiController/Post", "Creating a new road...");
 
                 // Проверяем входные данные на null
                 if (roadData == null)

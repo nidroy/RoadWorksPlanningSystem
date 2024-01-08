@@ -26,8 +26,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[H:/RoadWorksPlanningSystem/DSS/Views/Roads/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Roads/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/RoadWorksPlanningSystem/DSS/Views/Roads/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Roads/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcUmVhZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Roads/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [H:/RoadWorksPlanningSystem/DSS/Views/Shared/Error.cshtml]

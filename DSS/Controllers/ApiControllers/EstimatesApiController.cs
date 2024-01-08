@@ -117,7 +117,7 @@ namespace DSS.Controllers.ApiControllers
         {
             try
             {
-                _logger.LogInformation("EstimatesApiController/Post", $"Creating a new estimate...");
+                _logger.LogInformation("EstimatesApiController/Post", "Creating a new estimate...");
 
                 // Проверяем входные данные на null
                 if (estimateData == null)
