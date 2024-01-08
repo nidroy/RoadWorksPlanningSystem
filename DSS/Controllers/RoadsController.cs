@@ -3,7 +3,6 @@ using DSS.Loggers;
 using DSS.Models;
 using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace DSS.Controllers
@@ -83,7 +82,7 @@ namespace DSS.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-        
+
         [HttpGet("create")]
         public IActionResult Create()
         {
@@ -116,7 +115,7 @@ namespace DSS.Controllers
                 {
                     Number = road.Number,
                     Priority = road.Priority,
-                    LinkToPassport = road.LinkToPassport,
+                    LinkToPassport = road.LinkToPassport
                 };
 
                 var result = _roadsApi.Post(roadData);
@@ -189,7 +188,7 @@ namespace DSS.Controllers
                 {
                     Number = road.Number,
                     Priority = road.Priority,
-                    LinkToPassport = road.LinkToPassport,
+                    LinkToPassport = road.LinkToPassport
                 };
 
                 var result = _roadsApi.Put(road.Id, roadData);

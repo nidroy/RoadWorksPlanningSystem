@@ -58,7 +58,7 @@ namespace DSS.Tests
                 LevelOfWork = 0.2,
                 Cost = 20000,
                 Link = "",
-                RoadId = road.Id,
+                RoadId = road.Id
             };
             context.Estimates.Add(estimate);
             context.SaveChanges();
@@ -145,7 +145,7 @@ namespace DSS.Tests
                 LevelOfWork = 0.2,
                 Cost = 20000,
                 Link = "",
-                RoadId = road.Id,
+                RoadId = road.Id
             };
             context.Estimates.Add(estimate);
             context.SaveChanges();
@@ -156,7 +156,7 @@ namespace DSS.Tests
                 LevelOfWork = 0.4,
                 Cost = 45000,
                 Link = "",
-                RoadId = road.Id,
+                RoadId = road.Id
             };
 
             // Act
@@ -201,7 +201,7 @@ namespace DSS.Tests
                 LevelOfWork = 0.2,
                 Cost = 20000,
                 Link = "",
-                RoadId = road.Id,
+                RoadId = road.Id
             };
             context.Estimates.Add(estimate);
             context.SaveChanges();
