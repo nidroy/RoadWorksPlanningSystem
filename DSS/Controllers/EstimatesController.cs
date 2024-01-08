@@ -11,12 +11,14 @@ namespace DSS.Controllers
     public class EstimatesController : Controller
     {
         private readonly EstimatesApiController _estimatesApi;
+        private readonly RoadsApiController _roadsApi;
         private readonly ApiLogger _logger;
 
-        public EstimatesController(ApplicationContext context, ILogger<EstimatesApiController> logger)
+        public EstimatesController(ApplicationContext context, ILogger<EstimatesApiController> estimatesApiLogger, ILogger<RoadsApiController> roadsApiLogger)
         {
-            _estimatesApi = new EstimatesApiController(context, logger);
-            _logger = new ApiLogger(logger);
+            _estimatesApi = new EstimatesApiController(context, estimatesApiLogger);
+            _roadsApi = new RoadsApiController(context, roadsApiLogger);
+            _logger = new ApiLogger(estimatesApiLogger);
         }
 
         [HttpGet("read")]
@@ -88,8 +90,31 @@ namespace DSS.Controllers
         {
             try
             {
+                _logger.LogInformation("EstimatesController/Create", "Reading all roads...");
+
+                var result = _roadsApi.Get();
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("EstimatesController/Create", "Error on the API side of the controller");
+                    return BadRequest(value);
+                }
+
+                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
+
+                _logger.LogInformation("EstimatesController/Create", "All roads have been successfully read.");
+
+                EstimateRoadsViewModel viewModel = new EstimateRoadsViewModel
+                {
+                    Estimate = new(),
+                    Roads = roads
+                };
+
                 _logger.LogInformation("EstimatesController", "Navigating to the page \"Create Estimate\".");
-                return View("Create");
+
+                return View("Create", viewModel);
             }
             catch (Exception ex)
             {
@@ -162,9 +187,31 @@ namespace DSS.Controllers
 
                 _logger.LogInformation($"EstimatesController/Update/{id}", $"The estimate with Id {id} was successfully read.");
 
+                _logger.LogInformation($"EstimatesController/Update/{id}", "Reading all roads...");
+
+                result = _roadsApi.Get();
+                statusCode = ((ObjectResult)result).StatusCode;
+                value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning($"EstimatesController/Update/{id}", "Error on the API side of the controller");
+                    return BadRequest(value);
+                }
+
+                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
+
+                _logger.LogInformation($"EstimatesController/Update/{id}", "All roads have been successfully read.");
+
+                EstimateRoadsViewModel viewModel = new EstimateRoadsViewModel
+                {
+                    Estimate = estimate,
+                    Roads = roads
+                };
+
                 _logger.LogInformation("EstimatesController", "Navigating to the page \"Update Estimate\".");
 
-                return View("Update", estimate);
+                return View("Update", viewModel);
             }
             catch (Exception ex)
             {

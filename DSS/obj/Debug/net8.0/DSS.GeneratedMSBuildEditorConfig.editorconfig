@@ -18,8 +18,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = H:\RoadWorksPlanningSystem\DSS
 build_property._RazorSourceGeneratorDebug = 
 
+[H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXFJlYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [H:/RoadWorksPlanningSystem/DSS/Views/Home/Index.cshtml]

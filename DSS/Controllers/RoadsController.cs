@@ -88,8 +88,9 @@ namespace DSS.Controllers
         {
             try
             {
+                Road road = new();
                 _logger.LogInformation("RoadsController", "Navigating to the page \"Create Road\".");
-                return View("Create");
+                return View("Create", road);
             }
             catch (Exception ex)
             {
