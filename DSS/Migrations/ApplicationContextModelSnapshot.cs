@@ -3817,7 +3817,45 @@ namespace DSS.Migrations
                         });
                 });
 
+            modelBuilder.Entity("DSS.Models.TechnicalConditionOfRoad", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("RoadId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TechnicalCondition")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Месяц")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoadId");
+
+                    b.ToTable("TechnicalConditionsOfRoads");
+                });
+
             modelBuilder.Entity("DSS.Models.Estimate", b =>
+                {
+                    b.HasOne("DSS.Models.Road", "Road")
+                        .WithMany()
+                        .HasForeignKey("RoadId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Road");
+                });
+
+            modelBuilder.Entity("DSS.Models.TechnicalConditionOfRoad", b =>
                 {
                     b.HasOne("DSS.Models.Road", "Road")
                         .WithMany()

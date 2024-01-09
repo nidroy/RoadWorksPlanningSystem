@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DSS.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240108141302_FirstMigration")]
+    [Migration("20240109233203_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -35,7 +35,7 @@ namespace DSS.Migrations
                     b.Property<double>("Cost")
                         .HasColumnType("float");
 
-                    b.Property<double>("LevelOfWork")
+                    b.Property<double>("LevelOfWorks")
                         .HasColumnType("float");
 
                     b.Property<string>("Link")
@@ -58,7 +58,7 @@ namespace DSS.Migrations
                         {
                             Id = 1,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 1",
                             RoadId = 1
@@ -67,7 +67,7 @@ namespace DSS.Migrations
                         {
                             Id = 2,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 2",
                             RoadId = 1
@@ -76,7 +76,7 @@ namespace DSS.Migrations
                         {
                             Id = 3,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 3",
                             RoadId = 1
@@ -85,7 +85,7 @@ namespace DSS.Migrations
                         {
                             Id = 4,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 4",
                             RoadId = 1
@@ -94,7 +94,7 @@ namespace DSS.Migrations
                         {
                             Id = 5,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 5",
                             RoadId = 1
@@ -103,7 +103,7 @@ namespace DSS.Migrations
                         {
                             Id = 6,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 6",
                             RoadId = 1
@@ -112,7 +112,7 @@ namespace DSS.Migrations
                         {
                             Id = 7,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 7",
                             RoadId = 1
@@ -121,7 +121,7 @@ namespace DSS.Migrations
                         {
                             Id = 8,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 8",
                             RoadId = 1
@@ -130,7 +130,7 @@ namespace DSS.Migrations
                         {
                             Id = 9,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 9",
                             RoadId = 1
@@ -139,7 +139,7 @@ namespace DSS.Migrations
                         {
                             Id = 10,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 10",
                             RoadId = 1
@@ -148,7 +148,7 @@ namespace DSS.Migrations
                         {
                             Id = 11,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 11",
                             RoadId = 1
@@ -157,7 +157,7 @@ namespace DSS.Migrations
                         {
                             Id = 12,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 12",
                             RoadId = 1
@@ -166,7 +166,7 @@ namespace DSS.Migrations
                         {
                             Id = 13,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 13",
                             RoadId = 1
@@ -175,7 +175,7 @@ namespace DSS.Migrations
                         {
                             Id = 14,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 14",
                             RoadId = 1
@@ -184,7 +184,7 @@ namespace DSS.Migrations
                         {
                             Id = 15,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 15",
                             RoadId = 1
@@ -193,7 +193,7 @@ namespace DSS.Migrations
                         {
                             Id = 16,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 16",
                             RoadId = 1
@@ -202,7 +202,7 @@ namespace DSS.Migrations
                         {
                             Id = 17,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 17",
                             RoadId = 1
@@ -211,7 +211,7 @@ namespace DSS.Migrations
                         {
                             Id = 18,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 18",
                             RoadId = 1
@@ -220,7 +220,7 @@ namespace DSS.Migrations
                         {
                             Id = 19,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 19",
                             RoadId = 1
@@ -229,7 +229,7 @@ namespace DSS.Migrations
                         {
                             Id = 20,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 20",
                             RoadId = 1
@@ -238,7 +238,7 @@ namespace DSS.Migrations
                         {
                             Id = 21,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 21",
                             RoadId = 2
@@ -247,7 +247,7 @@ namespace DSS.Migrations
                         {
                             Id = 22,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 22",
                             RoadId = 2
@@ -256,7 +256,7 @@ namespace DSS.Migrations
                         {
                             Id = 23,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 23",
                             RoadId = 2
@@ -265,7 +265,7 @@ namespace DSS.Migrations
                         {
                             Id = 24,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 24",
                             RoadId = 2
@@ -274,7 +274,7 @@ namespace DSS.Migrations
                         {
                             Id = 25,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 25",
                             RoadId = 2
@@ -283,7 +283,7 @@ namespace DSS.Migrations
                         {
                             Id = 26,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 26",
                             RoadId = 2
@@ -292,7 +292,7 @@ namespace DSS.Migrations
                         {
                             Id = 27,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 27",
                             RoadId = 2
@@ -301,7 +301,7 @@ namespace DSS.Migrations
                         {
                             Id = 28,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 28",
                             RoadId = 2
@@ -310,7 +310,7 @@ namespace DSS.Migrations
                         {
                             Id = 29,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 29",
                             RoadId = 2
@@ -319,7 +319,7 @@ namespace DSS.Migrations
                         {
                             Id = 30,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 30",
                             RoadId = 2
@@ -328,7 +328,7 @@ namespace DSS.Migrations
                         {
                             Id = 31,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 31",
                             RoadId = 2
@@ -337,7 +337,7 @@ namespace DSS.Migrations
                         {
                             Id = 32,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 32",
                             RoadId = 2
@@ -346,7 +346,7 @@ namespace DSS.Migrations
                         {
                             Id = 33,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 33",
                             RoadId = 2
@@ -355,7 +355,7 @@ namespace DSS.Migrations
                         {
                             Id = 34,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 34",
                             RoadId = 2
@@ -364,7 +364,7 @@ namespace DSS.Migrations
                         {
                             Id = 35,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 35",
                             RoadId = 2
@@ -373,7 +373,7 @@ namespace DSS.Migrations
                         {
                             Id = 36,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 36",
                             RoadId = 2
@@ -382,7 +382,7 @@ namespace DSS.Migrations
                         {
                             Id = 37,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 37",
                             RoadId = 2
@@ -391,7 +391,7 @@ namespace DSS.Migrations
                         {
                             Id = 38,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 38",
                             RoadId = 2
@@ -400,7 +400,7 @@ namespace DSS.Migrations
                         {
                             Id = 39,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 39",
                             RoadId = 2
@@ -409,7 +409,7 @@ namespace DSS.Migrations
                         {
                             Id = 40,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 40",
                             RoadId = 2
@@ -418,7 +418,7 @@ namespace DSS.Migrations
                         {
                             Id = 41,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 41",
                             RoadId = 3
@@ -427,7 +427,7 @@ namespace DSS.Migrations
                         {
                             Id = 42,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 42",
                             RoadId = 3
@@ -436,7 +436,7 @@ namespace DSS.Migrations
                         {
                             Id = 43,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 43",
                             RoadId = 3
@@ -445,7 +445,7 @@ namespace DSS.Migrations
                         {
                             Id = 44,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 44",
                             RoadId = 3
@@ -454,7 +454,7 @@ namespace DSS.Migrations
                         {
                             Id = 45,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 45",
                             RoadId = 3
@@ -463,7 +463,7 @@ namespace DSS.Migrations
                         {
                             Id = 46,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 46",
                             RoadId = 3
@@ -472,7 +472,7 @@ namespace DSS.Migrations
                         {
                             Id = 47,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 47",
                             RoadId = 3
@@ -481,7 +481,7 @@ namespace DSS.Migrations
                         {
                             Id = 48,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 48",
                             RoadId = 3
@@ -490,7 +490,7 @@ namespace DSS.Migrations
                         {
                             Id = 49,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 49",
                             RoadId = 3
@@ -499,7 +499,7 @@ namespace DSS.Migrations
                         {
                             Id = 50,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 50",
                             RoadId = 3
@@ -508,7 +508,7 @@ namespace DSS.Migrations
                         {
                             Id = 51,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 51",
                             RoadId = 3
@@ -517,7 +517,7 @@ namespace DSS.Migrations
                         {
                             Id = 52,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 52",
                             RoadId = 3
@@ -526,7 +526,7 @@ namespace DSS.Migrations
                         {
                             Id = 53,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 53",
                             RoadId = 3
@@ -535,7 +535,7 @@ namespace DSS.Migrations
                         {
                             Id = 54,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 54",
                             RoadId = 3
@@ -544,7 +544,7 @@ namespace DSS.Migrations
                         {
                             Id = 55,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 55",
                             RoadId = 3
@@ -553,7 +553,7 @@ namespace DSS.Migrations
                         {
                             Id = 56,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 56",
                             RoadId = 3
@@ -562,7 +562,7 @@ namespace DSS.Migrations
                         {
                             Id = 57,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 57",
                             RoadId = 3
@@ -571,7 +571,7 @@ namespace DSS.Migrations
                         {
                             Id = 58,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 58",
                             RoadId = 3
@@ -580,7 +580,7 @@ namespace DSS.Migrations
                         {
                             Id = 59,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 59",
                             RoadId = 3
@@ -589,7 +589,7 @@ namespace DSS.Migrations
                         {
                             Id = 60,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 60",
                             RoadId = 3
@@ -598,7 +598,7 @@ namespace DSS.Migrations
                         {
                             Id = 61,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 61",
                             RoadId = 4
@@ -607,7 +607,7 @@ namespace DSS.Migrations
                         {
                             Id = 62,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 62",
                             RoadId = 4
@@ -616,7 +616,7 @@ namespace DSS.Migrations
                         {
                             Id = 63,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 63",
                             RoadId = 4
@@ -625,7 +625,7 @@ namespace DSS.Migrations
                         {
                             Id = 64,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 64",
                             RoadId = 4
@@ -634,7 +634,7 @@ namespace DSS.Migrations
                         {
                             Id = 65,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 65",
                             RoadId = 4
@@ -643,7 +643,7 @@ namespace DSS.Migrations
                         {
                             Id = 66,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 66",
                             RoadId = 4
@@ -652,7 +652,7 @@ namespace DSS.Migrations
                         {
                             Id = 67,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 67",
                             RoadId = 4
@@ -661,7 +661,7 @@ namespace DSS.Migrations
                         {
                             Id = 68,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 68",
                             RoadId = 4
@@ -670,7 +670,7 @@ namespace DSS.Migrations
                         {
                             Id = 69,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 69",
                             RoadId = 4
@@ -679,7 +679,7 @@ namespace DSS.Migrations
                         {
                             Id = 70,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 70",
                             RoadId = 4
@@ -688,7 +688,7 @@ namespace DSS.Migrations
                         {
                             Id = 71,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 71",
                             RoadId = 4
@@ -697,7 +697,7 @@ namespace DSS.Migrations
                         {
                             Id = 72,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 72",
                             RoadId = 4
@@ -706,7 +706,7 @@ namespace DSS.Migrations
                         {
                             Id = 73,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 73",
                             RoadId = 4
@@ -715,7 +715,7 @@ namespace DSS.Migrations
                         {
                             Id = 74,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 74",
                             RoadId = 4
@@ -724,7 +724,7 @@ namespace DSS.Migrations
                         {
                             Id = 75,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 75",
                             RoadId = 4
@@ -733,7 +733,7 @@ namespace DSS.Migrations
                         {
                             Id = 76,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 76",
                             RoadId = 4
@@ -742,7 +742,7 @@ namespace DSS.Migrations
                         {
                             Id = 77,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 77",
                             RoadId = 4
@@ -751,7 +751,7 @@ namespace DSS.Migrations
                         {
                             Id = 78,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 78",
                             RoadId = 4
@@ -760,7 +760,7 @@ namespace DSS.Migrations
                         {
                             Id = 79,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 79",
                             RoadId = 4
@@ -769,7 +769,7 @@ namespace DSS.Migrations
                         {
                             Id = 80,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 80",
                             RoadId = 4
@@ -778,7 +778,7 @@ namespace DSS.Migrations
                         {
                             Id = 81,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 81",
                             RoadId = 5
@@ -787,7 +787,7 @@ namespace DSS.Migrations
                         {
                             Id = 82,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 82",
                             RoadId = 5
@@ -796,7 +796,7 @@ namespace DSS.Migrations
                         {
                             Id = 83,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 83",
                             RoadId = 5
@@ -805,7 +805,7 @@ namespace DSS.Migrations
                         {
                             Id = 84,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 84",
                             RoadId = 5
@@ -814,7 +814,7 @@ namespace DSS.Migrations
                         {
                             Id = 85,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 85",
                             RoadId = 5
@@ -823,7 +823,7 @@ namespace DSS.Migrations
                         {
                             Id = 86,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 86",
                             RoadId = 5
@@ -832,7 +832,7 @@ namespace DSS.Migrations
                         {
                             Id = 87,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 87",
                             RoadId = 5
@@ -841,7 +841,7 @@ namespace DSS.Migrations
                         {
                             Id = 88,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 88",
                             RoadId = 5
@@ -850,7 +850,7 @@ namespace DSS.Migrations
                         {
                             Id = 89,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 89",
                             RoadId = 5
@@ -859,7 +859,7 @@ namespace DSS.Migrations
                         {
                             Id = 90,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 90",
                             RoadId = 5
@@ -868,7 +868,7 @@ namespace DSS.Migrations
                         {
                             Id = 91,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 91",
                             RoadId = 5
@@ -877,7 +877,7 @@ namespace DSS.Migrations
                         {
                             Id = 92,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 92",
                             RoadId = 5
@@ -886,7 +886,7 @@ namespace DSS.Migrations
                         {
                             Id = 93,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 93",
                             RoadId = 5
@@ -895,7 +895,7 @@ namespace DSS.Migrations
                         {
                             Id = 94,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 94",
                             RoadId = 5
@@ -904,7 +904,7 @@ namespace DSS.Migrations
                         {
                             Id = 95,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 95",
                             RoadId = 5
@@ -913,7 +913,7 @@ namespace DSS.Migrations
                         {
                             Id = 96,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 96",
                             RoadId = 5
@@ -922,7 +922,7 @@ namespace DSS.Migrations
                         {
                             Id = 97,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 97",
                             RoadId = 5
@@ -931,7 +931,7 @@ namespace DSS.Migrations
                         {
                             Id = 98,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 98",
                             RoadId = 5
@@ -940,7 +940,7 @@ namespace DSS.Migrations
                         {
                             Id = 99,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 99",
                             RoadId = 5
@@ -949,7 +949,7 @@ namespace DSS.Migrations
                         {
                             Id = 100,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 100",
                             RoadId = 5
@@ -958,7 +958,7 @@ namespace DSS.Migrations
                         {
                             Id = 101,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 101",
                             RoadId = 6
@@ -967,7 +967,7 @@ namespace DSS.Migrations
                         {
                             Id = 102,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 102",
                             RoadId = 6
@@ -976,7 +976,7 @@ namespace DSS.Migrations
                         {
                             Id = 103,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 103",
                             RoadId = 6
@@ -985,7 +985,7 @@ namespace DSS.Migrations
                         {
                             Id = 104,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 104",
                             RoadId = 6
@@ -994,7 +994,7 @@ namespace DSS.Migrations
                         {
                             Id = 105,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 105",
                             RoadId = 6
@@ -1003,7 +1003,7 @@ namespace DSS.Migrations
                         {
                             Id = 106,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 106",
                             RoadId = 6
@@ -1012,7 +1012,7 @@ namespace DSS.Migrations
                         {
                             Id = 107,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 107",
                             RoadId = 6
@@ -1021,7 +1021,7 @@ namespace DSS.Migrations
                         {
                             Id = 108,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 108",
                             RoadId = 6
@@ -1030,7 +1030,7 @@ namespace DSS.Migrations
                         {
                             Id = 109,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 109",
                             RoadId = 6
@@ -1039,7 +1039,7 @@ namespace DSS.Migrations
                         {
                             Id = 110,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 110",
                             RoadId = 6
@@ -1048,7 +1048,7 @@ namespace DSS.Migrations
                         {
                             Id = 111,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 111",
                             RoadId = 6
@@ -1057,7 +1057,7 @@ namespace DSS.Migrations
                         {
                             Id = 112,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 112",
                             RoadId = 6
@@ -1066,7 +1066,7 @@ namespace DSS.Migrations
                         {
                             Id = 113,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 113",
                             RoadId = 6
@@ -1075,7 +1075,7 @@ namespace DSS.Migrations
                         {
                             Id = 114,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 114",
                             RoadId = 6
@@ -1084,7 +1084,7 @@ namespace DSS.Migrations
                         {
                             Id = 115,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 115",
                             RoadId = 6
@@ -1093,7 +1093,7 @@ namespace DSS.Migrations
                         {
                             Id = 116,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 116",
                             RoadId = 6
@@ -1102,7 +1102,7 @@ namespace DSS.Migrations
                         {
                             Id = 117,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 117",
                             RoadId = 6
@@ -1111,7 +1111,7 @@ namespace DSS.Migrations
                         {
                             Id = 118,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 118",
                             RoadId = 6
@@ -1120,7 +1120,7 @@ namespace DSS.Migrations
                         {
                             Id = 119,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 119",
                             RoadId = 6
@@ -1129,7 +1129,7 @@ namespace DSS.Migrations
                         {
                             Id = 120,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 120",
                             RoadId = 6
@@ -1138,7 +1138,7 @@ namespace DSS.Migrations
                         {
                             Id = 121,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 121",
                             RoadId = 7
@@ -1147,7 +1147,7 @@ namespace DSS.Migrations
                         {
                             Id = 122,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 122",
                             RoadId = 7
@@ -1156,7 +1156,7 @@ namespace DSS.Migrations
                         {
                             Id = 123,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 123",
                             RoadId = 7
@@ -1165,7 +1165,7 @@ namespace DSS.Migrations
                         {
                             Id = 124,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 124",
                             RoadId = 7
@@ -1174,7 +1174,7 @@ namespace DSS.Migrations
                         {
                             Id = 125,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 125",
                             RoadId = 7
@@ -1183,7 +1183,7 @@ namespace DSS.Migrations
                         {
                             Id = 126,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 126",
                             RoadId = 7
@@ -1192,7 +1192,7 @@ namespace DSS.Migrations
                         {
                             Id = 127,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 127",
                             RoadId = 7
@@ -1201,7 +1201,7 @@ namespace DSS.Migrations
                         {
                             Id = 128,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 128",
                             RoadId = 7
@@ -1210,7 +1210,7 @@ namespace DSS.Migrations
                         {
                             Id = 129,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 129",
                             RoadId = 7
@@ -1219,7 +1219,7 @@ namespace DSS.Migrations
                         {
                             Id = 130,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 130",
                             RoadId = 7
@@ -1228,7 +1228,7 @@ namespace DSS.Migrations
                         {
                             Id = 131,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 131",
                             RoadId = 7
@@ -1237,7 +1237,7 @@ namespace DSS.Migrations
                         {
                             Id = 132,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 132",
                             RoadId = 7
@@ -1246,7 +1246,7 @@ namespace DSS.Migrations
                         {
                             Id = 133,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 133",
                             RoadId = 7
@@ -1255,7 +1255,7 @@ namespace DSS.Migrations
                         {
                             Id = 134,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 134",
                             RoadId = 7
@@ -1264,7 +1264,7 @@ namespace DSS.Migrations
                         {
                             Id = 135,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 135",
                             RoadId = 7
@@ -1273,7 +1273,7 @@ namespace DSS.Migrations
                         {
                             Id = 136,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 136",
                             RoadId = 7
@@ -1282,7 +1282,7 @@ namespace DSS.Migrations
                         {
                             Id = 137,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 137",
                             RoadId = 7
@@ -1291,7 +1291,7 @@ namespace DSS.Migrations
                         {
                             Id = 138,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 138",
                             RoadId = 7
@@ -1300,7 +1300,7 @@ namespace DSS.Migrations
                         {
                             Id = 139,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 139",
                             RoadId = 7
@@ -1309,7 +1309,7 @@ namespace DSS.Migrations
                         {
                             Id = 140,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 140",
                             RoadId = 7
@@ -1318,7 +1318,7 @@ namespace DSS.Migrations
                         {
                             Id = 141,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 141",
                             RoadId = 8
@@ -1327,7 +1327,7 @@ namespace DSS.Migrations
                         {
                             Id = 142,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 142",
                             RoadId = 8
@@ -1336,7 +1336,7 @@ namespace DSS.Migrations
                         {
                             Id = 143,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 143",
                             RoadId = 8
@@ -1345,7 +1345,7 @@ namespace DSS.Migrations
                         {
                             Id = 144,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 144",
                             RoadId = 8
@@ -1354,7 +1354,7 @@ namespace DSS.Migrations
                         {
                             Id = 145,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 145",
                             RoadId = 8
@@ -1363,7 +1363,7 @@ namespace DSS.Migrations
                         {
                             Id = 146,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 146",
                             RoadId = 8
@@ -1372,7 +1372,7 @@ namespace DSS.Migrations
                         {
                             Id = 147,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 147",
                             RoadId = 8
@@ -1381,7 +1381,7 @@ namespace DSS.Migrations
                         {
                             Id = 148,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 148",
                             RoadId = 8
@@ -1390,7 +1390,7 @@ namespace DSS.Migrations
                         {
                             Id = 149,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 149",
                             RoadId = 8
@@ -1399,7 +1399,7 @@ namespace DSS.Migrations
                         {
                             Id = 150,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 150",
                             RoadId = 8
@@ -1408,7 +1408,7 @@ namespace DSS.Migrations
                         {
                             Id = 151,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 151",
                             RoadId = 8
@@ -1417,7 +1417,7 @@ namespace DSS.Migrations
                         {
                             Id = 152,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 152",
                             RoadId = 8
@@ -1426,7 +1426,7 @@ namespace DSS.Migrations
                         {
                             Id = 153,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 153",
                             RoadId = 8
@@ -1435,7 +1435,7 @@ namespace DSS.Migrations
                         {
                             Id = 154,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 154",
                             RoadId = 8
@@ -1444,7 +1444,7 @@ namespace DSS.Migrations
                         {
                             Id = 155,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 155",
                             RoadId = 8
@@ -1453,7 +1453,7 @@ namespace DSS.Migrations
                         {
                             Id = 156,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 156",
                             RoadId = 8
@@ -1462,7 +1462,7 @@ namespace DSS.Migrations
                         {
                             Id = 157,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 157",
                             RoadId = 8
@@ -1471,7 +1471,7 @@ namespace DSS.Migrations
                         {
                             Id = 158,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 158",
                             RoadId = 8
@@ -1480,7 +1480,7 @@ namespace DSS.Migrations
                         {
                             Id = 159,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 159",
                             RoadId = 8
@@ -1489,7 +1489,7 @@ namespace DSS.Migrations
                         {
                             Id = 160,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 160",
                             RoadId = 8
@@ -1498,7 +1498,7 @@ namespace DSS.Migrations
                         {
                             Id = 161,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 161",
                             RoadId = 9
@@ -1507,7 +1507,7 @@ namespace DSS.Migrations
                         {
                             Id = 162,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 162",
                             RoadId = 9
@@ -1516,7 +1516,7 @@ namespace DSS.Migrations
                         {
                             Id = 163,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 163",
                             RoadId = 9
@@ -1525,7 +1525,7 @@ namespace DSS.Migrations
                         {
                             Id = 164,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 164",
                             RoadId = 9
@@ -1534,7 +1534,7 @@ namespace DSS.Migrations
                         {
                             Id = 165,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 165",
                             RoadId = 9
@@ -1543,7 +1543,7 @@ namespace DSS.Migrations
                         {
                             Id = 166,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 166",
                             RoadId = 9
@@ -1552,7 +1552,7 @@ namespace DSS.Migrations
                         {
                             Id = 167,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 167",
                             RoadId = 9
@@ -1561,7 +1561,7 @@ namespace DSS.Migrations
                         {
                             Id = 168,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 168",
                             RoadId = 9
@@ -1570,7 +1570,7 @@ namespace DSS.Migrations
                         {
                             Id = 169,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 169",
                             RoadId = 9
@@ -1579,7 +1579,7 @@ namespace DSS.Migrations
                         {
                             Id = 170,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 170",
                             RoadId = 9
@@ -1588,7 +1588,7 @@ namespace DSS.Migrations
                         {
                             Id = 171,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 171",
                             RoadId = 9
@@ -1597,7 +1597,7 @@ namespace DSS.Migrations
                         {
                             Id = 172,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 172",
                             RoadId = 9
@@ -1606,7 +1606,7 @@ namespace DSS.Migrations
                         {
                             Id = 173,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 173",
                             RoadId = 9
@@ -1615,7 +1615,7 @@ namespace DSS.Migrations
                         {
                             Id = 174,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 174",
                             RoadId = 9
@@ -1624,7 +1624,7 @@ namespace DSS.Migrations
                         {
                             Id = 175,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 175",
                             RoadId = 9
@@ -1633,7 +1633,7 @@ namespace DSS.Migrations
                         {
                             Id = 176,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 176",
                             RoadId = 9
@@ -1642,7 +1642,7 @@ namespace DSS.Migrations
                         {
                             Id = 177,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 177",
                             RoadId = 9
@@ -1651,7 +1651,7 @@ namespace DSS.Migrations
                         {
                             Id = 178,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 178",
                             RoadId = 9
@@ -1660,7 +1660,7 @@ namespace DSS.Migrations
                         {
                             Id = 179,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 179",
                             RoadId = 9
@@ -1669,7 +1669,7 @@ namespace DSS.Migrations
                         {
                             Id = 180,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 180",
                             RoadId = 9
@@ -1678,7 +1678,7 @@ namespace DSS.Migrations
                         {
                             Id = 181,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 181",
                             RoadId = 10
@@ -1687,7 +1687,7 @@ namespace DSS.Migrations
                         {
                             Id = 182,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 182",
                             RoadId = 10
@@ -1696,7 +1696,7 @@ namespace DSS.Migrations
                         {
                             Id = 183,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 183",
                             RoadId = 10
@@ -1705,7 +1705,7 @@ namespace DSS.Migrations
                         {
                             Id = 184,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 184",
                             RoadId = 10
@@ -1714,7 +1714,7 @@ namespace DSS.Migrations
                         {
                             Id = 185,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 185",
                             RoadId = 10
@@ -1723,7 +1723,7 @@ namespace DSS.Migrations
                         {
                             Id = 186,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 186",
                             RoadId = 10
@@ -1732,7 +1732,7 @@ namespace DSS.Migrations
                         {
                             Id = 187,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 187",
                             RoadId = 10
@@ -1741,7 +1741,7 @@ namespace DSS.Migrations
                         {
                             Id = 188,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 188",
                             RoadId = 10
@@ -1750,7 +1750,7 @@ namespace DSS.Migrations
                         {
                             Id = 189,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 189",
                             RoadId = 10
@@ -1759,7 +1759,7 @@ namespace DSS.Migrations
                         {
                             Id = 190,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 190",
                             RoadId = 10
@@ -1768,7 +1768,7 @@ namespace DSS.Migrations
                         {
                             Id = 191,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 191",
                             RoadId = 10
@@ -1777,7 +1777,7 @@ namespace DSS.Migrations
                         {
                             Id = 192,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 192",
                             RoadId = 10
@@ -1786,7 +1786,7 @@ namespace DSS.Migrations
                         {
                             Id = 193,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 193",
                             RoadId = 10
@@ -1795,7 +1795,7 @@ namespace DSS.Migrations
                         {
                             Id = 194,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 194",
                             RoadId = 10
@@ -1804,7 +1804,7 @@ namespace DSS.Migrations
                         {
                             Id = 195,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 195",
                             RoadId = 10
@@ -1813,7 +1813,7 @@ namespace DSS.Migrations
                         {
                             Id = 196,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 196",
                             RoadId = 10
@@ -1822,7 +1822,7 @@ namespace DSS.Migrations
                         {
                             Id = 197,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 197",
                             RoadId = 10
@@ -1831,7 +1831,7 @@ namespace DSS.Migrations
                         {
                             Id = 198,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 198",
                             RoadId = 10
@@ -1840,7 +1840,7 @@ namespace DSS.Migrations
                         {
                             Id = 199,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 199",
                             RoadId = 10
@@ -1849,7 +1849,7 @@ namespace DSS.Migrations
                         {
                             Id = 200,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 200",
                             RoadId = 10
@@ -1858,7 +1858,7 @@ namespace DSS.Migrations
                         {
                             Id = 201,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 201",
                             RoadId = 11
@@ -1867,7 +1867,7 @@ namespace DSS.Migrations
                         {
                             Id = 202,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 202",
                             RoadId = 11
@@ -1876,7 +1876,7 @@ namespace DSS.Migrations
                         {
                             Id = 203,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 203",
                             RoadId = 11
@@ -1885,7 +1885,7 @@ namespace DSS.Migrations
                         {
                             Id = 204,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 204",
                             RoadId = 11
@@ -1894,7 +1894,7 @@ namespace DSS.Migrations
                         {
                             Id = 205,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 205",
                             RoadId = 11
@@ -1903,7 +1903,7 @@ namespace DSS.Migrations
                         {
                             Id = 206,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 206",
                             RoadId = 11
@@ -1912,7 +1912,7 @@ namespace DSS.Migrations
                         {
                             Id = 207,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 207",
                             RoadId = 11
@@ -1921,7 +1921,7 @@ namespace DSS.Migrations
                         {
                             Id = 208,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 208",
                             RoadId = 11
@@ -1930,7 +1930,7 @@ namespace DSS.Migrations
                         {
                             Id = 209,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 209",
                             RoadId = 11
@@ -1939,7 +1939,7 @@ namespace DSS.Migrations
                         {
                             Id = 210,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 210",
                             RoadId = 11
@@ -1948,7 +1948,7 @@ namespace DSS.Migrations
                         {
                             Id = 211,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 211",
                             RoadId = 11
@@ -1957,7 +1957,7 @@ namespace DSS.Migrations
                         {
                             Id = 212,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 212",
                             RoadId = 11
@@ -1966,7 +1966,7 @@ namespace DSS.Migrations
                         {
                             Id = 213,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 213",
                             RoadId = 11
@@ -1975,7 +1975,7 @@ namespace DSS.Migrations
                         {
                             Id = 214,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 214",
                             RoadId = 11
@@ -1984,7 +1984,7 @@ namespace DSS.Migrations
                         {
                             Id = 215,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 215",
                             RoadId = 11
@@ -1993,7 +1993,7 @@ namespace DSS.Migrations
                         {
                             Id = 216,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 216",
                             RoadId = 11
@@ -2002,7 +2002,7 @@ namespace DSS.Migrations
                         {
                             Id = 217,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 217",
                             RoadId = 11
@@ -2011,7 +2011,7 @@ namespace DSS.Migrations
                         {
                             Id = 218,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 218",
                             RoadId = 11
@@ -2020,7 +2020,7 @@ namespace DSS.Migrations
                         {
                             Id = 219,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 219",
                             RoadId = 11
@@ -2029,7 +2029,7 @@ namespace DSS.Migrations
                         {
                             Id = 220,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 220",
                             RoadId = 11
@@ -2038,7 +2038,7 @@ namespace DSS.Migrations
                         {
                             Id = 221,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 221",
                             RoadId = 12
@@ -2047,7 +2047,7 @@ namespace DSS.Migrations
                         {
                             Id = 222,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 222",
                             RoadId = 12
@@ -2056,7 +2056,7 @@ namespace DSS.Migrations
                         {
                             Id = 223,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 223",
                             RoadId = 12
@@ -2065,7 +2065,7 @@ namespace DSS.Migrations
                         {
                             Id = 224,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 224",
                             RoadId = 12
@@ -2074,7 +2074,7 @@ namespace DSS.Migrations
                         {
                             Id = 225,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 225",
                             RoadId = 12
@@ -2083,7 +2083,7 @@ namespace DSS.Migrations
                         {
                             Id = 226,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 226",
                             RoadId = 12
@@ -2092,7 +2092,7 @@ namespace DSS.Migrations
                         {
                             Id = 227,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 227",
                             RoadId = 12
@@ -2101,7 +2101,7 @@ namespace DSS.Migrations
                         {
                             Id = 228,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 228",
                             RoadId = 12
@@ -2110,7 +2110,7 @@ namespace DSS.Migrations
                         {
                             Id = 229,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 229",
                             RoadId = 12
@@ -2119,7 +2119,7 @@ namespace DSS.Migrations
                         {
                             Id = 230,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 230",
                             RoadId = 12
@@ -2128,7 +2128,7 @@ namespace DSS.Migrations
                         {
                             Id = 231,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 231",
                             RoadId = 12
@@ -2137,7 +2137,7 @@ namespace DSS.Migrations
                         {
                             Id = 232,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 232",
                             RoadId = 12
@@ -2146,7 +2146,7 @@ namespace DSS.Migrations
                         {
                             Id = 233,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 233",
                             RoadId = 12
@@ -2155,7 +2155,7 @@ namespace DSS.Migrations
                         {
                             Id = 234,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 234",
                             RoadId = 12
@@ -2164,7 +2164,7 @@ namespace DSS.Migrations
                         {
                             Id = 235,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 235",
                             RoadId = 12
@@ -2173,7 +2173,7 @@ namespace DSS.Migrations
                         {
                             Id = 236,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 236",
                             RoadId = 12
@@ -2182,7 +2182,7 @@ namespace DSS.Migrations
                         {
                             Id = 237,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 237",
                             RoadId = 12
@@ -2191,7 +2191,7 @@ namespace DSS.Migrations
                         {
                             Id = 238,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 238",
                             RoadId = 12
@@ -2200,7 +2200,7 @@ namespace DSS.Migrations
                         {
                             Id = 239,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 239",
                             RoadId = 12
@@ -2209,7 +2209,7 @@ namespace DSS.Migrations
                         {
                             Id = 240,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 240",
                             RoadId = 12
@@ -2218,7 +2218,7 @@ namespace DSS.Migrations
                         {
                             Id = 241,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 241",
                             RoadId = 13
@@ -2227,7 +2227,7 @@ namespace DSS.Migrations
                         {
                             Id = 242,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 242",
                             RoadId = 13
@@ -2236,7 +2236,7 @@ namespace DSS.Migrations
                         {
                             Id = 243,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 243",
                             RoadId = 13
@@ -2245,7 +2245,7 @@ namespace DSS.Migrations
                         {
                             Id = 244,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 244",
                             RoadId = 13
@@ -2254,7 +2254,7 @@ namespace DSS.Migrations
                         {
                             Id = 245,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 245",
                             RoadId = 13
@@ -2263,7 +2263,7 @@ namespace DSS.Migrations
                         {
                             Id = 246,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 246",
                             RoadId = 13
@@ -2272,7 +2272,7 @@ namespace DSS.Migrations
                         {
                             Id = 247,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 247",
                             RoadId = 13
@@ -2281,7 +2281,7 @@ namespace DSS.Migrations
                         {
                             Id = 248,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 248",
                             RoadId = 13
@@ -2290,7 +2290,7 @@ namespace DSS.Migrations
                         {
                             Id = 249,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 249",
                             RoadId = 13
@@ -2299,7 +2299,7 @@ namespace DSS.Migrations
                         {
                             Id = 250,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 250",
                             RoadId = 13
@@ -2308,7 +2308,7 @@ namespace DSS.Migrations
                         {
                             Id = 251,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 251",
                             RoadId = 13
@@ -2317,7 +2317,7 @@ namespace DSS.Migrations
                         {
                             Id = 252,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 252",
                             RoadId = 13
@@ -2326,7 +2326,7 @@ namespace DSS.Migrations
                         {
                             Id = 253,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 253",
                             RoadId = 13
@@ -2335,7 +2335,7 @@ namespace DSS.Migrations
                         {
                             Id = 254,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 254",
                             RoadId = 13
@@ -2344,7 +2344,7 @@ namespace DSS.Migrations
                         {
                             Id = 255,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 255",
                             RoadId = 13
@@ -2353,7 +2353,7 @@ namespace DSS.Migrations
                         {
                             Id = 256,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 256",
                             RoadId = 13
@@ -2362,7 +2362,7 @@ namespace DSS.Migrations
                         {
                             Id = 257,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 257",
                             RoadId = 13
@@ -2371,7 +2371,7 @@ namespace DSS.Migrations
                         {
                             Id = 258,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 258",
                             RoadId = 13
@@ -2380,7 +2380,7 @@ namespace DSS.Migrations
                         {
                             Id = 259,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 259",
                             RoadId = 13
@@ -2389,7 +2389,7 @@ namespace DSS.Migrations
                         {
                             Id = 260,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 260",
                             RoadId = 13
@@ -2398,7 +2398,7 @@ namespace DSS.Migrations
                         {
                             Id = 261,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 261",
                             RoadId = 14
@@ -2407,7 +2407,7 @@ namespace DSS.Migrations
                         {
                             Id = 262,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 262",
                             RoadId = 14
@@ -2416,7 +2416,7 @@ namespace DSS.Migrations
                         {
                             Id = 263,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 263",
                             RoadId = 14
@@ -2425,7 +2425,7 @@ namespace DSS.Migrations
                         {
                             Id = 264,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 264",
                             RoadId = 14
@@ -2434,7 +2434,7 @@ namespace DSS.Migrations
                         {
                             Id = 265,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 265",
                             RoadId = 14
@@ -2443,7 +2443,7 @@ namespace DSS.Migrations
                         {
                             Id = 266,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 266",
                             RoadId = 14
@@ -2452,7 +2452,7 @@ namespace DSS.Migrations
                         {
                             Id = 267,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 267",
                             RoadId = 14
@@ -2461,7 +2461,7 @@ namespace DSS.Migrations
                         {
                             Id = 268,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 268",
                             RoadId = 14
@@ -2470,7 +2470,7 @@ namespace DSS.Migrations
                         {
                             Id = 269,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 269",
                             RoadId = 14
@@ -2479,7 +2479,7 @@ namespace DSS.Migrations
                         {
                             Id = 270,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 270",
                             RoadId = 14
@@ -2488,7 +2488,7 @@ namespace DSS.Migrations
                         {
                             Id = 271,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 271",
                             RoadId = 14
@@ -2497,7 +2497,7 @@ namespace DSS.Migrations
                         {
                             Id = 272,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 272",
                             RoadId = 14
@@ -2506,7 +2506,7 @@ namespace DSS.Migrations
                         {
                             Id = 273,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 273",
                             RoadId = 14
@@ -2515,7 +2515,7 @@ namespace DSS.Migrations
                         {
                             Id = 274,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 274",
                             RoadId = 14
@@ -2524,7 +2524,7 @@ namespace DSS.Migrations
                         {
                             Id = 275,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 275",
                             RoadId = 14
@@ -2533,7 +2533,7 @@ namespace DSS.Migrations
                         {
                             Id = 276,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 276",
                             RoadId = 14
@@ -2542,7 +2542,7 @@ namespace DSS.Migrations
                         {
                             Id = 277,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 277",
                             RoadId = 14
@@ -2551,7 +2551,7 @@ namespace DSS.Migrations
                         {
                             Id = 278,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 278",
                             RoadId = 14
@@ -2560,7 +2560,7 @@ namespace DSS.Migrations
                         {
                             Id = 279,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 279",
                             RoadId = 14
@@ -2569,7 +2569,7 @@ namespace DSS.Migrations
                         {
                             Id = 280,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 280",
                             RoadId = 14
@@ -2578,7 +2578,7 @@ namespace DSS.Migrations
                         {
                             Id = 281,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 281",
                             RoadId = 15
@@ -2587,7 +2587,7 @@ namespace DSS.Migrations
                         {
                             Id = 282,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 282",
                             RoadId = 15
@@ -2596,7 +2596,7 @@ namespace DSS.Migrations
                         {
                             Id = 283,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 283",
                             RoadId = 15
@@ -2605,7 +2605,7 @@ namespace DSS.Migrations
                         {
                             Id = 284,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 284",
                             RoadId = 15
@@ -2614,7 +2614,7 @@ namespace DSS.Migrations
                         {
                             Id = 285,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 285",
                             RoadId = 15
@@ -2623,7 +2623,7 @@ namespace DSS.Migrations
                         {
                             Id = 286,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 286",
                             RoadId = 15
@@ -2632,7 +2632,7 @@ namespace DSS.Migrations
                         {
                             Id = 287,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 287",
                             RoadId = 15
@@ -2641,7 +2641,7 @@ namespace DSS.Migrations
                         {
                             Id = 288,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 288",
                             RoadId = 15
@@ -2650,7 +2650,7 @@ namespace DSS.Migrations
                         {
                             Id = 289,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 289",
                             RoadId = 15
@@ -2659,7 +2659,7 @@ namespace DSS.Migrations
                         {
                             Id = 290,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 290",
                             RoadId = 15
@@ -2668,7 +2668,7 @@ namespace DSS.Migrations
                         {
                             Id = 291,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 291",
                             RoadId = 15
@@ -2677,7 +2677,7 @@ namespace DSS.Migrations
                         {
                             Id = 292,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 292",
                             RoadId = 15
@@ -2686,7 +2686,7 @@ namespace DSS.Migrations
                         {
                             Id = 293,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 293",
                             RoadId = 15
@@ -2695,7 +2695,7 @@ namespace DSS.Migrations
                         {
                             Id = 294,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 294",
                             RoadId = 15
@@ -2704,7 +2704,7 @@ namespace DSS.Migrations
                         {
                             Id = 295,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 295",
                             RoadId = 15
@@ -2713,7 +2713,7 @@ namespace DSS.Migrations
                         {
                             Id = 296,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 296",
                             RoadId = 15
@@ -2722,7 +2722,7 @@ namespace DSS.Migrations
                         {
                             Id = 297,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 297",
                             RoadId = 15
@@ -2731,7 +2731,7 @@ namespace DSS.Migrations
                         {
                             Id = 298,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 298",
                             RoadId = 15
@@ -2740,7 +2740,7 @@ namespace DSS.Migrations
                         {
                             Id = 299,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 299",
                             RoadId = 15
@@ -2749,7 +2749,7 @@ namespace DSS.Migrations
                         {
                             Id = 300,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 300",
                             RoadId = 15
@@ -2758,7 +2758,7 @@ namespace DSS.Migrations
                         {
                             Id = 301,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 301",
                             RoadId = 16
@@ -2767,7 +2767,7 @@ namespace DSS.Migrations
                         {
                             Id = 302,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 302",
                             RoadId = 16
@@ -2776,7 +2776,7 @@ namespace DSS.Migrations
                         {
                             Id = 303,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 303",
                             RoadId = 16
@@ -2785,7 +2785,7 @@ namespace DSS.Migrations
                         {
                             Id = 304,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 304",
                             RoadId = 16
@@ -2794,7 +2794,7 @@ namespace DSS.Migrations
                         {
                             Id = 305,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 305",
                             RoadId = 16
@@ -2803,7 +2803,7 @@ namespace DSS.Migrations
                         {
                             Id = 306,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 306",
                             RoadId = 16
@@ -2812,7 +2812,7 @@ namespace DSS.Migrations
                         {
                             Id = 307,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 307",
                             RoadId = 16
@@ -2821,7 +2821,7 @@ namespace DSS.Migrations
                         {
                             Id = 308,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 308",
                             RoadId = 16
@@ -2830,7 +2830,7 @@ namespace DSS.Migrations
                         {
                             Id = 309,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 309",
                             RoadId = 16
@@ -2839,7 +2839,7 @@ namespace DSS.Migrations
                         {
                             Id = 310,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 310",
                             RoadId = 16
@@ -2848,7 +2848,7 @@ namespace DSS.Migrations
                         {
                             Id = 311,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 311",
                             RoadId = 16
@@ -2857,7 +2857,7 @@ namespace DSS.Migrations
                         {
                             Id = 312,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 312",
                             RoadId = 16
@@ -2866,7 +2866,7 @@ namespace DSS.Migrations
                         {
                             Id = 313,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 313",
                             RoadId = 16
@@ -2875,7 +2875,7 @@ namespace DSS.Migrations
                         {
                             Id = 314,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 314",
                             RoadId = 16
@@ -2884,7 +2884,7 @@ namespace DSS.Migrations
                         {
                             Id = 315,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 315",
                             RoadId = 16
@@ -2893,7 +2893,7 @@ namespace DSS.Migrations
                         {
                             Id = 316,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 316",
                             RoadId = 16
@@ -2902,7 +2902,7 @@ namespace DSS.Migrations
                         {
                             Id = 317,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 317",
                             RoadId = 16
@@ -2911,7 +2911,7 @@ namespace DSS.Migrations
                         {
                             Id = 318,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 318",
                             RoadId = 16
@@ -2920,7 +2920,7 @@ namespace DSS.Migrations
                         {
                             Id = 319,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 319",
                             RoadId = 16
@@ -2929,7 +2929,7 @@ namespace DSS.Migrations
                         {
                             Id = 320,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 320",
                             RoadId = 16
@@ -2938,7 +2938,7 @@ namespace DSS.Migrations
                         {
                             Id = 321,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 321",
                             RoadId = 17
@@ -2947,7 +2947,7 @@ namespace DSS.Migrations
                         {
                             Id = 322,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 322",
                             RoadId = 17
@@ -2956,7 +2956,7 @@ namespace DSS.Migrations
                         {
                             Id = 323,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 323",
                             RoadId = 17
@@ -2965,7 +2965,7 @@ namespace DSS.Migrations
                         {
                             Id = 324,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 324",
                             RoadId = 17
@@ -2974,7 +2974,7 @@ namespace DSS.Migrations
                         {
                             Id = 325,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 325",
                             RoadId = 17
@@ -2983,7 +2983,7 @@ namespace DSS.Migrations
                         {
                             Id = 326,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 326",
                             RoadId = 17
@@ -2992,7 +2992,7 @@ namespace DSS.Migrations
                         {
                             Id = 327,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 327",
                             RoadId = 17
@@ -3001,7 +3001,7 @@ namespace DSS.Migrations
                         {
                             Id = 328,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 328",
                             RoadId = 17
@@ -3010,7 +3010,7 @@ namespace DSS.Migrations
                         {
                             Id = 329,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 329",
                             RoadId = 17
@@ -3019,7 +3019,7 @@ namespace DSS.Migrations
                         {
                             Id = 330,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 330",
                             RoadId = 17
@@ -3028,7 +3028,7 @@ namespace DSS.Migrations
                         {
                             Id = 331,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 331",
                             RoadId = 17
@@ -3037,7 +3037,7 @@ namespace DSS.Migrations
                         {
                             Id = 332,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 332",
                             RoadId = 17
@@ -3046,7 +3046,7 @@ namespace DSS.Migrations
                         {
                             Id = 333,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 333",
                             RoadId = 17
@@ -3055,7 +3055,7 @@ namespace DSS.Migrations
                         {
                             Id = 334,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 334",
                             RoadId = 17
@@ -3064,7 +3064,7 @@ namespace DSS.Migrations
                         {
                             Id = 335,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 335",
                             RoadId = 17
@@ -3073,7 +3073,7 @@ namespace DSS.Migrations
                         {
                             Id = 336,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 336",
                             RoadId = 17
@@ -3082,7 +3082,7 @@ namespace DSS.Migrations
                         {
                             Id = 337,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 337",
                             RoadId = 17
@@ -3091,7 +3091,7 @@ namespace DSS.Migrations
                         {
                             Id = 338,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 338",
                             RoadId = 17
@@ -3100,7 +3100,7 @@ namespace DSS.Migrations
                         {
                             Id = 339,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 339",
                             RoadId = 17
@@ -3109,7 +3109,7 @@ namespace DSS.Migrations
                         {
                             Id = 340,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 340",
                             RoadId = 17
@@ -3118,7 +3118,7 @@ namespace DSS.Migrations
                         {
                             Id = 341,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 341",
                             RoadId = 18
@@ -3127,7 +3127,7 @@ namespace DSS.Migrations
                         {
                             Id = 342,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 342",
                             RoadId = 18
@@ -3136,7 +3136,7 @@ namespace DSS.Migrations
                         {
                             Id = 343,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 343",
                             RoadId = 18
@@ -3145,7 +3145,7 @@ namespace DSS.Migrations
                         {
                             Id = 344,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 344",
                             RoadId = 18
@@ -3154,7 +3154,7 @@ namespace DSS.Migrations
                         {
                             Id = 345,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 345",
                             RoadId = 18
@@ -3163,7 +3163,7 @@ namespace DSS.Migrations
                         {
                             Id = 346,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 346",
                             RoadId = 18
@@ -3172,7 +3172,7 @@ namespace DSS.Migrations
                         {
                             Id = 347,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 347",
                             RoadId = 18
@@ -3181,7 +3181,7 @@ namespace DSS.Migrations
                         {
                             Id = 348,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 348",
                             RoadId = 18
@@ -3190,7 +3190,7 @@ namespace DSS.Migrations
                         {
                             Id = 349,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 349",
                             RoadId = 18
@@ -3199,7 +3199,7 @@ namespace DSS.Migrations
                         {
                             Id = 350,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 350",
                             RoadId = 18
@@ -3208,7 +3208,7 @@ namespace DSS.Migrations
                         {
                             Id = 351,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 351",
                             RoadId = 18
@@ -3217,7 +3217,7 @@ namespace DSS.Migrations
                         {
                             Id = 352,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 352",
                             RoadId = 18
@@ -3226,7 +3226,7 @@ namespace DSS.Migrations
                         {
                             Id = 353,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 353",
                             RoadId = 18
@@ -3235,7 +3235,7 @@ namespace DSS.Migrations
                         {
                             Id = 354,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 354",
                             RoadId = 18
@@ -3244,7 +3244,7 @@ namespace DSS.Migrations
                         {
                             Id = 355,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 355",
                             RoadId = 18
@@ -3253,7 +3253,7 @@ namespace DSS.Migrations
                         {
                             Id = 356,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 356",
                             RoadId = 18
@@ -3262,7 +3262,7 @@ namespace DSS.Migrations
                         {
                             Id = 357,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 357",
                             RoadId = 18
@@ -3271,7 +3271,7 @@ namespace DSS.Migrations
                         {
                             Id = 358,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 358",
                             RoadId = 18
@@ -3280,7 +3280,7 @@ namespace DSS.Migrations
                         {
                             Id = 359,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 359",
                             RoadId = 18
@@ -3289,7 +3289,7 @@ namespace DSS.Migrations
                         {
                             Id = 360,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 360",
                             RoadId = 18
@@ -3298,7 +3298,7 @@ namespace DSS.Migrations
                         {
                             Id = 361,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 361",
                             RoadId = 19
@@ -3307,7 +3307,7 @@ namespace DSS.Migrations
                         {
                             Id = 362,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 362",
                             RoadId = 19
@@ -3316,7 +3316,7 @@ namespace DSS.Migrations
                         {
                             Id = 363,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 363",
                             RoadId = 19
@@ -3325,7 +3325,7 @@ namespace DSS.Migrations
                         {
                             Id = 364,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 364",
                             RoadId = 19
@@ -3334,7 +3334,7 @@ namespace DSS.Migrations
                         {
                             Id = 365,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 365",
                             RoadId = 19
@@ -3343,7 +3343,7 @@ namespace DSS.Migrations
                         {
                             Id = 366,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 366",
                             RoadId = 19
@@ -3352,7 +3352,7 @@ namespace DSS.Migrations
                         {
                             Id = 367,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 367",
                             RoadId = 19
@@ -3361,7 +3361,7 @@ namespace DSS.Migrations
                         {
                             Id = 368,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 368",
                             RoadId = 19
@@ -3370,7 +3370,7 @@ namespace DSS.Migrations
                         {
                             Id = 369,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 369",
                             RoadId = 19
@@ -3379,7 +3379,7 @@ namespace DSS.Migrations
                         {
                             Id = 370,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 370",
                             RoadId = 19
@@ -3388,7 +3388,7 @@ namespace DSS.Migrations
                         {
                             Id = 371,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 371",
                             RoadId = 19
@@ -3397,7 +3397,7 @@ namespace DSS.Migrations
                         {
                             Id = 372,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 372",
                             RoadId = 19
@@ -3406,7 +3406,7 @@ namespace DSS.Migrations
                         {
                             Id = 373,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 373",
                             RoadId = 19
@@ -3415,7 +3415,7 @@ namespace DSS.Migrations
                         {
                             Id = 374,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 374",
                             RoadId = 19
@@ -3424,7 +3424,7 @@ namespace DSS.Migrations
                         {
                             Id = 375,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 375",
                             RoadId = 19
@@ -3433,7 +3433,7 @@ namespace DSS.Migrations
                         {
                             Id = 376,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 376",
                             RoadId = 19
@@ -3442,7 +3442,7 @@ namespace DSS.Migrations
                         {
                             Id = 377,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 377",
                             RoadId = 19
@@ -3451,7 +3451,7 @@ namespace DSS.Migrations
                         {
                             Id = 378,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 378",
                             RoadId = 19
@@ -3460,7 +3460,7 @@ namespace DSS.Migrations
                         {
                             Id = 379,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 379",
                             RoadId = 19
@@ -3469,7 +3469,7 @@ namespace DSS.Migrations
                         {
                             Id = 380,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 380",
                             RoadId = 19
@@ -3478,7 +3478,7 @@ namespace DSS.Migrations
                         {
                             Id = 381,
                             Cost = 20000.0,
-                            LevelOfWork = 0.20000000000000001,
+                            LevelOfWorks = 0.20000000000000001,
                             Link = "",
                             Name = "Смета 381",
                             RoadId = 20
@@ -3487,7 +3487,7 @@ namespace DSS.Migrations
                         {
                             Id = 382,
                             Cost = 40000.0,
-                            LevelOfWork = 0.40000000000000002,
+                            LevelOfWorks = 0.40000000000000002,
                             Link = "",
                             Name = "Смета 382",
                             RoadId = 20
@@ -3496,7 +3496,7 @@ namespace DSS.Migrations
                         {
                             Id = 383,
                             Cost = 60000.0,
-                            LevelOfWork = 0.59999999999999998,
+                            LevelOfWorks = 0.59999999999999998,
                             Link = "",
                             Name = "Смета 383",
                             RoadId = 20
@@ -3505,7 +3505,7 @@ namespace DSS.Migrations
                         {
                             Id = 384,
                             Cost = 80000.0,
-                            LevelOfWork = 0.80000000000000004,
+                            LevelOfWorks = 0.80000000000000004,
                             Link = "",
                             Name = "Смета 384",
                             RoadId = 20
@@ -3514,7 +3514,7 @@ namespace DSS.Migrations
                         {
                             Id = 385,
                             Cost = 100000.0,
-                            LevelOfWork = 1.0,
+                            LevelOfWorks = 1.0,
                             Link = "",
                             Name = "Смета 385",
                             RoadId = 20
@@ -3523,7 +3523,7 @@ namespace DSS.Migrations
                         {
                             Id = 386,
                             Cost = 120000.0,
-                            LevelOfWork = 1.2,
+                            LevelOfWorks = 1.2,
                             Link = "",
                             Name = "Смета 386",
                             RoadId = 20
@@ -3532,7 +3532,7 @@ namespace DSS.Migrations
                         {
                             Id = 387,
                             Cost = 140000.0,
-                            LevelOfWork = 1.3999999999999999,
+                            LevelOfWorks = 1.3999999999999999,
                             Link = "",
                             Name = "Смета 387",
                             RoadId = 20
@@ -3541,7 +3541,7 @@ namespace DSS.Migrations
                         {
                             Id = 388,
                             Cost = 160000.0,
-                            LevelOfWork = 1.6000000000000001,
+                            LevelOfWorks = 1.6000000000000001,
                             Link = "",
                             Name = "Смета 388",
                             RoadId = 20
@@ -3550,7 +3550,7 @@ namespace DSS.Migrations
                         {
                             Id = 389,
                             Cost = 180000.0,
-                            LevelOfWork = 1.8,
+                            LevelOfWorks = 1.8,
                             Link = "",
                             Name = "Смета 389",
                             RoadId = 20
@@ -3559,7 +3559,7 @@ namespace DSS.Migrations
                         {
                             Id = 390,
                             Cost = 200000.0,
-                            LevelOfWork = 2.0,
+                            LevelOfWorks = 2.0,
                             Link = "",
                             Name = "Смета 390",
                             RoadId = 20
@@ -3568,7 +3568,7 @@ namespace DSS.Migrations
                         {
                             Id = 391,
                             Cost = 220000.0,
-                            LevelOfWork = 2.2000000000000002,
+                            LevelOfWorks = 2.2000000000000002,
                             Link = "",
                             Name = "Смета 391",
                             RoadId = 20
@@ -3577,7 +3577,7 @@ namespace DSS.Migrations
                         {
                             Id = 392,
                             Cost = 240000.0,
-                            LevelOfWork = 2.3999999999999999,
+                            LevelOfWorks = 2.3999999999999999,
                             Link = "",
                             Name = "Смета 392",
                             RoadId = 20
@@ -3586,7 +3586,7 @@ namespace DSS.Migrations
                         {
                             Id = 393,
                             Cost = 260000.0,
-                            LevelOfWork = 2.6000000000000001,
+                            LevelOfWorks = 2.6000000000000001,
                             Link = "",
                             Name = "Смета 393",
                             RoadId = 20
@@ -3595,7 +3595,7 @@ namespace DSS.Migrations
                         {
                             Id = 394,
                             Cost = 280000.0,
-                            LevelOfWork = 2.7999999999999998,
+                            LevelOfWorks = 2.7999999999999998,
                             Link = "",
                             Name = "Смета 394",
                             RoadId = 20
@@ -3604,7 +3604,7 @@ namespace DSS.Migrations
                         {
                             Id = 395,
                             Cost = 300000.0,
-                            LevelOfWork = 3.0,
+                            LevelOfWorks = 3.0,
                             Link = "",
                             Name = "Смета 395",
                             RoadId = 20
@@ -3613,7 +3613,7 @@ namespace DSS.Migrations
                         {
                             Id = 396,
                             Cost = 320000.0,
-                            LevelOfWork = 3.2000000000000002,
+                            LevelOfWorks = 3.2000000000000002,
                             Link = "",
                             Name = "Смета 396",
                             RoadId = 20
@@ -3622,7 +3622,7 @@ namespace DSS.Migrations
                         {
                             Id = 397,
                             Cost = 340000.0,
-                            LevelOfWork = 3.3999999999999999,
+                            LevelOfWorks = 3.3999999999999999,
                             Link = "",
                             Name = "Смета 397",
                             RoadId = 20
@@ -3631,7 +3631,7 @@ namespace DSS.Migrations
                         {
                             Id = 398,
                             Cost = 360000.0,
-                            LevelOfWork = 3.6000000000000001,
+                            LevelOfWorks = 3.6000000000000001,
                             Link = "",
                             Name = "Смета 398",
                             RoadId = 20
@@ -3640,7 +3640,7 @@ namespace DSS.Migrations
                         {
                             Id = 399,
                             Cost = 380000.0,
-                            LevelOfWork = 3.7999999999999998,
+                            LevelOfWorks = 3.7999999999999998,
                             Link = "",
                             Name = "Смета 399",
                             RoadId = 20
@@ -3649,7 +3649,7 @@ namespace DSS.Migrations
                         {
                             Id = 400,
                             Cost = 400000.0,
-                            LevelOfWork = 4.0,
+                            LevelOfWorks = 4.0,
                             Link = "",
                             Name = "Смета 400",
                             RoadId = 20
@@ -3820,7 +3820,45 @@ namespace DSS.Migrations
                         });
                 });
 
+            modelBuilder.Entity("DSS.Models.TechnicalConditionOfRoad", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("RoadId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("TechnicalCondition")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Месяц")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoadId");
+
+                    b.ToTable("TechnicalConditionsOfRoads");
+                });
+
             modelBuilder.Entity("DSS.Models.Estimate", b =>
+                {
+                    b.HasOne("DSS.Models.Road", "Road")
+                        .WithMany()
+                        .HasForeignKey("RoadId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Road");
+                });
+
+            modelBuilder.Entity("DSS.Models.TechnicalConditionOfRoad", b =>
                 {
                     b.HasOne("DSS.Models.Road", "Road")
                         .WithMany()

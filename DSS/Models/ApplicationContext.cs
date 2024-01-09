@@ -6,6 +6,7 @@ namespace DSS.Models
     {
         public DbSet<Road> Roads { get; set; }
         public DbSet<Estimate> Estimates { get; set; }
+        public DbSet<TechnicalConditionOfRoad> TechnicalConditionsOfRoads { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {

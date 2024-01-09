@@ -34,7 +34,7 @@ namespace DSS.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LevelOfWork = table.Column<double>(type: "float", nullable: false),
+                    LevelOfWorks = table.Column<double>(type: "float", nullable: false),
                     Cost = table.Column<double>(type: "float", nullable: false),
                     Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RoadId = table.Column<int>(type: "int", nullable: false)
@@ -44,6 +44,28 @@ namespace DSS.Migrations
                     table.PrimaryKey("PK_Estimates", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Estimates_Roads_RoadId",
+                        column: x => x.RoadId,
+                        principalTable: "Roads",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TechnicalConditionsOfRoads",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Year = table.Column<int>(type: "int", nullable: false),
+                    Месяц = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TechnicalCondition = table.Column<double>(type: "float", nullable: false),
+                    RoadId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TechnicalConditionsOfRoads", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TechnicalConditionsOfRoads_Roads_RoadId",
                         column: x => x.RoadId,
                         principalTable: "Roads",
                         principalColumn: "Id",
@@ -79,7 +101,7 @@ namespace DSS.Migrations
 
             migrationBuilder.InsertData(
                 table: "Estimates",
-                columns: new[] { "Id", "Cost", "LevelOfWork", "Link", "Name", "RoadId" },
+                columns: new[] { "Id", "Cost", "LevelOfWorks", "Link", "Name", "RoadId" },
                 values: new object[,]
                 {
                     { 1, 20000.0, 0.20000000000000001, "", "Смета 1", 1 },
@@ -488,6 +510,11 @@ namespace DSS.Migrations
                 name: "IX_Estimates_RoadId",
                 table: "Estimates",
                 column: "RoadId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TechnicalConditionsOfRoads_RoadId",
+                table: "TechnicalConditionsOfRoads",
+                column: "RoadId");
         }
 
         /// <inheritdoc />
@@ -495,6 +522,9 @@ namespace DSS.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Estimates");
+
+            migrationBuilder.DropTable(
+                name: "TechnicalConditionsOfRoads");
 
             migrationBuilder.DropTable(
                 name: "Roads");
