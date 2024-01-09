@@ -2,31 +2,24 @@
     ViewData["Title"] = "Read All Estimates Page";
 }
 
-@model IEnumerable<Estimate>
+@model IEnumerable<RoadEstimatesViewModel>
 
 <h2 style="margin-bottom: 15px;">Список смет дорожных работ</h2>
 
 <table border="1">
     <tr>
         <th>Идентификационный номер дороги</th>
-        <th>Название сметы</th>
-        <th>Уровень работ</th>
-        <th>Стоимость сметы</th>
-        <th>Ссылка на смету</th>
-        <th>Операции</th>
+        <th>Название смет</th>
     </tr>
-    @foreach (var estimate in Model)
+    @foreach (var viewModel in Model)
     {
         <tr>
-            <td>@estimate.Road.Number</td>
-            <td>@estimate.Name</td>
-            <td>@estimate.LevelOfWorks</td>
-            <td>@estimate.Cost</td>
-            <td>@estimate.Link</td>
-            <td style="text-align: center;">
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Read", "Estimates", new { id = estimate.Id })'">Открыть</button>
-                <button type="button" class="btn btn-warning" onclick="location.href='@Url.Action("Update", "Estimates", new { id = estimate.Id })'">Изменить</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Estimates", new { id = estimate.Id })'">Удалить</button>
+            <td>@viewModel.Road.Number</td>
+            <td>
+                @foreach (var estimate in viewModel.Estimates)
+                {
+                    @Html.ActionLink(estimate.Name, "Read", "Estimates", new { id = estimate.Id }, new { @class = "btn btn-link" })
+                }
             </td>
         </tr>
     }

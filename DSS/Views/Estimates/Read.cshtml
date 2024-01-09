@@ -4,6 +4,41 @@
 
 @model Estimate
 
+<h3 style="margin-bottom: 15px;">Данные сметы дорожных работ</h3>
+
+<table border="1">
+    <tr>
+        <th>Название сметы</th>
+        <th>@Model.Name</th>
+    </tr>
+    <tr>
+        <td>Идентификационный номер дороги</td>
+        <td>
+            <button type="button" class="btn btn-link" onclick="openModal()">@Model.Road.Number</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Уровень работ</td>
+        <td>@Model.LevelOfWorks</td>
+    </tr>
+    <tr>
+        <td>Стоимость сметы</td>
+        <td>@Model.Cost</td>
+    </tr>
+    <tr>
+        <td>Ссылка на смету</td>
+        <td>@Model.Link</td>
+    </tr>
+</table>
+
+<div style="display: flex; gap: 15px; margin-top: 15px;">
+    <button type="button" class="btn btn-warning" onclick="location.href='@Url.Action("Update", "Estimates", new { id = @Model.Id })'">Изменить</button>
+
+    <form asp-controller="Estimates" asp-action="Delete" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Вы уверены, что хотите удалить эту смету?');">
+        <button type="submit" class="btn btn-danger">Удалить</button>
+    </form>
+</div>
+
 <div id="Road" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
@@ -26,35 +61,6 @@
         </table>
     </div>
 </div>
-
-<h3 style="margin-bottom: 15px;">Данные сметы дорожных работ</h3>
-
-<table border="1">
-    <tr>
-        <th>Название сметы</th>
-        <th>@Model.Name</th>
-    </tr>
-    <tr>
-        <td>Идентификационный номер дороги</td>
-        <td>
-            <a href="#" onclick="openModal()" style="text-decoration: underline; color: blue; cursor: pointer;">
-                @Model.Road.Number
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td>Уровень работ</td>
-        <td>@Model.LevelOfWorks</td>
-    </tr>
-    <tr>
-        <td>Стоимость сметы</td>
-        <td>@Model.Cost</td>
-    </tr>
-    <tr>
-        <td>Ссылка на смету</td>
-        <td>@Model.Link</td>
-    </tr>
-</table>
 
 <script>
     // Функция открытия модального окна

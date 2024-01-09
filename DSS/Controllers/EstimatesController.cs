@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 
 namespace DSS.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     [Route("estimates")]
     public class EstimatesController : Controller
     {
@@ -42,9 +43,40 @@ namespace DSS.Controllers
 
                 _logger.LogInformation("EstimatesController/Read", "All estimates have been successfully read.");
 
+                _logger.LogInformation($"EstimatesController/Read", "Reading all roads...");
+
+                result = _roadsApi.Get();
+                statusCode = ((ObjectResult)result).StatusCode;
+                value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning($"EstimatesController/Read", "Error on the API side of the controller");
+                    return BadRequest(value);
+                }
+
+                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
+
+                _logger.LogInformation($"EstimatesController/Read", "All roads have been successfully read.");
+
+                List<RoadEstimatesViewModel> viewModels = new();
+
+                foreach (var road in roads)
+                {
+                    var roadEstimates = estimates.Where(e => e.RoadId == road.Id);
+
+                    RoadEstimatesViewModel viewModel = new()
+                    {
+                        Road = road,
+                        Estimates = roadEstimates
+                    };
+
+                    viewModels.Add(viewModel);
+                }
+
                 _logger.LogInformation("EstimatesController", "Navigating to the page \"Read All Estimates\".");
 
-                return View("Index", estimates);
+                return View("Index", viewModels);
             }
             catch (Exception ex)
             {
@@ -252,9 +284,11 @@ namespace DSS.Controllers
                     return BadRequest(value);
                 }
 
+                estimate = JsonConvert.DeserializeObject<Estimate>(value.ToString());
+
                 _logger.LogInformation("EstimatesController/Update", $"The estimate with Id {estimate.Id} has been successfully updated.");
 
-                return RedirectToAction("Read");
+                return View("Read", estimate);
             }
             catch (Exception ex)
             {
@@ -263,52 +297,14 @@ namespace DSS.Controllers
             }
         }
 
-        [HttpGet("delete/{id}")]
+        [HttpPost("delete/{id}")]
         public IActionResult Delete(int id)
         {
             try
             {
-                _logger.LogInformation($"EstimatesController/Delete/{id}", $"Reading a estimate with Id {id}...");
+                _logger.LogInformation("EstimatesController/Delete", $"Deleting a estimate with Id {id}...");
 
-                var result = _estimatesApi.Get(id);
-                var statusCode = ((ObjectResult)result).StatusCode;
-                var value = ((ObjectResult)result).Value;
-
-                if (statusCode != 200)
-                {
-                    _logger.LogWarning($"EstimatesController/Delete/{id}", "Error on the API side of the controller");
-                    return BadRequest(value);
-                }
-
-                var estimate = JsonConvert.DeserializeObject<Estimate>(value.ToString());
-
-                _logger.LogInformation($"EstimatesController/Delete/{id}", $"The estimate with Id {id} was successfully read.");
-
-                _logger.LogInformation("EstimatesController", "Navigating to the page \"Delete Estimate\".");
-
-                return View("Delete", estimate);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("EstimatesController", $"Error when navigating to the page \"Delete Estimate\": {ex.Message}");
-                return StatusCode(500, "Internal server error");
-            }
-        }
-
-        [HttpPost("delete/{id}")]
-        public IActionResult Delete(Estimate estimate)
-        {
-            try
-            {
-                _logger.LogInformation("EstimatesController/Delete", $"Deleting a estimate with Id {estimate.Id}...");
-
-                if (estimate == null)
-                {
-                    _logger.LogWarning("EstimatesController/Delete", "Incorrect estimate data provided.");
-                    return BadRequest("Incorrect estimate data provided");
-                }
-
-                var result = _estimatesApi.Delete(estimate.Id);
+                var result = _estimatesApi.Delete(id);
                 var statusCode = ((ObjectResult)result).StatusCode;
                 var value = ((ObjectResult)result).Value;
 
@@ -318,13 +314,13 @@ namespace DSS.Controllers
                     return BadRequest(value);
                 }
 
-                _logger.LogInformation("EstimatesController/Delete", $"The estimate with Id {estimate.Id} has been successfully deleted.");
+                _logger.LogInformation("EstimatesController/Delete", $"The estimate with Id {id} has been successfully deleted.");
 
                 return RedirectToAction("Read");
             }
             catch (Exception ex)
             {
-                _logger.LogError("EstimatesController/Delete", $"Error when deleting a estimate with Id {estimate.Id}: {ex.Message}");
+                _logger.LogError("EstimatesController/Delete", $"Error when deleting a estimate with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }

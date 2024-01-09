@@ -20,9 +20,13 @@
             <td>@road.Priority</td>
             <td>@road.LinkToPassport</td>
             <td style="text-align: center;">
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Read", "Roads", new { id = road.Id })'">Открыть</button>
-                <button type="button" class="btn btn-warning" onclick="location.href='@Url.Action("Update", "Roads", new { id = road.Id })'">Изменить</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", "Roads", new { id = road.Id })'">Удалить</button>
+                <div style="display: flex; gap: 15px;">
+                    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Read", "Roads", new { id = road.Id })'">Открыть</button>
+                    <button type="button" class="btn btn-warning" onclick="location.href='@Url.Action("Update", "Roads", new { id = road.Id })'">Изменить</button>
+                    <form asp-controller="Roads" asp-action="Delete" asp-route-id="@road.Id" method="post" onsubmit="return confirm('Вы уверены, что хотите удалить эту дорогу?');">
+                        <button type="submit" class="btn btn-danger">Удалить</button>
+                    </form>
+                </div>
             </td>
         </tr>
     }

@@ -7,6 +7,7 @@ using Newtonsoft.Json;
 
 namespace DSS.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     [Route("roads")]
     public class RoadsController : Controller
     {
@@ -213,52 +214,14 @@ namespace DSS.Controllers
             }
         }
 
-        [HttpGet("delete/{id}")]
+        [HttpPost("delete/{id}")]
         public IActionResult Delete(int id)
         {
             try
             {
-                _logger.LogInformation($"RoadsController/Delete/{id}", $"Reading a road with Id {id}...");
+                _logger.LogInformation("RoadsController/Delete", $"Deleting a road with Id {id}...");
 
-                var result = _roadsApi.Get(id);
-                var statusCode = ((ObjectResult)result).StatusCode;
-                var value = ((ObjectResult)result).Value;
-
-                if (statusCode != 200)
-                {
-                    _logger.LogWarning($"RoadsController/Delete/{id}", "Error on the API side of the controller");
-                    return BadRequest(value);
-                }
-
-                var road = JsonConvert.DeserializeObject<Road>(value.ToString());
-
-                _logger.LogInformation($"RoadsController/Delete/{id}", $"The road with Id {id} was successfully read.");
-
-                _logger.LogInformation("RoadsController", "Navigating to the page \"Delete Road\".");
-
-                return View("Delete", road);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("RoadsController", $"Error when navigating to the page \"Delete Road\": {ex.Message}");
-                return StatusCode(500, "Internal server error");
-            }
-        }
-
-        [HttpPost("delete/{id}")]
-        public IActionResult Delete(Road road)
-        {
-            try
-            {
-                _logger.LogInformation("RoadsController/Delete", $"Deleting a road with Id {road.Id}...");
-
-                if (road == null)
-                {
-                    _logger.LogWarning("RoadsController/Delete", "Incorrect road data provided.");
-                    return BadRequest("Incorrect road data provided");
-                }
-
-                var result = _roadsApi.Delete(road.Id);
+                var result = _roadsApi.Delete(id);
                 var statusCode = ((ObjectResult)result).StatusCode;
                 var value = ((ObjectResult)result).Value;
 
@@ -268,13 +231,13 @@ namespace DSS.Controllers
                     return BadRequest(value);
                 }
 
-                _logger.LogInformation("RoadsController/Delete", $"The road with Id {road.Id} has been successfully deleted.");
+                _logger.LogInformation("RoadsController/Delete", $"The road with Id {id} has been successfully deleted.");
 
                 return RedirectToAction("Read");
             }
             catch (Exception ex)
             {
-                _logger.LogError("RoadsController/Delete", $"Error when deleting a road with Id {road.Id}: {ex.Message}");
+                _logger.LogError("RoadsController/Delete", $"Error when deleting a road with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
