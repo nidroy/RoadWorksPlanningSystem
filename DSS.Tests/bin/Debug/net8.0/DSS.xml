@@ -80,6 +80,35 @@
             </summary>
             <returns>Данные всех технических состояний дорог</returns>
         </member>
+        <member name="M:DSS.Controllers.ApiControllers.TechnicalConditionsOfRoadsApiController.Get(System.Int32)">
+            <summary>
+            Получаем данные технического состояния дороги по id
+            </summary>
+            <param name="id">Идентификатор технического состояния дороги</param>
+            <returns>Данные технического состояния дороги</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.TechnicalConditionsOfRoadsApiController.Post(DSS.Models.ViewModels.TechnicalConditionOfRoadViewModel)">
+            <summary>
+            Создаем новое техническое состояние дороги
+            </summary>
+            <param name="technicalConditionOfRoadData">Данные нового технического состояния дороги</param>
+            <returns>Идентификатор нового технического состояния дороги</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.TechnicalConditionsOfRoadsApiController.Put(System.Int32,DSS.Models.ViewModels.TechnicalConditionOfRoadViewModel)">
+            <summary>
+            Обновляем данные технического состояния дороги
+            </summary>
+            <param name="id">Идентификатор технического состояния дороги</param>
+            <param name="technicalConditionOfRoadData">Новые данные технического состояния дороги</param>
+            <returns>Данные обновленного технического состояния дороги</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.TechnicalConditionsOfRoadsApiController.Delete(System.Int32)">
+            <summary>
+            Удаляем техническое состояние дороги
+            </summary>
+            <param name="id">Идентификатор технического состояния дороги</param>
+            <returns>Количество оставшихся технических состояний дорог</returns>
+        </member>
         <member name="T:DSS.Migrations.FirstMigration">
             <inheritdoc />
         </member>
