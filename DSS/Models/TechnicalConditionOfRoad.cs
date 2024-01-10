@@ -6,7 +6,7 @@ namespace DSS.Models
     {
         public int Id { get; set; }
         public int Year { get; set; }
-        public string? Месяц { get; set; }
+        public string? Month { get; set; }
         public double TechnicalCondition { get; set; }
 
         [ForeignKey("Road")]

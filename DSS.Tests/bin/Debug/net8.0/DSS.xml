@@ -74,6 +74,12 @@
             <param name="id">Идентификатор дороги</param>
             <returns>Количество оставшихся дорог</returns>
         </member>
+        <member name="M:DSS.Controllers.ApiControllers.TechnicalConditionsOfRoadsApiController.Get">
+            <summary>
+            Получаем данные всех технических состояний дорог
+            </summary>
+            <returns>Данные всех технических состояний дорог</returns>
+        </member>
         <member name="T:DSS.Migrations.FirstMigration">
             <inheritdoc />
         </member>

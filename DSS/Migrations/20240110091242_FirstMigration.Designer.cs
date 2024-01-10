@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DSS.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240109233203_FirstMigration")]
+    [Migration("20240110091242_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -3828,6 +3828,9 @@ namespace DSS.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Month")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("RoadId")
                         .HasColumnType("int");
 
@@ -3836,9 +3839,6 @@ namespace DSS.Migrations
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
-
-                    b.Property<string>("Месяц")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

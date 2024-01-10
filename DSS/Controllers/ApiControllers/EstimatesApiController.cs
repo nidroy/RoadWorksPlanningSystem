@@ -164,7 +164,7 @@ namespace DSS.Controllers.ApiControllers
                     LevelOfWorks = estimateData.LevelOfWorks,
                     Cost = estimateData.Cost,
                     Link = estimateData.Link,
-                    RoadId = estimateData.RoadId,
+                    RoadId = estimateData.RoadId
                 };
 
                 // Добавляем новую смету в контекст данных

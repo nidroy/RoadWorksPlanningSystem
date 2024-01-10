@@ -3825,6 +3825,9 @@ namespace DSS.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Month")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("RoadId")
                         .HasColumnType("int");
 
@@ -3833,9 +3836,6 @@ namespace DSS.Migrations
 
                     b.Property<int>("Year")
                         .HasColumnType("int");
-
-                    b.Property<string>("Месяц")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
