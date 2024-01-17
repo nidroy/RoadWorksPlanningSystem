@@ -1,17 +1,8 @@
-﻿using DSS.Controllers.ApiControllers;
-using DSS.Models;
-using DSS.Models.ViewModels;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Moq;
-using Newtonsoft.Json;
-
-namespace DSS.Tests
+﻿namespace DSS.Tests
 {
     public class RoadsApiControllerTests
     {
-        private readonly Mock<ILogger<RoadsApiController>> _mock = new();
+        private readonly Mock<ILogger<ApiController>> _mock = new();
         private readonly IServiceProvider _serviceProvider;
 
         public RoadsApiControllerTests()

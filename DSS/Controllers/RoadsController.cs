@@ -14,7 +14,7 @@ namespace DSS.Controllers
         private readonly RoadsApiController _roadsApi;
         private readonly ApiLogger _logger;
 
-        public RoadsController(ApplicationContext context, ILogger<RoadsApiController> logger)
+        public RoadsController(ApplicationContext context, ILogger<ApiController> logger)
         {
             _roadsApi = new RoadsApiController(context, logger);
             _logger = new ApiLogger(logger);

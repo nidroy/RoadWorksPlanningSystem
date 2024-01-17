@@ -1,12 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DSS.Controllers.ApiControllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DSS.Loggers
 {
     public class ApiLogger
     {
-        private readonly ILogger<ControllerBase> _logger;
+        private readonly ILogger<ApiController> _logger;
 
-        public ApiLogger(ILogger<ControllerBase> logger)
+        public ApiLogger(ILogger<ApiController> logger)
         {
             _logger = logger;
         }

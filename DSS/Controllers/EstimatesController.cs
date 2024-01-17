@@ -11,15 +11,15 @@ namespace DSS.Controllers
     [Route("estimates")]
     public class EstimatesController : Controller
     {
-        private readonly EstimatesApiController _estimatesApi;
         private readonly RoadsApiController _roadsApi;
+        private readonly EstimatesApiController _estimatesApi;
         private readonly ApiLogger _logger;
 
-        public EstimatesController(ApplicationContext context, ILogger<EstimatesApiController> estimatesApiLogger, ILogger<RoadsApiController> roadsApiLogger)
+        public EstimatesController(ApplicationContext context, ILogger<ApiController> logger)
         {
-            _estimatesApi = new EstimatesApiController(context, estimatesApiLogger);
-            _roadsApi = new RoadsApiController(context, roadsApiLogger);
-            _logger = new ApiLogger(estimatesApiLogger);
+            _roadsApi = new RoadsApiController(context, logger);
+            _estimatesApi = new EstimatesApiController(context, logger);
+            _logger = new ApiLogger(logger);
         }
 
         [HttpGet("read")]

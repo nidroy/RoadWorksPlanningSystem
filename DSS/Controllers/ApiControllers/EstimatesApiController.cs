@@ -1,5 +1,4 @@
-﻿using DSS.Loggers;
-using DSS.Models;
+﻿using DSS.Models;
 using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -9,15 +8,10 @@ namespace DSS.Controllers.ApiControllers
 {
     [ApiController]
     [Route("api/estimates")]
-    public class EstimatesApiController : ControllerBase
+    public class EstimatesApiController : ApiController
     {
-        private readonly ApplicationContext _context;
-        private readonly ApiLogger _logger;
-
-        public EstimatesApiController(ApplicationContext context, ILogger<EstimatesApiController> logger)
+        public EstimatesApiController(ApplicationContext context, ILogger<ApiController> logger) : base(context, logger)
         {
-            _context = context;
-            _logger = new ApiLogger(logger);
         }
 
         /// <summary>

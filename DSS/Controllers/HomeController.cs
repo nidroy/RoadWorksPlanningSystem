@@ -12,11 +12,11 @@ namespace DSS.Controllers
         private readonly EstimatesApiController _estimatesApi;
         private readonly TechnicalConditionsOfRoadsApiController _technicalConditionsOfRoadsApi;
 
-        public HomeController(ApplicationContext context, ILogger<RoadsApiController> roadsApiLogger, ILogger<EstimatesApiController> estimatesApiLogger, ILogger<TechnicalConditionsOfRoadsApiController> technicalConditionsOfRoadsApiLogger)
+        public HomeController(ApplicationContext context, ILogger<ApiController> logger)
         {
-            _roadsApi = new RoadsApiController(context, roadsApiLogger);
-            _estimatesApi = new EstimatesApiController(context, estimatesApiLogger);
-            _technicalConditionsOfRoadsApi = new TechnicalConditionsOfRoadsApiController(context, technicalConditionsOfRoadsApiLogger);
+            _roadsApi = new RoadsApiController(context, logger);
+            _estimatesApi = new EstimatesApiController(context, logger);
+            _technicalConditionsOfRoadsApi = new TechnicalConditionsOfRoadsApiController(context, logger);
         }
 
         public IActionResult Index()

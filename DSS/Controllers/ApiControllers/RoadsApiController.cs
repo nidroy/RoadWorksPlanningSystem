@@ -1,5 +1,4 @@
-﻿using DSS.Loggers;
-using DSS.Models;
+﻿using DSS.Models;
 using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -9,15 +8,10 @@ namespace DSS.Controllers.ApiControllers
 {
     [ApiController]
     [Route("api/roads")]
-    public class RoadsApiController : ControllerBase
+    public class RoadsApiController : ApiController
     {
-        private readonly ApplicationContext _context;
-        private readonly ApiLogger _logger;
-
-        public RoadsApiController(ApplicationContext context, ILogger<RoadsApiController> logger)
+        public RoadsApiController(ApplicationContext context, ILogger<ApiController> logger) : base(context, logger)
         {
-            _context = context;
-            _logger = new ApiLogger(logger);
         }
 
         /// <summary>
