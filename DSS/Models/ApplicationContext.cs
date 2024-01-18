@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DSS.Parsers;
+using Microsoft.EntityFrameworkCore;
 
 namespace DSS.Models
 {
@@ -48,6 +49,8 @@ namespace DSS.Models
                 Road road = CreateRoadModel(i + 1, roadNumber, roadPriority, modelBuilder);
                 estimateCount = CreateEstimateModels(estimateCount, road, modelBuilder);
             }
+
+            CreateTechnicalConditionOfRoadModels(modelBuilder);
         }
 
         private Road CreateRoadModel(int id, string number, double priority, ModelBuilder modelBuilder)
@@ -82,6 +85,31 @@ namespace DSS.Models
             }
 
             return estimateCount + 20;
+        }
+
+        private void CreateTechnicalConditionOfRoadModels(ModelBuilder modelBuilder)
+        {
+            string folderPath = @"Data\TechnicalConditionsOfRoads";
+            var technicalConditionsOfRoads = ExcelParser.ParseTechnicalConditionsOfRoads(folderPath);
+
+            if (technicalConditionsOfRoads == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < technicalConditionsOfRoads.Count; i++)
+            {
+                TechnicalConditionOfRoad technicalConditionOfRoad = new()
+                {
+                    Id = i + 1,
+                    Year = technicalConditionsOfRoads[i].Year,
+                    Month = technicalConditionsOfRoads[i].Month,
+                    TechnicalCondition = technicalConditionsOfRoads[i].TechnicalCondition,
+                    RoadId = technicalConditionsOfRoads[i].RoadId
+                };
+
+                modelBuilder.Entity<TechnicalConditionOfRoad>().HasData(technicalConditionOfRoad);
+            }
         }
     }
 }
