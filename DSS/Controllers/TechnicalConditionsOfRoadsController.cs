@@ -77,13 +77,30 @@ namespace DSS.Controllers
                     viewModels.Add(viewModel);
                 }
 
-                _logger.LogInformation("TechnicalConditionsOfRoadsController", "Navigating to the page \"Read All Technical Conditions Of Roads\".");
+                _logger.LogInformation("TechnicalConditionsOfRoadsController", "Navigating to the page \"Read All Technical Conditions Of Roads By Year\".");
 
                 return View("Index", viewModels);
             }
             catch (Exception ex)
             {
-                _logger.LogError("TechnicalConditionsOfRoadsController", $"Error when navigating to the page \"Read All Technical Conditions Of Roads\": {ex.Message}");
+                _logger.LogError("TechnicalConditionsOfRoadsController", $"Error when navigating to the page \"Read All Technical Conditions Of Roads By Year\": {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+
+        [HttpGet("read/{year}")]
+        public IActionResult Read(IEnumerable<TechnicalConditionOfRoad> technicalConditionsOfRoads)
+        {
+            try
+            {
+                _logger.LogInformation("TechnicalConditionsOfRoadsController", "Navigating to the page \"Read All Technical Conditions Of Roads By Year\".");
+
+                return View("Index", technicalConditionsOfRoads);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("TechnicalConditionsOfRoadsController", $"Error when navigating to the page \"Read All Technical Conditions Of Roads By Year\": {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }

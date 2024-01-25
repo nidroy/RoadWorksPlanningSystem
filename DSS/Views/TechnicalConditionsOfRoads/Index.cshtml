@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Read All Technical Conditions Of Roads By Year Page";
+}
+
+@model IEnumerable<RoadTechnicalConditionsOfRoadsViewModel>
+
+<h2 style="margin-bottom: 15px;">Список технических состояний дорог по годам</h2>
+
+<table border="1">
+    <tr>
+        <th>Идентификационный номер дороги</th>
+        <th>Года</th>
+    </tr>
+    @foreach (var viewModel in Model)
+    {
+        <tr>
+            <td>@viewModel.Road.Number</td>
+            <td>
+                @foreach (var dictionary in viewModel.TechnicalConditionsOfRoads)
+                {
+                    @Html.ActionLink(
+                             linkText: dictionary.Key.ToString(),
+                             actionName: "Read",
+                             controllerName: "TechnicalConditionsOfRoads",
+                             routeValues: new { technicalConditionsOfRoads = dictionary.Value },
+                             htmlAttributes: new { @class = "btn btn-link" }
+                             )
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+<p style="margin-top: 15px;">
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Create", "TechnicalConditionsOfRoads")'">Добавить</button>
+</p>
