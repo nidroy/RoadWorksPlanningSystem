@@ -132,9 +132,6 @@ H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win-arm\native\Mi
 H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
@@ -153,3 +150,9 @@ H:\RoadWorksPlanningSystem\DSS.Tests\obj\Debug\net8.0\refint\DSS.Tests.dll
 H:\RoadWorksPlanningSystem\DSS.Tests\obj\Debug\net8.0\DSS.Tests.pdb
 H:\RoadWorksPlanningSystem\DSS.Tests\obj\Debug\net8.0\DSS.Tests.genruntimeconfig.cache
 H:\RoadWorksPlanningSystem\DSS.Tests\obj\Debug\net8.0\ref\DSS.Tests.dll
+H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\EPPlus.dll
+H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\EPPlus.Interfaces.dll
+H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\EPPlus.System.Drawing.dll
+H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+H:\RoadWorksPlanningSystem\DSS.Tests\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll

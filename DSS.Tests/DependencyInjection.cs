@@ -7,7 +7,7 @@ namespace DSS.Tests
         public static ServiceCollection InitilizeServices()
         {
             var services = new ServiceCollection();
-            var options = new DbContextOptionsBuilder<ApplicationContext>().UseInMemoryDatabase("applicationdb").Options;
+            var options = new DbContextOptionsBuilder<ApplicationContext>().UseInMemoryDatabase("DSS.db").Options;
             services.AddScoped(_ => new ApplicationContext(options));
             return services;
         }

@@ -4,7 +4,7 @@
 
 @model IEnumerable<TechnicalConditionOfRoad>
 
-<h2 style="margin-bottom: 15px;">Список технических состояний дороги (@Model.First().Road.Number) за @Model.First().Year год</h2>
+<h2>Список технических состояний дороги (<button type="button" class="btn btn-link" onclick="openModal()"><h2>@Model.First().Road.Number</h2></button>) за @Model.First().Year год</h2>
 
 <table border="1">
     <tr>
@@ -28,3 +28,46 @@
         </tr>
     }
 </table>
+
+<div id="Road" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <h3 style="margin-bottom: 15px;">Данные дороги</h3>
+
+        <table border="1">
+            <tr>
+                <th>Идентификационный номер дороги</th>
+                <th>@Model.First().Road.Number</th>
+            </tr>
+            <tr>
+                <td>Приоритет дороги</td>
+                <td>@Model.First().Road.Priority</td>
+            </tr>
+            <tr>
+                <td>Ссылка на паспорт дороги</td>
+                <td>@Model.First().Road.LinkToPassport</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    // Функция открытия модального окна
+    function openModal() {
+        document.getElementById('Road').style.display = 'block';
+    }
+
+    // Функция закрытия модального окна
+    function closeModal() {
+        document.getElementById('Road').style.display = 'none';
+    }
+
+    // Закрытие модального окна при клике вне его
+    window.onclick = function (event) {
+        var modal = document.getElementById('Road');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>

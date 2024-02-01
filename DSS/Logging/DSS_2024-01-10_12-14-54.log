@@ -1,8 +1,0 @@
-Failed executing DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE [Roads] (
-    [Id] int NOT NULL IDENTITY,
-    [Number] nvarchar(max) NULL,
-    [Priority] float NOT NULL,
-    [LinkToPassport] nvarchar(max) NULL,
-    CONSTRAINT [PK_Roads] PRIMARY KEY ([Id])
-);

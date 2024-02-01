@@ -109,13 +109,13 @@ namespace DSS.Controllers
 
                 _logger.LogInformation($"TechnicalConditionsOfRoadsController/Read/{roadId}/{year}", $"The technical conditions of road for {year} was successfully read.");
 
-                var technicalConditionsOfRoadsForYear = technicalConditionsOfRoads
+                var technicalConditionsOfRoadForYear = technicalConditionsOfRoads
                     .Where(tc => tc.RoadId == roadId && tc.Year == year)
                     .ToList();
 
                 _logger.LogInformation("TechnicalConditionsOfRoadsController", $"Navigating to the page \"Read Technical Conditions Of Road For {year}\".");
 
-                return View("Read", technicalConditionsOfRoadsForYear);
+                return View("Read", technicalConditionsOfRoadForYear);
             }
             catch (Exception ex)
             {

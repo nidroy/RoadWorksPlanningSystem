@@ -10,7 +10,7 @@ namespace DSS.Parsers
         /// Парсим технические состояния дорог
         /// </summary>
         /// <param name="folderPath">Путь к папке с техническими состояниями дорог</param>
-        /// <returns>Модели технических состояний дорог</returns>
+        /// <returns>Список моделей технических состояний дорог</returns>
         public static List<TechnicalConditionOfRoadViewModel>? ParseTechnicalConditionsOfRoads(string folderPath)
         {
             try
