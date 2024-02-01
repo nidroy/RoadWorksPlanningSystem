@@ -22,7 +22,7 @@
                              linkText: dictionary.Key.ToString(),
                              actionName: "Read",
                              controllerName: "TechnicalConditionsOfRoads",
-                             routeValues: new { technicalConditionsOfRoads = dictionary.Value },
+                             routeValues: new { roadId = viewModel.Road.Id, year = dictionary.Key },
                              htmlAttributes: new { @class = "btn btn-link" }
                              )
                 }

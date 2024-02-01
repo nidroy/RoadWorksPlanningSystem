@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = $"Read Technical Conditions Of Road For {@Model.First().Year} Page";
+}
+
+@model IEnumerable<TechnicalConditionOfRoad>
+
+<h2 style="margin-bottom: 15px;">Список технических состояний дороги (@Model.First().Road.Number) за @Model.First().Year год</h2>
+
+<table border="1">
+    <tr>
+        <th>Месяц</th>
+        <th>Техническое состояние</th>
+        <th>Операции</th>
+    </tr>
+    @foreach (var technicalConditionOfRoad in Model)
+    {
+        <tr>
+            <td>@technicalConditionOfRoad.Month</td>
+            <td>@technicalConditionOfRoad.TechnicalCondition</td>
+            <td style="text-align: center;">
+                <div style="display: flex; gap: 15px;">
+                    <button type="button" class="btn btn-warning" onclick="location.href='@Url.Action("Update", "TechnicalConditionsOfRoads", new { id = technicalConditionOfRoad.Id })'">Изменить</button>
+                    <form asp-controller="TechnicalConditionsOfRoads" asp-action="Delete" asp-route-id="@technicalConditionOfRoad.Id" method="post" onsubmit="return confirm('Вы уверены, что хотите удалить это техническое состояние?');">
+                        <button type="submit" class="btn btn-danger">Удалить</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+    }
+</table>

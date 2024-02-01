@@ -126,7 +126,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"RoadsController/Create", "Error on the API side of the controller");
+                    _logger.LogWarning("RoadsController/Create", "Error on the API side of the controller");
                     return BadRequest(value);
                 }
 
@@ -178,11 +178,11 @@ namespace DSS.Controllers
         {
             try
             {
-                _logger.LogInformation("RoadsController/Update", $"Updating the road with Id {road.Id}...");
+                _logger.LogInformation($"RoadsController/Update/{road.Id}", $"Updating the road with Id {road.Id}...");
 
                 if (road == null)
                 {
-                    _logger.LogWarning("RoadsController/Update", "Incorrect road data provided.");
+                    _logger.LogWarning($"RoadsController/Update/{road.Id}", "Incorrect road data provided.");
                     return BadRequest("Incorrect road data provided");
                 }
 
@@ -199,17 +199,17 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"RoadsController/Update", "Error on the API side of the controller");
+                    _logger.LogWarning($"RoadsController/Update/{road.Id}", "Error on the API side of the controller");
                     return BadRequest(value);
                 }
 
-                _logger.LogInformation("RoadsController/Update", $"The road with Id {road.Id} has been successfully updated.");
+                _logger.LogInformation($"RoadsController/Update/{road.Id}", $"The road with Id {road.Id} has been successfully updated.");
 
                 return RedirectToAction("Read");
             }
             catch (Exception ex)
             {
-                _logger.LogError("RoadsController/Update", $"Error updating the road with Id {road.Id}: {ex.Message}");
+                _logger.LogError($"RoadsController/Update/{road.Id}", $"Error updating the road with Id {road.Id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -219,7 +219,7 @@ namespace DSS.Controllers
         {
             try
             {
-                _logger.LogInformation("RoadsController/Delete", $"Deleting a road with Id {id}...");
+                _logger.LogInformation($"RoadsController/Delete/{id}", $"Deleting a road with Id {id}...");
 
                 var result = _roadsApi.Delete(id);
                 var statusCode = ((ObjectResult)result).StatusCode;
@@ -227,17 +227,17 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"RoadsController/Delete", "Error on the API side of the controller");
+                    _logger.LogWarning($"RoadsController/Delete/{id}", "Error on the API side of the controller");
                     return BadRequest(value);
                 }
 
-                _logger.LogInformation("RoadsController/Delete", $"The road with Id {id} has been successfully deleted.");
+                _logger.LogInformation($"RoadsController/Delete/{id}", $"The road with Id {id} has been successfully deleted.");
 
                 return RedirectToAction("Read");
             }
             catch (Exception ex)
             {
-                _logger.LogError("RoadsController/Delete", $"Error when deleting a road with Id {id}: {ex.Message}");
+                _logger.LogError($"RoadsController/Delete/{id}", $"Error when deleting a road with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }

@@ -43,7 +43,7 @@ namespace DSS.Controllers
 
                 _logger.LogInformation("EstimatesController/Read", "All estimates have been successfully read.");
 
-                _logger.LogInformation($"EstimatesController/Read", "Reading all roads...");
+                _logger.LogInformation("EstimatesController/Read", "Reading all roads...");
 
                 result = _roadsApi.Get();
                 statusCode = ((ObjectResult)result).StatusCode;
@@ -51,13 +51,13 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Read", "Error on the API side of the controller");
+                    _logger.LogWarning("EstimatesController/Read", "Error on the API side of the controller");
                     return BadRequest(value);
                 }
 
                 var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
 
-                _logger.LogInformation($"EstimatesController/Read", "All roads have been successfully read.");
+                _logger.LogInformation("EstimatesController/Read", "All roads have been successfully read.");
 
                 List<RoadEstimatesViewModel> viewModels = new();
 
@@ -138,7 +138,7 @@ namespace DSS.Controllers
 
                 _logger.LogInformation("EstimatesController/Create", "All roads have been successfully read.");
 
-                EstimateRoadsViewModel viewModel = new EstimateRoadsViewModel
+                EstimateRoadsViewModel viewModel = new()
                 {
                     Estimate = new(),
                     Roads = roads
@@ -183,7 +183,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Create", "Error on the API side of the controller");
+                    _logger.LogWarning("EstimatesController/Create", "Error on the API side of the controller");
                     return BadRequest(value);
                 }
 
@@ -235,7 +235,7 @@ namespace DSS.Controllers
 
                 _logger.LogInformation($"EstimatesController/Update/{id}", "All roads have been successfully read.");
 
-                EstimateRoadsViewModel viewModel = new EstimateRoadsViewModel
+                EstimateRoadsViewModel viewModel = new()
                 {
                     Estimate = estimate,
                     Roads = roads
@@ -257,11 +257,11 @@ namespace DSS.Controllers
         {
             try
             {
-                _logger.LogInformation("EstimatesController/Update", $"Updating the estimate with Id {estimate.Id}...");
+                _logger.LogInformation($"EstimatesController/Update/{estimate.Id}", $"Updating the estimate with Id {estimate.Id}...");
 
                 if (estimate == null)
                 {
-                    _logger.LogWarning("EstimatesController/Update", "Incorrect estimate data provided.");
+                    _logger.LogWarning($"EstimatesController/Update/{estimate.Id}", "Incorrect estimate data provided.");
                     return BadRequest("Incorrect estimate data provided");
                 }
 
@@ -280,19 +280,19 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Update", "Error on the API side of the controller");
+                    _logger.LogWarning($"EstimatesController/Update/{estimate.Id}", "Error on the API side of the controller");
                     return BadRequest(value);
                 }
 
                 estimate = JsonConvert.DeserializeObject<Estimate>(value.ToString());
 
-                _logger.LogInformation("EstimatesController/Update", $"The estimate with Id {estimate.Id} has been successfully updated.");
+                _logger.LogInformation($"EstimatesController/Update/{estimate.Id}", $"The estimate with Id {estimate.Id} has been successfully updated.");
 
                 return View("Read", estimate);
             }
             catch (Exception ex)
             {
-                _logger.LogError("EstimatesController/Update", $"Error updating the estimate with Id {estimate.Id}: {ex.Message}");
+                _logger.LogError($"EstimatesController/Update/{estimate.Id}", $"Error updating the estimate with Id {estimate.Id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
@@ -302,7 +302,7 @@ namespace DSS.Controllers
         {
             try
             {
-                _logger.LogInformation("EstimatesController/Delete", $"Deleting a estimate with Id {id}...");
+                _logger.LogInformation($"EstimatesController/Delete/{id}", $"Deleting a estimate with Id {id}...");
 
                 var result = _estimatesApi.Delete(id);
                 var statusCode = ((ObjectResult)result).StatusCode;
@@ -310,17 +310,17 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Delete", "Error on the API side of the controller");
+                    _logger.LogWarning($"EstimatesController/Delete/{id}", "Error on the API side of the controller");
                     return BadRequest(value);
                 }
 
-                _logger.LogInformation("EstimatesController/Delete", $"The estimate with Id {id} has been successfully deleted.");
+                _logger.LogInformation($"EstimatesController/Delete/{id}", $"The estimate with Id {id} has been successfully deleted.");
 
                 return RedirectToAction("Read");
             }
             catch (Exception ex)
             {
-                _logger.LogError("EstimatesController/Delete", $"Error when deleting a estimate with Id {id}: {ex.Message}");
+                _logger.LogError($"EstimatesController/Delete/{id}", $"Error when deleting a estimate with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
