@@ -1,3 +1,4 @@
+import os
 import sys
 
 import numpy as np
@@ -30,7 +31,7 @@ def linear_regression_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = LinearRegression()
-    model.fit(x_train, y_train)
+    model.fit(x_train, y_train, verbose=0)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -42,7 +43,7 @@ def polynomial_regression_predict(data):
     poly = PolynomialFeatures(degree=2)
     x_poly = poly.fit_transform(x_train)
     model = LinearRegression()
-    model.fit(x_poly, y_train)
+    model.fit(x_poly, y_train, verbose=0)
     x_pred_poly = poly.transform(x_pred)
     y_pred = model.predict(x_pred_poly)[0]
     return y_pred
@@ -53,7 +54,7 @@ def decision_tree_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = DecisionTreeRegressor()
-    model.fit(x_train, y_train)
+    model.fit(x_train, y_train, verbose=0)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -63,7 +64,7 @@ def random_forest_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = RandomForestRegressor()
-    model.fit(x_train, y_train)
+    model.fit(x_train, y_train, verbose=0)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -73,7 +74,7 @@ def svr_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = SVR()
-    model.fit(x_train, y_train)
+    model.fit(x_train, y_train, verbose=0)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -87,7 +88,7 @@ def neural_network_predict(data):
         Dense(1)
     ])
     model.compile(optimizer='adam', loss='mse')
-    model.fit(x_train, y_train, epochs=100, batch_size=10)
+    model.fit(x_train, y_train, epochs=100, batch_size=10, verbose=0)
     y_pred = model.predict(x_pred)[0, 0]
     return y_pred
 
@@ -100,7 +101,7 @@ def lstm_predict(data):
     model.add(LSTM(4, input_shape=(1, 1)))
     model.add(Dense(1))
     model.compile(loss='mean_squared_error', optimizer='adam')
-    model.fit(x_train, y_train, epochs=100, batch_size=10)
+    model.fit(x_train, y_train, epochs=100, batch_size=10, verbose=0)
     y_pred = model.predict(x_pred)[0, 0]
     return y_pred
 
@@ -114,7 +115,7 @@ def simple_rnn_predict(data):
         Dense(1)
     ])
     model.compile(optimizer='adam', loss='mse')
-    model.fit(x_train, y_train, epochs=100, batch_size=10)
+    model.fit(x_train, y_train, epochs=100, batch_size=10, verbose=0)
     y_pred = model.predict(x_pred)[0, 0]
     return y_pred
 
@@ -128,7 +129,7 @@ def gru_predict(data):
         Dense(1)
     ])
     model.compile(optimizer='adam', loss='mse')
-    model.fit(x_train, y_train, epochs=100, batch_size=10)
+    model.fit(x_train, y_train, epochs=100, batch_size=10, verbose=0)
     y_pred = model.predict(x_pred)[0, 0]
     return y_pred
 
@@ -138,7 +139,7 @@ def knn_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = KNeighborsRegressor(n_neighbors=5)
-    model.fit(x_train, y_train)
+    model.fit(x_train, y_train, verbose=0)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -148,7 +149,7 @@ def gradient_boosting_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = GradientBoostingRegressor()
-    model.fit(x_train, y_train)
+    model.fit(x_train, y_train, verbose=0)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -158,13 +159,16 @@ def xgboost_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = XGBRegressor()
-    model.fit(x_train, y_train)
+    model.fit(x_train, y_train, verbose=0)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
 
 # Загрузка данных из файла
-with open('data.json', 'r', encoding='utf-8') as file:
+current_directory = os.path.dirname(os.path.abspath(__file__))
+data_path = os.path.join(current_directory, 'data.json')
+
+with open(data_path, 'r', encoding='utf-8') as file:
     json_data = file.read()
 
 df = pd.read_json(StringIO(json_data))
@@ -184,6 +188,8 @@ months = [
 ]
 table = df.pivot_table(values='TechnicalCondition', index='RoadId', columns=['Year', 'Month'], aggfunc='first').reindex(columns=pd.MultiIndex.from_product([df['Year'].unique(), months]))
 table.columns = range(0, len(table.columns))
+
+table = table.dropna(axis=1)
 
 y = np.array(table.iloc[2])
 x = np.arange(len(y))

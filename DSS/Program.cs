@@ -36,6 +36,23 @@ namespace DSS
             builder.Services.AddLogging(loggingBuilder =>
             {
                 loggingBuilder.AddFilter("Microsoft", LogLevel.Warning);
+                loggingBuilder.AddFilter("System", LogLevel.Warning);
+                loggingBuilder.AddFilter("Microsoft.Hosting.Lifetime", LogLevel.Information);
+                loggingBuilder.AddFilter("Microsoft.AspNetCore.Hosting.Diagnostics", LogLevel.Information);
+                loggingBuilder.AddFilter("Microsoft.Extensions.Hosting", LogLevel.Information);
+
+                loggingBuilder.AddFilter((provider, category, logLevel) =>
+                {
+                    if (category.StartsWith("tensorflow"))
+                    {
+                        return false;
+                    }
+                    if (category.StartsWith("pandas"))
+                    {
+                        return false;
+                    }
+                    return true;
+                });
             });
 
             builder.Services.AddSwaggerGen(c =>

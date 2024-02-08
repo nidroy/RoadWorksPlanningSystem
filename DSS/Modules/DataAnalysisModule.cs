@@ -2,6 +2,7 @@
 using DSS.Loggers;
 using DSS.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Text;
 
@@ -62,6 +63,51 @@ namespace DSS.Modules
             {
                 _logger.LogError("DataAnalysisModule", $"Error in comparing prediction methods: {ex.Message}");
                 return false;
+            }
+        }
+
+        public Dictionary<string, double>? PredictTechnicalConditionsOfRoads()
+        {
+            try
+            {
+                _logger.LogInformation("DataAnalysisModule", "Predicting the technical conditions of roads...");
+                _logger.LogInformation("DataAnalysisModule", "Reading all technical conditions of roads...");
+
+                var result = _technicalConditionsOfRoadsApi.Get();
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("DataAnalysisModule", "Error on the API side of the controller");
+                    return null;
+                }
+
+                string dataPath = Path.Combine(scriptsFolderPath, "data.json");
+                File.WriteAllText(dataPath, value.ToString());
+
+                _logger.LogInformation("DataAnalysisModule", "All technical conditions of roads have been successfully read.");
+
+                string scriptPath = Path.Combine(scriptsFolderPath, "PredictTechnicalConditionsOfRoads.py");
+                string? response = ExecutePythonScript(scriptPath, interpreterPath);
+
+                File.Delete(dataPath);
+
+                if (response == null)
+                {
+                    return null;
+                }
+
+                Dictionary<string, double> predictions = JsonConvert.DeserializeObject<Dictionary<string, double>>(response);
+
+                _logger.LogInformation("DataAnalysisModule", "Technical conditions of roads have been successfully predicted.");
+
+                return predictions;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("DataAnalysisModule", $"Error in predicting technical conditions of roads: {ex.Message}");
+                return null;
             }
         }
 
