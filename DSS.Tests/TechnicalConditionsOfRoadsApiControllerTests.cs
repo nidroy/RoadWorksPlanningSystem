@@ -205,5 +205,55 @@
             var statusCode = ((ObjectResult)result).StatusCode;
             Assert.Equal(200, statusCode);
         }
+
+        [Fact]
+        public void DeleteAllTechnicalConditionsOfRoadsTest()
+        {
+            // Arrange
+            var context = _serviceProvider.GetRequiredService<ApplicationContext>();
+            var controller = new TechnicalConditionsOfRoadsApiController(context, _mock.Object);
+
+            Road road = new()
+            {
+                Number = "18 ОП РЗ 18Р-10",
+                Priority = 1,
+                LinkToPassport = ""
+            };
+            context.Roads.Add(road);
+            context.SaveChanges();
+
+            TechnicalConditionOfRoad technicalConditionOfRoad = new()
+            {
+                Year = 2001,
+                Month = "Сентябрь",
+                TechnicalCondition = 2.5,
+                RoadId = road.Id
+            };
+            context.TechnicalConditionsOfRoads.Add(technicalConditionOfRoad);
+            context.SaveChanges();
+
+            technicalConditionOfRoad = new()
+            {
+                Year = 2001,
+                Month = "Октябрь",
+                TechnicalCondition = 1.5,
+                RoadId = road.Id
+            };
+            context.TechnicalConditionsOfRoads.Add(technicalConditionOfRoad);
+            context.SaveChanges();
+
+            // Act
+            var result = controller.Delete();
+
+            // Assert
+            Assert.NotNull(result);
+
+            var resultTechnicalConditionOfRoadCount = ((ObjectResult)result).Value;
+
+            Assert.Equal(0, resultTechnicalConditionOfRoadCount);
+
+            var statusCode = ((ObjectResult)result).StatusCode;
+            Assert.Equal(200, statusCode);
+        }
     }
 }

@@ -109,6 +109,12 @@
             <param name="id">Идентификатор технического состояния дороги</param>
             <returns>Количество оставшихся технических состояний дорог</returns>
         </member>
+        <member name="M:DSS.Controllers.ApiControllers.TechnicalConditionsOfRoadsApiController.Delete">
+            <summary>
+            Удаляем все технические состояния дорог
+            </summary>
+            <returns>Количество оставшихся технических состояний дорог</returns>
+        </member>
         <member name="M:DSS.Handlers.FileHandler.GetExcelFileNames(System.String)">
             <summary>
             Получаем названия файлов Excel в папке

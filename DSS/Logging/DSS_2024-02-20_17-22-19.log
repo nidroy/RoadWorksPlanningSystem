@@ -1,0 +1,40 @@
+Now listening on: https://localhost:7051
+Now listening on: http://localhost:5155
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: H:\RoadWorksPlanningSystem\DSS
+Request starting HTTP/2 GET https://localhost:7051/ - - -
+Request finished HTTP/2 GET https://localhost:7051/ - 200 - text/html;+charset=utf-8 2461.8125ms
+Request starting HTTP/2 GET https://localhost:7051/lib/bootstrap/dist/css/bootstrap.min.css - - -
+Request starting HTTP/2 GET https://localhost:7051/css/site.css?v=ZR61JfdxUYilX_lC3yLqTr8IRPDCx7iJeyVXzvf8WNA - - -
+Request starting HTTP/2 GET https://localhost:7051/DSS.styles.css?v=mULltvPmZktKA9F9fGqh_dzco_imQKRJ2nflaWKu5lg - - -
+Request starting HTTP/2 GET https://localhost:7051/lib/jquery/dist/jquery.min.js - - -
+Request starting HTTP/2 GET https://localhost:7051/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - - -
+Request starting HTTP/2 GET https://localhost:7051/lib/bootstrap/dist/js/bootstrap.bundle.min.js - - -
+Request starting HTTP/2 GET https://localhost:7051/_framework/aspnetcore-browser-refresh.js - - -
+Request starting HTTP/2 GET https://localhost:7051/_vs/browserLink - - -
+Request finished HTTP/2 GET https://localhost:7051/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 231 text/javascript 61.8548ms
+Request finished HTTP/2 GET https://localhost:7051/css/site.css?v=ZR61JfdxUYilX_lC3yLqTr8IRPDCx7iJeyVXzvf8WNA - 200 1706 text/css 78.2611ms
+Request finished HTTP/2 GET https://localhost:7051/DSS.styles.css?v=mULltvPmZktKA9F9fGqh_dzco_imQKRJ2nflaWKu5lg - 200 1121 text/css 78.2497ms
+Request finished HTTP/2 GET https://localhost:7051/_framework/aspnetcore-browser-refresh.js - 200 13742 application/javascript;+charset=utf-8 67.6410ms
+Request finished HTTP/2 GET https://localhost:7051/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 119.6276ms
+Request finished HTTP/2 GET https://localhost:7051/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 127.4358ms
+Request finished HTTP/2 GET https://localhost:7051/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 109.3789ms
+Request finished HTTP/2 GET https://localhost:7051/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 109.3988ms
+Request starting HTTP/2 GET https://localhost:7051/favicon.ico - - -
+Request finished HTTP/2 GET https://localhost:7051/favicon.ico - 200 5430 image/x-icon 21.8975ms
+Request starting HTTP/2 GET https://localhost:7051/technicalConditionsOfRoads/read - - -
+20.02.2024 17:22:36 [Information] [TechnicalConditionsOfRoadsController/Read] Reading all technical conditions of roads...
+20.02.2024 17:22:36 [Information] [TechnicalConditionsOfRoadsApiController/Get] Getting all the technical conditions of roads...
+20.02.2024 17:22:39 [Information] [TechnicalConditionsOfRoadsApiController/Get] All technical conditions of roads have been successfully received.
+20.02.2024 17:22:39 [Information] [TechnicalConditionsOfRoadsController/Read] All technical conditions of roads have been successfully read.
+20.02.2024 17:22:39 [Information] [TechnicalConditionsOfRoadsController/Read] Reading all roads...
+20.02.2024 17:22:39 [Information] [RoadsApiController/Get] Getting all the roads...
+20.02.2024 17:22:39 [Information] [RoadsApiController/Get] All roads have been successfully received.
+20.02.2024 17:22:39 [Information] [TechnicalConditionsOfRoadsController/Read] All roads have been successfully read.
+20.02.2024 17:22:39 [Information] [TechnicalConditionsOfRoadsController] Navigating to the page "Read All Technical Conditions Of Roads By Year".
+Request finished HTTP/2 GET https://localhost:7051/technicalConditionsOfRoads/read - 200 - text/html;+charset=utf-8 3094.1975ms
+Request starting HTTP/2 GET https://localhost:7051/_vs/browserLink - - -
+Request starting HTTP/2 GET https://localhost:7051/_framework/aspnetcore-browser-refresh.js - - -
+Request finished HTTP/2 GET https://localhost:7051/_framework/aspnetcore-browser-refresh.js - 200 13742 application/javascript;+charset=utf-8 12.5795ms
+Request finished HTTP/2 GET https://localhost:7051/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 48.4277ms

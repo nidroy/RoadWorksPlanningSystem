@@ -37,9 +37,6 @@ namespace DSS
             {
                 loggingBuilder.AddFilter("Microsoft", LogLevel.Warning);
                 loggingBuilder.AddFilter("System", LogLevel.Warning);
-                loggingBuilder.AddFilter("Microsoft.Hosting.Lifetime", LogLevel.Information);
-                loggingBuilder.AddFilter("Microsoft.AspNetCore.Hosting.Diagnostics", LogLevel.Information);
-                loggingBuilder.AddFilter("Microsoft.Extensions.Hosting", LogLevel.Information);
 
                 loggingBuilder.AddFilter((provider, category, logLevel) =>
                 {

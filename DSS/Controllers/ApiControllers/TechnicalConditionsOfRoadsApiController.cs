@@ -303,5 +303,39 @@ namespace DSS.Controllers.ApiControllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
+        /// <summary>
+        /// Удаляем все технические состояния дорог
+        /// </summary>
+        /// <returns>Количество оставшихся технических состояний дорог</returns>
+        [HttpDelete("delete")]
+        public IActionResult Delete()
+        {
+            try
+            {
+                _logger.LogInformation("TechnicalConditionsOfRoadsApiController/Delete", "Deleting all the technical conditions of roads...");
+
+                // Получаем все технические состояния дорог из контекста данных
+                List<TechnicalConditionOfRoad> technicalConditionsOfRoads = _context.TechnicalConditionsOfRoads.ToList();
+
+                // Удаляем техническое состояние дороги из контекста данных
+                _context.TechnicalConditionsOfRoads.RemoveRange(technicalConditionsOfRoads);
+                _context.SaveChanges();
+
+                _logger.LogInformation("TechnicalConditionsOfRoadsApiController/Delete", "All technical conditions of roads have been successfully deleted.");
+
+                // Получаем все оставшиеся технические состояния дорог из контекста данных
+                technicalConditionsOfRoads = _context.TechnicalConditionsOfRoads.ToList();
+
+                // Возвращаем успешный результат с количеством оставшихся технических состояний дорог
+                return Ok(technicalConditionsOfRoads.Count);
+            }
+            catch (Exception ex)
+            {
+                // В случае ошибки логируем и возвращаем 500 Internal Server Error
+                _logger.LogError("TechnicalConditionsOfRoadsApiController/Delete", $"Error when deleting all technical conditions of roads: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
     }
 }

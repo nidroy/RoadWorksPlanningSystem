@@ -19,8 +19,8 @@ namespace DSS.Modules
             _logger = new ApiLogger(logger);
         }
 
-        private readonly string scriptsFolderPath = @"Modules\DataAnalysisModule";
-        private readonly string interpreterPath = @"Modules\DataAnalysisModule\.venv\Scripts\python.exe";
+        private readonly string scriptsFolderPath = @"Modules\PythonModule";
+        private readonly string interpreterPath = @"Modules\PythonModule\.venv\Scripts\python.exe";
 
         public bool ComparePredictionMethods()
         {

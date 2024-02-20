@@ -148,3 +148,5 @@ H:\RoadWorksPlanningSystem\DSS\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStr
 H:\RoadWorksPlanningSystem\DSS\bin\Debug\net8.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
 H:\RoadWorksPlanningSystem\DSS\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 H:\RoadWorksPlanningSystem\DSS\bin\Debug\net8.0\Modules\DataAnalysisModule\data.json
+H:\RoadWorksPlanningSystem\DSS\bin\Debug\net8.0\Modules\DataAnalysisModule\venv\Lib\site-packages\matplotlib\backends\web_backend\package.json
+H:\RoadWorksPlanningSystem\DSS\bin\Debug\net8.0\Modules\DataAnalysisModule\venv\Lib\site-packages\scipy\stats\tests\data\studentized_range_mpmath_ref.json
