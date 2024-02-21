@@ -12,19 +12,27 @@ namespace DSS.Controllers.ApiControllers
     [Route("api/home")]
     public class HomeApiController : ApiController
     {
+        private readonly MainModule _mainModule;
+
         public HomeApiController(ApplicationContext context, ILogger<ApiController> logger) : base(context, logger)
         {
+            _mainModule = new(context, logger);
         }
 
+        /// <summary>
+        /// Получаем данные планов
+        /// </summary>
+        /// <param name="inputData">Входные данные</param>
+        /// <returns>Данные планов</returns>
         [HttpGet("get/plans")]
-        public IActionResult GetPlans()
+        public IActionResult GetPlans(InputDataViewModel inputData)
         {
             try
             {
                 _logger.LogInformation("HomeApiController/Get/Plans", "Getting plans...");
 
                 // Получаем планы
-                List<(string, DataTable)>? plans = MainModule.CreatePlans();
+                List<(string, DataTable)>? plans = _mainModule.CreatePlans(inputData);
 
                 if (plans == null)
                 {
@@ -57,8 +65,14 @@ namespace DSS.Controllers.ApiControllers
             }
         }
 
+        /// <summary>
+        /// Получаем финансовую статистику
+        /// </summary>
+        /// <param name="budget">Бюджет</param>
+        /// <param name="plans">Данные планов</param>
+        /// <returns>Финансовая статистика</returns>
         [HttpGet("get/statistics")]
-        public IActionResult GetStatistics(double budget, List<DataTable>? plans)
+        public IActionResult GetStatistics(double budget, List<(string, DataTable)>? plans)
         {
             try
             {

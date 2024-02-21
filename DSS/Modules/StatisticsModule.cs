@@ -5,11 +5,11 @@ namespace DSS.Modules
 {
     public class StatisticsModule
     {
-        public static StatisticsViewModel CalculateFinancialStatistics(double budget, List<DataTable> plans)
+        public static StatisticsViewModel CalculateFinancialStatistics(double budget, List<(string, DataTable)> plans)
         {
             double expenses = 0;
 
-            foreach (DataTable plan in plans)
+            foreach ((string name, DataTable plan) in plans)
             {
                 DataRow lastRow = plan.Rows[plan.Rows.Count - 1];
                 double cost = Convert.ToDouble(lastRow["Стоимость"]);

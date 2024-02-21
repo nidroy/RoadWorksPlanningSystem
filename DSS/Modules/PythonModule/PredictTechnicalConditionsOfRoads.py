@@ -29,7 +29,7 @@ def linear_regression_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = LinearRegression()
-    model.fit(x_train, y_train, verbose=0)
+    model.fit(x_train, y_train)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -41,7 +41,7 @@ def polynomial_regression_predict(data):
     poly = PolynomialFeatures(degree=2)
     x_poly = poly.fit_transform(x_train)
     model = LinearRegression()
-    model.fit(x_poly, y_train, verbose=0)
+    model.fit(x_poly, y_train)
     x_pred_poly = poly.transform(x_pred)
     y_pred = model.predict(x_pred_poly)[0]
     return y_pred
@@ -52,7 +52,7 @@ def decision_tree_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = DecisionTreeRegressor()
-    model.fit(x_train, y_train, verbose=0)
+    model.fit(x_train, y_train)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -62,7 +62,7 @@ def random_forest_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = RandomForestRegressor()
-    model.fit(x_train, y_train, verbose=0)
+    model.fit(x_train, y_train)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -72,7 +72,7 @@ def svr_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = SVR()
-    model.fit(x_train, y_train, verbose=0)
+    model.fit(x_train, y_train)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -137,7 +137,7 @@ def knn_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = KNeighborsRegressor(n_neighbors=5)
-    model.fit(x_train, y_train, verbose=0)
+    model.fit(x_train, y_train)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -147,7 +147,7 @@ def gradient_boosting_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = GradientBoostingRegressor()
-    model.fit(x_train, y_train, verbose=0)
+    model.fit(x_train, y_train)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
@@ -157,7 +157,7 @@ def xgboost_predict(data):
     y_train = data[:-1]
     x_pred = np.array(len(data)-1).reshape(-1, 1)
     model = XGBRegressor()
-    model.fit(x_train, y_train, verbose=0)
+    model.fit(x_train, y_train)
     y_pred = model.predict(x_pred)[0]
     return y_pred
 
