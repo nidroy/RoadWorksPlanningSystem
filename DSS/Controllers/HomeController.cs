@@ -20,7 +20,7 @@ namespace DSS.Controllers
             _logger = new ApiLogger(logger);
         }
 
-        private static InputDataViewModel viewModel = new()
+        private InputDataViewModel viewModel = new()
         {
             InitialYear = 0,
             InitialMonth = "январь",
@@ -74,7 +74,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("HomeController/Planning", "Error on the API side of the controller");
+                    _logger.LogWarning("HomeController/Planning", "Error on the API side of the controller".);
                     return BadRequest(value);
                 }
 

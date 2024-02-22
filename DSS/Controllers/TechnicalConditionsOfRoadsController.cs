@@ -36,7 +36,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Read", "Error on the API side of the controller");
+                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Read", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -52,7 +52,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Read", "Error on the API side of the controller");
+                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Read", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -102,7 +102,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Read/{roadId}/{year}", "Error on the API side of the controller");
+                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Read/{roadId}/{year}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -138,7 +138,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Create", "Error on the API side of the controller");
+                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Create", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -205,7 +205,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Create", "Error on the API side of the controller");
+                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Create", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -233,7 +233,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Update", "Error on the API side of the controller");
+                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Update", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -258,7 +258,7 @@ namespace DSS.Controllers
 
                     if (statusCode != 200)
                     {
-                        _logger.LogWarning("TechnicalConditionsOfRoadsController/Update", "Error on the API side of the controller");
+                        _logger.LogWarning("TechnicalConditionsOfRoadsController/Update", "Error on the API side of the controller.");
                         return BadRequest(value);
                     }
                 }
@@ -287,7 +287,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Update/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Update/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -303,7 +303,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Update/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Update/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -370,7 +370,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Update/{technicalConditionOfRoad.Id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Update/{technicalConditionOfRoad.Id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -400,7 +400,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Delete/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"TechnicalConditionsOfRoadsController/Delete/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 

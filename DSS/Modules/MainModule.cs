@@ -8,14 +8,16 @@ namespace DSS.Modules
 {
     public class MainModule
     {
-        private readonly TechnicalConditionsOfRoadsAnalysisModule _technicalConditionsOfRoadsAnalysisModule;
         private readonly DataAnalysisModule _dataAnalysisModule;
+        private readonly TechnicalConditionsOfRoadsAnalysisModule _technicalConditionsOfRoadsAnalysisModule;
+        private readonly EstimatesAnalysisModule _estimatesAnalysisModule;
         private readonly ApiLogger _logger;
 
         public MainModule(ApplicationContext context, ILogger<ApiController> logger)
         {
-            _technicalConditionsOfRoadsAnalysisModule = new TechnicalConditionsOfRoadsAnalysisModule(context, logger);
             _dataAnalysisModule = new DataAnalysisModule(context, logger);
+            _technicalConditionsOfRoadsAnalysisModule = new TechnicalConditionsOfRoadsAnalysisModule(context, logger);
+            _estimatesAnalysisModule = new EstimatesAnalysisModule(context, logger);
             _logger = new ApiLogger(logger);
         }
 
@@ -40,6 +42,13 @@ namespace DSS.Modules
             Dictionary<string, double> changesTechnicalConditionsOfRoads = _technicalConditionsOfRoadsAnalysisModule.CalculateChangesTechnicalConditionsOfRoads(initialTechnicalConditionsOfRoads, predictedTechnicalConditionsOfRoads);
 
             if (changesTechnicalConditionsOfRoads == null)
+            {
+
+            }
+
+            Dictionary<string, List<Estimate>>? optimalEstimates = _estimatesAnalysisModule.GetOptimalEstimates(changesTechnicalConditionsOfRoads);
+
+            if (optimalEstimates == null)
             {
 
             }

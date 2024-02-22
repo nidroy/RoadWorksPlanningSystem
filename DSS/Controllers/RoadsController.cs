@@ -33,7 +33,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("RoadsController/Read", "Error on the API side of the controller");
+                    _logger.LogWarning("RoadsController/Read", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -65,7 +65,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"RoadsController/Read/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"RoadsController/Read/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -126,7 +126,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("RoadsController/Create", "Error on the API side of the controller");
+                    _logger.LogWarning("RoadsController/Create", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -154,7 +154,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"RoadsController/Update/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"RoadsController/Update/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -199,7 +199,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"RoadsController/Update/{road.Id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"RoadsController/Update/{road.Id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -227,7 +227,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"RoadsController/Delete/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"RoadsController/Delete/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 

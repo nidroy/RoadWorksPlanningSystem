@@ -10,14 +10,14 @@ namespace DSS.Modules
 {
     public class DataAnalysisModule
     {
-        private readonly TechnicalConditionsOfRoadsApiController _technicalConditionsOfRoadsApi;
         private readonly RoadsApiController _roadsApi;
+        private readonly TechnicalConditionsOfRoadsApiController _technicalConditionsOfRoadsApi;
         private readonly ApiLogger _logger;
 
         public DataAnalysisModule(ApplicationContext context, ILogger<ApiController> logger)
         {
-            _technicalConditionsOfRoadsApi = new TechnicalConditionsOfRoadsApiController(context, logger);
             _roadsApi = new RoadsApiController(context, logger);
+            _technicalConditionsOfRoadsApi = new TechnicalConditionsOfRoadsApiController(context, logger);
             _logger = new ApiLogger(logger);
         }
 
@@ -36,7 +36,7 @@ namespace DSS.Modules
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("DataAnalysisModule/ComparePredictionMethods", "Error on the API side of the controller");
+                    _logger.LogWarning("DataAnalysisModule/ComparePredictionMethods", "Error on the API side of the controller.");
                     return false;
                 }
 
@@ -79,7 +79,7 @@ namespace DSS.Modules
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("DataAnalysisModule/PredictTechnicalConditionsOfRoads", "Error on the API side of the controller");
+                    _logger.LogWarning("DataAnalysisModule/PredictTechnicalConditionsOfRoads", "Error on the API side of the controller.");
                     return null;
                 }
 
@@ -108,7 +108,7 @@ namespace DSS.Modules
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("DataAnalysisModule/PredictTechnicalConditionsOfRoads", "Error on the API side of the controller");
+                    _logger.LogWarning("DataAnalysisModule/PredictTechnicalConditionsOfRoads", "Error on the API side of the controller.");
                     return null;
                 }
 

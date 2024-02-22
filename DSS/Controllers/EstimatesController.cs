@@ -35,7 +35,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("EstimatesController/Read", "Error on the API side of the controller");
+                    _logger.LogWarning("EstimatesController/Read", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -51,7 +51,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("EstimatesController/Read", "Error on the API side of the controller");
+                    _logger.LogWarning("EstimatesController/Read", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -98,7 +98,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Read/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"EstimatesController/Read/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -130,7 +130,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("EstimatesController/Create", "Error on the API side of the controller");
+                    _logger.LogWarning("EstimatesController/Create", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -183,7 +183,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("EstimatesController/Create", "Error on the API side of the controller");
+                    _logger.LogWarning("EstimatesController/Create", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -211,7 +211,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Update/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"EstimatesController/Update/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -227,7 +227,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Update/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"EstimatesController/Update/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -280,7 +280,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Update/{estimate.Id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"EstimatesController/Update/{estimate.Id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
@@ -310,7 +310,7 @@ namespace DSS.Controllers
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning($"EstimatesController/Delete/{id}", "Error on the API side of the controller");
+                    _logger.LogWarning($"EstimatesController/Delete/{id}", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 

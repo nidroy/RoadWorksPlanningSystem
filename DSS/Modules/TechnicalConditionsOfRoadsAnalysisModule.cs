@@ -30,7 +30,7 @@ namespace DSS.Modules
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("TechnicalConditionsOfRoadsAnalysisModule/GetInitialTechnicalConditionsOfRoads", "Error on the API side of the controller");
+                    _logger.LogWarning("TechnicalConditionsOfRoadsAnalysisModule/GetInitialTechnicalConditionsOfRoads", "Error on the API side of the controller.");
                     return null;
                 }
 
