@@ -21,42 +21,64 @@ namespace DSS.Modules
             _logger = new ApiLogger(logger);
         }
 
-        public Dictionary<string, List<Estimate>>? OptimizeOptimalEstimates(Dictionary<string, List<Estimate>> optimalEstimates)
+        public (string, Dictionary<string, List<Estimate>>?) OptimizeOptimalEstimates(Dictionary<string, List<Estimate>> optimalEstimates)
         {
-            _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Reading all roads...");
-
-            var result = _roadsApi.Get();
-            var statusCode = ((ObjectResult)result).StatusCode;
-            var value = ((ObjectResult)result).Value;
-
-            if (statusCode != 200)
+            try
             {
-                _logger.LogWarning("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Error on the API side of the controller.");
-                return null;
+                _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Reading all roads...");
+
+                var result = _roadsApi.Get();
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Error on the API side of the controller.");
+                    return ("", null);
+                }
+
+                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
+
+                _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "All roads have been successfully read.");
+
+                _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Optimization of optimal estimates...");
+
+                string roadNumber = "";
+                double roadPriority = 0;
+                double optimalEstimatesCost = 0;
+
+                foreach (var estimates in optimalEstimates)
+                {
+                    if (estimates.Value.Count() > 0)
+                    {
+                        if (estimates.Value.First().Road.Priority >= roadPriority)
+                        {
+                            double? estimatesCost = 0;
+
+                            foreach (var estimate in estimates.Value)
+                            {
+                                estimatesCost += estimate.Cost;
+                            }
+
+                            if (estimatesCost < optimalEstimatesCost || optimalEstimatesCost == 0)
+                            {
+                                roadNumber = estimates.Key;
+                            }
+                        }
+                    }
+                }
+
+                optimalEstimates.Remove(roadNumber);
+
+                _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Optimal estimates have been successfully optimized.");
+
+                return (roadNumber, optimalEstimates);
             }
-
-            var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
-
-            _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "All roads have been successfully read.");
-
-            string roadNumber = "";
-            double roadPriority = 0;
-
-            //foreach (var estimates in optimalEstimates)
-            //{
-            //    foreach (var road in roads)
-            //    {
-            //        if (estimates.Key == road.Number && estimates.Value.Count != 0)
-            //        {
-            //            if (road.Priority < roadPriority || roadPriority == 0)
-            //            {
-            //                roadPriority =
-            //            }
-            //        }
-            //    }
-            //}
-
-            return null;
+            catch (Exception ex)
+            {
+                _logger.LogError("EstimatesAnalysisModule/OptimizeOptimalEstimates", $"Error in optimizing optimal estimates: {ex.Message}");
+                return ("", null);
+            }
         }
 
         public Dictionary<string, List<Estimate>>? GetOptimalEstimates(Dictionary<string, double> changesTechnicalConditionsOfRoads)

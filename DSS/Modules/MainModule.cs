@@ -25,6 +25,8 @@ namespace DSS.Modules
         {
             List<(string, DataTable)> plans = new();
 
+            // расчет бюджета по месяцам
+
             Dictionary<string, double>? initialTechnicalConditionsOfRoads = _technicalConditionsOfRoadsAnalysisModule.GetInitialTechnicalConditionsOfRoads(inputData);
 
             if (initialTechnicalConditionsOfRoads == null)
@@ -52,6 +54,27 @@ namespace DSS.Modules
             {
 
             }
+
+            // цыкл пока стоимость смет не будет входить в рамки бюджета за месяц
+
+            (string roadNumber, optimalEstimates) = _estimatesAnalysisModule.OptimizeOptimalEstimates(optimalEstimates);
+
+            if (optimalEstimates == null)
+            {
+
+            }
+
+            changesTechnicalConditionsOfRoads.Remove(roadNumber);
+
+            predictedTechnicalConditionsOfRoads[roadNumber] -= changesTechnicalConditionsOfRoads[roadNumber];
+
+            // конец цыкла
+            // перенос остатка бюджета на следующий месяц
+            // если в последний месяц года остается бюджет то он осваивается самой оптимальной работой 
+            // перенос остатка бюджета на первый месяц следующего года
+            // формирование планов
+
+            initialTechnicalConditionsOfRoads = predictedTechnicalConditionsOfRoads;
 
             return plans;
         }
