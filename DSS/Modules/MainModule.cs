@@ -8,6 +8,7 @@ namespace DSS.Modules
 {
     public class MainModule
     {
+        private readonly FinancialModule _financialModule;
         private readonly DataAnalysisModule _dataAnalysisModule;
         private readonly TechnicalConditionsOfRoadsAnalysisModule _technicalConditionsOfRoadsAnalysisModule;
         private readonly EstimatesAnalysisModule _estimatesAnalysisModule;
@@ -15,6 +16,7 @@ namespace DSS.Modules
 
         public MainModule(ApplicationContext context, ILogger<ApiController> logger)
         {
+            _financialModule = new FinancialModule(context, logger);
             _dataAnalysisModule = new DataAnalysisModule(context, logger);
             _technicalConditionsOfRoadsAnalysisModule = new TechnicalConditionsOfRoadsAnalysisModule(context, logger);
             _estimatesAnalysisModule = new EstimatesAnalysisModule(context, logger);
@@ -25,7 +27,7 @@ namespace DSS.Modules
         {
             List<(string, DataTable)> plans = new();
 
-            // расчет бюджета по месяцам
+            List<double>? budgets = _financialModule.CalculateBudget(inputData);
 
             Dictionary<string, double>? initialTechnicalConditionsOfRoads = _technicalConditionsOfRoadsAnalysisModule.GetInitialTechnicalConditionsOfRoads(inputData);
 

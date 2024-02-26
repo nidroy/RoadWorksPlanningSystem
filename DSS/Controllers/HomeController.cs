@@ -66,15 +66,22 @@ namespace DSS.Controllers
             {
                 _logger.LogInformation("HomeController/Planning", "Planning...");
 
-                viewModel = inputData;
+                viewModel = new()
+                {
+                    InitialYear = inputData.InitialYear,
+                    InitialMonth = inputData.InitialMonth,
+                    YearCount = inputData.YearCount,
+                    Budget = inputData.Budget,
+                    Months = viewModel.Months
+                };
 
-                var result = _homeApi.GetPlans(inputData);
+                var result = _homeApi.GetPlans(viewModel);
                 var statusCode = ((ObjectResult)result).StatusCode;
                 var value = ((ObjectResult)result).Value;
 
                 if (statusCode != 200)
                 {
-                    _logger.LogWarning("HomeController/Planning", "Error on the API side of the controller".);
+                    _logger.LogWarning("HomeController/Planning", "Error on the API side of the controller.");
                     return BadRequest(value);
                 }
 
