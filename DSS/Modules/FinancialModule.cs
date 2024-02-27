@@ -18,6 +18,8 @@ namespace DSS.Modules
         {
             try
             {
+                _logger.LogInformation("FinancialModule/CalculateBudget", "Сalculating the budget...");
+
                 int monthCount = inputData.YearCount * inputData.Months.Count();
                 monthCount -= inputData.Months.TakeWhile(month => month != inputData.InitialMonth).Count();
 
@@ -29,11 +31,13 @@ namespace DSS.Modules
                     inputData.Budget -= budgets[i];
                 }
 
+                _logger.LogInformation("FinancialModule/CalculateBudget", "The budget has been calculated successfully.");
+
                 return budgets;
             }
             catch (Exception ex)
             {
-                _logger.LogError("EstimatesAnalysisModule/OptimizeOptimalEstimates", $"Error in optimizing optimal estimates: {ex.Message}");
+                _logger.LogError("FinancialModule/CalculateBudget", $"Error in calculating the budget: {ex.Message}");
                 return null;
             }
         }

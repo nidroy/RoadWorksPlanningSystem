@@ -18,7 +18,7 @@ namespace DSS.Modules
             _logger = new ApiLogger(logger);
         }
 
-        public Dictionary<string, double>? GetInitialTechnicalConditionsOfRoads(InputDataViewModel inputData)
+        public Dictionary<int, double>? GetInitialTechnicalConditionsOfRoads(InputDataViewModel inputData)
         {
             try
             {
@@ -40,35 +40,12 @@ namespace DSS.Modules
 
                 _logger.LogInformation("TechnicalConditionsOfRoadsAnalysisModule/GetInitialTechnicalConditionsOfRoads", "Getting all initial technical conditions of roads...");
 
-                Dictionary<string, double>? initialTechnicalConditionsOfRoads = new();
+                Dictionary<int, double>? initialTechnicalConditionsOfRoads = new();
 
-                Dictionary<string, int> months = new()
-                {
-                    ["Январь"] = 1,
-                    ["Февраль"] = 2,
-                    ["Март"] = 3,
-                    ["Апрель"] = 4,
-                    ["Май"] = 5,
-                    ["Июнь"] = 6,
-                    ["Июль"] = 7,
-                    ["Август"] = 8,
-                    ["Сентябрь"] = 9,
-                    ["Октябрь"] = 10,
-                    ["Ноябрь"] = 11,
-                    ["Декабрь"] = 12
-                };
-
-                int initialYear = inputData.InitialYear;
-                int initialMonth = months[inputData.InitialMonth] - 1;
-
-                if (initialMonth == 0)
-                {
-                    initialYear -= 1;
-                    initialMonth = 12;
-                }
-
-                technicalConditionsOfRoads = technicalConditionsOfRoads.Where(tc => tc.Year > initialYear ||
-                (tc.Year == initialYear && months[tc.Month] >= initialMonth));
+                technicalConditionsOfRoads = technicalConditionsOfRoads.GroupBy(tc => tc.RoadId)
+                    .Select(technicalConditionsOfRoads => technicalConditionsOfRoads.OrderByDescending(tc => tc.Year)
+                    .ThenByDescending(tc => Array.IndexOf(inputData.Months.ToArray(), tc.Month))
+                    .First());
 
                 if (technicalConditionsOfRoads.Count() == 0)
                 {
@@ -76,31 +53,10 @@ namespace DSS.Modules
                     return null;
                 }
 
-                string roadNumber = technicalConditionsOfRoads.First().Road.Number;
-                int month = months[technicalConditionsOfRoads.First().Month];
-                double initialTechnicalConditionOfRoad = (double)technicalConditionsOfRoads.First().TechnicalCondition;
-
                 foreach (var technicalConditionOfRoad in technicalConditionsOfRoads)
                 {
-                    if (roadNumber != technicalConditionOfRoad.Road.Number)
-                    {
-                        initialTechnicalConditionsOfRoads.Add(roadNumber, initialTechnicalConditionOfRoad);
-
-                        roadNumber = technicalConditionOfRoad.Road.Number;
-                        month = months[technicalConditionOfRoad.Month];
-                        initialTechnicalConditionOfRoad = (double)technicalConditionOfRoad.TechnicalCondition;
-                    }
-                    else
-                    {
-                        if (month < months[technicalConditionOfRoad.Month])
-                        {
-                            month = months[technicalConditionOfRoad.Month];
-                            initialTechnicalConditionOfRoad = (double)technicalConditionOfRoad.TechnicalCondition;
-                        }
-                    }
+                    initialTechnicalConditionsOfRoads.Add(technicalConditionOfRoad.RoadId, (double)technicalConditionOfRoad.TechnicalCondition);
                 }
-
-                initialTechnicalConditionsOfRoads.Add(roadNumber, initialTechnicalConditionOfRoad);
 
                 _logger.LogInformation("TechnicalConditionsOfRoadsAnalysisModule/GetInitialTechnicalConditionsOfRoads", "All initial technical conditions of roads have been successfully received.");
 
@@ -113,32 +69,24 @@ namespace DSS.Modules
             }
         }
 
-        public Dictionary<string, double>? CalculateChangesTechnicalConditionsOfRoads(Dictionary<string, double> initialTechnicalConditionsOfRoads, Dictionary<string, double> predictedTechnicalConditionsOfRoads)
+        public Dictionary<int, double>? CalculateChangesTechnicalConditionsOfRoads(Dictionary<int, double> initialTechnicalConditionsOfRoads, Dictionary<int, double> predictedTechnicalConditionsOfRoads)
         {
             try
             {
                 _logger.LogInformation("TechnicalConditionsOfRoadsAnalysisModule/CalculateChangesTechnicalConditionsOfRoads", "Calculating technical conditions of roads...");
 
-                Dictionary<string, double> changesTechnicalConditionsOfRoads = new();
-
-                foreach (var initialTechnicalConditionOfRoad in initialTechnicalConditionsOfRoads)
-                {
-                    foreach (var predictedTechnicalConditionOfRoad in predictedTechnicalConditionsOfRoads)
+                Dictionary<int, double> changesTechnicalConditionsOfRoads = initialTechnicalConditionsOfRoads
+                    .Join(predictedTechnicalConditionsOfRoads,
+                    initialTechnicalConditionOfRoad => initialTechnicalConditionOfRoad.Key,
+                    predictedTechnicalConditionOfRoad => predictedTechnicalConditionOfRoad.Key,
+                    (initialTechnicalConditionOfRoad, predictedTechnicalConditionOfRoad) =>
                     {
-                        if (initialTechnicalConditionOfRoad.Key == predictedTechnicalConditionOfRoad.Key)
-                        {
-                            double technicalConditionOfRoad = CalculateTechnicalConditionOfRoad(initialTechnicalConditionOfRoad.Value);
-                            double changeTechnicalConditionOfRoad = predictedTechnicalConditionOfRoad.Value - technicalConditionOfRoad;
+                        double technicalConditionOfRoad = CalculateTechnicalConditionOfRoad(initialTechnicalConditionOfRoad.Value);
+                        double changeTechnicalConditionOfRoad = predictedTechnicalConditionOfRoad.Value - technicalConditionOfRoad;
 
-                            if (changeTechnicalConditionOfRoad > 5)
-                                changeTechnicalConditionOfRoad = 5;
-                            if (changeTechnicalConditionOfRoad < 0.1)
-                                changeTechnicalConditionOfRoad = 0;
-
-                            changesTechnicalConditionsOfRoads.Add(initialTechnicalConditionOfRoad.Key, Math.Round(changeTechnicalConditionOfRoad, 1));
-                        }
-                    }
-                }
+                        return new { key = initialTechnicalConditionOfRoad.Key, value = Math.Clamp(Math.Round(changeTechnicalConditionOfRoad, 1), 0, 5) };
+                    })
+                    .ToDictionary(changeTechnicalConditionsOfRoads => changeTechnicalConditionsOfRoads.key, changeTechnicalConditionsOfRoads => changeTechnicalConditionsOfRoads.value);
 
                 _logger.LogInformation("TechnicalConditionsOfRoadsAnalysisModule/CalculateChangesTechnicalConditionsOfRoads", "The technical conditions of roads have been successfully calculated.");
 
@@ -156,12 +104,7 @@ namespace DSS.Modules
             double exp = Math.Exp(-1);
             double technicalConditionOfRoad = initialTechnicalConditionOfRoad * exp;
 
-            if (technicalConditionOfRoad > 5)
-                technicalConditionOfRoad = 5;
-            if (technicalConditionOfRoad < 0.1)
-                technicalConditionOfRoad = 0.1;
-
-            return Math.Round(technicalConditionOfRoad, 1);
+            return Math.Clamp(Math.Round(technicalConditionOfRoad, 1), 0.1, 5);
         }
     }
 }

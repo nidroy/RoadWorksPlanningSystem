@@ -29,28 +29,28 @@ namespace DSS.Modules
 
             List<double>? budgets = _financialModule.CalculateBudget(inputData);
 
-            Dictionary<string, double>? initialTechnicalConditionsOfRoads = _technicalConditionsOfRoadsAnalysisModule.GetInitialTechnicalConditionsOfRoads(inputData);
+            Dictionary<int, double>? initialTechnicalConditionsOfRoads = _technicalConditionsOfRoadsAnalysisModule.GetInitialTechnicalConditionsOfRoads(inputData);
 
             if (initialTechnicalConditionsOfRoads == null)
             {
 
             }
 
-            Dictionary<string, double>? predictedTechnicalConditionsOfRoads = _dataAnalysisModule.PredictTechnicalConditionsOfRoads();
+            Dictionary<int, double>? predictedTechnicalConditionsOfRoads = _dataAnalysisModule.PredictTechnicalConditionsOfRoads();
 
             if (predictedTechnicalConditionsOfRoads == null)
             {
 
             }
 
-            Dictionary<string, double> changesTechnicalConditionsOfRoads = _technicalConditionsOfRoadsAnalysisModule.CalculateChangesTechnicalConditionsOfRoads(initialTechnicalConditionsOfRoads, predictedTechnicalConditionsOfRoads);
+            Dictionary<int, double>? changesTechnicalConditionsOfRoads = _technicalConditionsOfRoadsAnalysisModule.CalculateChangesTechnicalConditionsOfRoads(initialTechnicalConditionsOfRoads, predictedTechnicalConditionsOfRoads);
 
             if (changesTechnicalConditionsOfRoads == null)
             {
 
             }
 
-            Dictionary<string, List<Estimate>>? optimalEstimates = _estimatesAnalysisModule.GetOptimalEstimates(changesTechnicalConditionsOfRoads);
+            Dictionary<int, List<Estimate>>? optimalEstimates = _estimatesAnalysisModule.GetOptimalEstimates(changesTechnicalConditionsOfRoads);
 
             if (optimalEstimates == null)
             {
@@ -59,16 +59,16 @@ namespace DSS.Modules
 
             // цыкл пока стоимость смет не будет входить в рамки бюджета за месяц
 
-            (string roadNumber, optimalEstimates) = _estimatesAnalysisModule.OptimizeOptimalEstimates(optimalEstimates);
+            (int roadId, optimalEstimates) = _estimatesAnalysisModule.OptimizeOptimalEstimates(optimalEstimates);
 
             if (optimalEstimates == null)
             {
 
             }
 
-            changesTechnicalConditionsOfRoads.Remove(roadNumber);
+            changesTechnicalConditionsOfRoads.Remove(roadId);
 
-            predictedTechnicalConditionsOfRoads[roadNumber] -= changesTechnicalConditionsOfRoads[roadNumber];
+            predictedTechnicalConditionsOfRoads[roadId] -= changesTechnicalConditionsOfRoads[roadId];
 
             // конец цыкла
             // перенос остатка бюджета на следующий месяц

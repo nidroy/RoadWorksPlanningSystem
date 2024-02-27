@@ -1,9 +1,7 @@
 ﻿using DSS.Controllers.ApiControllers;
 using DSS.Loggers;
 using DSS.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 
 namespace DSS.Modules
@@ -21,67 +19,32 @@ namespace DSS.Modules
             _logger = new ApiLogger(logger);
         }
 
-        public (string, Dictionary<string, List<Estimate>>?) OptimizeOptimalEstimates(Dictionary<string, List<Estimate>> optimalEstimates)
+        public (int, Dictionary<int, List<Estimate>>?) OptimizeOptimalEstimates(Dictionary<int, List<Estimate>> optimalEstimates)
         {
             try
             {
-                _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Reading all roads...");
-
-                var result = _roadsApi.Get();
-                var statusCode = ((ObjectResult)result).StatusCode;
-                var value = ((ObjectResult)result).Value;
-
-                if (statusCode != 200)
-                {
-                    _logger.LogWarning("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Error on the API side of the controller.");
-                    return ("", null);
-                }
-
-                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
-
-                _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "All roads have been successfully read.");
-
                 _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Optimization of optimal estimates...");
 
-                string roadNumber = "";
-                double roadPriority = 0;
-                double optimalEstimatesCost = 0;
+                var roadId = optimalEstimates.Where(optimalEstimates => optimalEstimates.Value.Any())
+                    .OrderByDescending(optimalEstimates => optimalEstimates.Value.First().Road.Priority)
+                    .ThenBy(optimalEstimates => optimalEstimates.Value.Sum(estimate => estimate.Cost))
+                    .Select(optimalEstimates => optimalEstimates.Key)
+                    .FirstOrDefault();
 
-                foreach (var estimates in optimalEstimates)
-                {
-                    if (estimates.Value.Count() > 0)
-                    {
-                        if (estimates.Value.First().Road.Priority >= roadPriority)
-                        {
-                            double? estimatesCost = 0;
-
-                            foreach (var estimate in estimates.Value)
-                            {
-                                estimatesCost += estimate.Cost;
-                            }
-
-                            if (estimatesCost < optimalEstimatesCost || optimalEstimatesCost == 0)
-                            {
-                                roadNumber = estimates.Key;
-                            }
-                        }
-                    }
-                }
-
-                optimalEstimates.Remove(roadNumber);
+                optimalEstimates.Remove(roadId);
 
                 _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Optimal estimates have been successfully optimized.");
 
-                return (roadNumber, optimalEstimates);
+                return (roadId, optimalEstimates);
             }
             catch (Exception ex)
             {
                 _logger.LogError("EstimatesAnalysisModule/OptimizeOptimalEstimates", $"Error in optimizing optimal estimates: {ex.Message}");
-                return ("", null);
+                return (0, null);
             }
         }
 
-        public Dictionary<string, List<Estimate>>? GetOptimalEstimates(Dictionary<string, double> changesTechnicalConditionsOfRoads)
+        public Dictionary<int, List<Estimate>>? GetOptimalEstimates(Dictionary<int, double> changesTechnicalConditionsOfRoads)
         {
             try
             {
@@ -124,24 +87,13 @@ namespace DSS.Modules
 
                 var levelsOfWorks = estimates.Select(e => e.LevelOfWorks)
                     .Where(LevelOfWorks => LevelOfWorks.HasValue)
+                    .Select(LevelOfWorks => LevelOfWorks.Value)
                     .Distinct()
                     .ToList();
 
-                Dictionary<string, List<Estimate>> optimalEstimates = new();
-
-                foreach (var road in roads)
-                {
-                    double changeTechnicalConditionOfRoad = changesTechnicalConditionsOfRoads[road.Number];
-                    List<Estimate>? optimalEstimatesForOneRoad = GetOptimalEstimatesForOneRoad(changeTechnicalConditionOfRoad, levelsOfWorks, estimates);
-
-                    if (optimalEstimatesForOneRoad == null)
-                    {
-                        _logger.LogWarning("EstimatesAnalysisModule/GetOptimalEstimates", "Error in getting optimal estimates for one road.");
-                        return null;
-                    }
-
-                    optimalEstimates.Add(road.Number, optimalEstimatesForOneRoad);
-                }
+                var optimalEstimates = roads.ToDictionary(
+                    road => road.Id,
+                    road => GetOptimalEstimatesForOneRoad(changesTechnicalConditionsOfRoads[road.Id], levelsOfWorks, estimates));
 
                 _logger.LogInformation("EstimatesAnalysisModule/GetOptimalEstimates", "Optimal estimates have been successfully received.");
 
@@ -154,13 +106,13 @@ namespace DSS.Modules
             }
         }
 
-        private List<Estimate>? GetOptimalEstimatesForOneRoad(double changeTechnicalConditionOfRoad, List<double?> levelsOfWorks, IEnumerable<Estimate> estimates)
+        private List<Estimate>? GetOptimalEstimatesForOneRoad(double changeTechnicalConditionOfRoad, List<double> levelsOfWorks, IEnumerable<Estimate> estimates)
         {
             try
             {
                 _logger.LogInformation("EstimatesAnalysisModule/GetOptimalEstimatesForOneRoad", "Getting optimal estimates for one road...");
 
-                List<List<double?>>? combinationsOfLevelsOfWorks = GetCombinationsOfLevelsOfWorks(changeTechnicalConditionOfRoad, levelsOfWorks);
+                List<List<double>>? combinationsOfLevelsOfWorks = GetCombinationsOfLevelsOfWorks(changeTechnicalConditionOfRoad, levelsOfWorks);
 
                 if (combinationsOfLevelsOfWorks == null)
                 {
@@ -168,42 +120,19 @@ namespace DSS.Modules
                     return null;
                 }
 
-                double? costOfOptimalEstimatesForOneRoad = 0;
-                List<Estimate> optimalEstimatesForOneRoad = new();
-                List<double?> optimalCombinationOfLevelsOfWorks = new();
-
-                foreach (var combinationOfLevelsOfWorks in combinationsOfLevelsOfWorks)
-                {
-                    double? costOfCombinationOfLevelsOfWorks = 0;
-
-                    foreach (var levelOfWorks in combinationOfLevelsOfWorks)
+                var optimalEstimatesForOneRoad = combinationsOfLevelsOfWorks
+                    .Select(combinationOfLevelsOfWorks =>
                     {
-                        foreach (var estimate in estimates)
-                        {
-                            if (estimate.LevelOfWorks == levelOfWorks)
-                            {
-                                costOfCombinationOfLevelsOfWorks += estimate.Cost;
-                            }
-                        }
-                    }
+                        double costOfCombinationOfLevelsOfWorks = (double)combinationOfLevelsOfWorks
+                        .Sum(levelOfWorks => estimates.Where(estimate => estimate.LevelOfWorks == levelOfWorks)
+                        .Sum(estimate => estimate.Cost));
 
-                    if (costOfCombinationOfLevelsOfWorks < costOfOptimalEstimatesForOneRoad || costOfOptimalEstimatesForOneRoad == 0)
-                    {
-                        costOfOptimalEstimatesForOneRoad = costOfCombinationOfLevelsOfWorks;
-                        optimalCombinationOfLevelsOfWorks = combinationOfLevelsOfWorks;
-                    }
-                }
-
-                foreach (var levelOfWorks in optimalCombinationOfLevelsOfWorks)
-                {
-                    foreach (var estimate in estimates)
-                    {
-                        if (estimate.LevelOfWorks == levelOfWorks)
-                        {
-                            optimalEstimatesForOneRoad.Add(estimate);
-                        }
-                    }
-                }
+                        return (combinationOfLevelsOfWorks, costOfCombinationOfLevelsOfWorks);
+                    })
+                    .OrderBy(combinationOfLevelsOfWorks => combinationOfLevelsOfWorks.costOfCombinationOfLevelsOfWorks)
+                    .FirstOrDefault().combinationOfLevelsOfWorks
+                    .SelectMany(levelOfWorks => estimates.Where(estimate => estimate.LevelOfWorks == levelOfWorks))
+                    .ToList();
 
                 _logger.LogInformation("EstimatesAnalysisModule/GetOptimalEstimatesForOneRoad", "Optimal estimates for one road have been successfully received.");
 
@@ -216,14 +145,14 @@ namespace DSS.Modules
             }
         }
 
-        private List<List<double?>>? GetCombinationsOfLevelsOfWorks(double changeTechnicalConditionOfRoad, List<double?> levelsOfWorks)
+        private List<List<double>>? GetCombinationsOfLevelsOfWorks(double changeTechnicalConditionOfRoad, List<double> levelsOfWorks)
         {
             try
             {
                 _logger.LogInformation("EstimatesAnalysisModule/GetCombinationsOfLevelsOfWorks", "Getting all the combinations of levels of works...");
 
-                List<List<double?>> combinationsOfLevelsOfWorks = new();
-                List<double?> combinationOfLevelsOfWorks = new();
+                List<List<double>> combinationsOfLevelsOfWorks = new();
+                List<double> combinationOfLevelsOfWorks = new();
 
                 GetCombinationOfLevelsOfWorks(changeTechnicalConditionOfRoad, levelsOfWorks, 0, combinationOfLevelsOfWorks, combinationsOfLevelsOfWorks);
 
@@ -238,13 +167,13 @@ namespace DSS.Modules
             }
         }
 
-        private void GetCombinationOfLevelsOfWorks(double? changeTechnicalConditionOfRoad, List<double?> levelsOfWorks, int initialIndexOfLevelOfWorks, List<double?> combinationOfLevelsOfWorks, List<List<double?>> combinationsOfLevelsOfWorks)
+        private void GetCombinationOfLevelsOfWorks(double? changeTechnicalConditionOfRoad, List<double> levelsOfWorks, int initialIndexOfLevelOfWorks, List<double> combinationOfLevelsOfWorks, List<List<double>> combinationsOfLevelsOfWorks)
         {
             try
             {
                 if (changeTechnicalConditionOfRoad == 0)
                 {
-                    combinationsOfLevelsOfWorks.Add(new List<double?>(combinationOfLevelsOfWorks));
+                    combinationsOfLevelsOfWorks.Add(new List<double>(combinationOfLevelsOfWorks));
 
                     _logger.LogInformation("EstimatesAnalysisModule/GetCombinationOfLevelsOfWorks", "The combination of levels of works was successfully received.");
 
@@ -253,7 +182,7 @@ namespace DSS.Modules
 
                 for (int indexOfLevelOfWorks = initialIndexOfLevelOfWorks; indexOfLevelOfWorks < levelsOfWorks.Count; indexOfLevelOfWorks++)
                 {
-                    double? levelOfWorks = levelsOfWorks[indexOfLevelOfWorks];
+                    double levelOfWorks = levelsOfWorks[indexOfLevelOfWorks];
 
                     if (changeTechnicalConditionOfRoad >= levelOfWorks)
                     {

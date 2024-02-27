@@ -10,13 +10,11 @@ namespace DSS.Modules
 {
     public class DataAnalysisModule
     {
-        private readonly RoadsApiController _roadsApi;
         private readonly TechnicalConditionsOfRoadsApiController _technicalConditionsOfRoadsApi;
         private readonly ApiLogger _logger;
 
         public DataAnalysisModule(ApplicationContext context, ILogger<ApiController> logger)
         {
-            _roadsApi = new RoadsApiController(context, logger);
             _technicalConditionsOfRoadsApi = new TechnicalConditionsOfRoadsApiController(context, logger);
             _logger = new ApiLogger(logger);
         }
@@ -67,7 +65,7 @@ namespace DSS.Modules
             }
         }
 
-        public Dictionary<string, double>? PredictTechnicalConditionsOfRoads()
+        public Dictionary<int, double>? PredictTechnicalConditionsOfRoads()
         {
             try
             {
@@ -100,45 +98,16 @@ namespace DSS.Modules
 
                 Dictionary<int, double> predictions = JsonConvert.DeserializeObject<Dictionary<int, double>>(response);
 
-                _logger.LogInformation("DataAnalysisModule/PredictTechnicalConditionsOfRoads", "Reading all roads...");
-
-                result = _roadsApi.Get();
-                statusCode = ((ObjectResult)result).StatusCode;
-                value = ((ObjectResult)result).Value;
-
-                if (statusCode != 200)
-                {
-                    _logger.LogWarning("DataAnalysisModule/PredictTechnicalConditionsOfRoads", "Error on the API side of the controller.");
-                    return null;
-                }
-
-                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
-
-                _logger.LogInformation("DataAnalysisModule/PredictTechnicalConditionsOfRoads", "All roads have been successfully read.");
-
-                Dictionary<string, double> predictedTechnicalConditionsOfRoads = new();
-
                 foreach (var prediction in predictions)
                 {
-                    foreach (var road in roads)
-                    {
-                        if (prediction.Key == road.Id)
-                        {
-                            double predictedTechnicalConditionOfRoad = Math.Round(prediction.Value, 1);
-
-                            if (predictedTechnicalConditionOfRoad > 5)
-                                predictedTechnicalConditionOfRoad = 5;
-                            if (predictedTechnicalConditionOfRoad < 0.1)
-                                predictedTechnicalConditionOfRoad = 0.1;
-
-                            predictedTechnicalConditionsOfRoads.Add(road.Number, predictedTechnicalConditionOfRoad);
-                        }
-                    }
+                    double predictedTechnicalConditionOfRoad = Math.Round(prediction.Value, 1);
+                    predictedTechnicalConditionOfRoad = Math.Clamp(predictedTechnicalConditionOfRoad, 0.1, 5);
+                    predictions[prediction.Key] = predictedTechnicalConditionOfRoad;
                 }
 
                 _logger.LogInformation("DataAnalysisModule/PredictTechnicalConditionsOfRoads", "Technical conditions of roads have been successfully predicted.");
 
-                return predictedTechnicalConditionsOfRoads;
+                return predictions;
             }
             catch (Exception ex)
             {
