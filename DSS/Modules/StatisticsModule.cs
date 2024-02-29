@@ -1,21 +1,13 @@
-﻿using DSS.Models.ViewModels;
-using System.Data;
+﻿using DSS.Models;
+using DSS.Models.ViewModels;
 
 namespace DSS.Modules
 {
     public class StatisticsModule
     {
-        public static StatisticsViewModel CalculateFinancialStatistics(double budget, List<(string, DataTable)> plans)
+        public static StatisticsViewModel CalculateFinancialStatistics(double budget, List<(int, string, Dictionary<int, List<Estimate>>)> plans)
         {
-            double expenses = 0;
-
-            foreach ((string name, DataTable plan) in plans)
-            {
-                DataRow lastRow = plan.Rows[plan.Rows.Count - 1];
-                double cost = Convert.ToDouble(lastRow["Стоимость"]);
-                expenses += cost;
-            }
-
+            double expenses = plans.Sum(plan => plan.Item3.Values.Sum(estimates => estimates.Sum(estimate => (double)estimate.Cost)));
             double balance = budget - expenses;
 
             StatisticsViewModel statistics = new()

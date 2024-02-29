@@ -3,8 +3,6 @@ using DSS.Models.ViewModels;
 using DSS.Modules;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Data;
 
 namespace DSS.Controllers.ApiControllers
 {
@@ -32,7 +30,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation("HomeApiController/Get/Plans", "Getting plans...");
 
                 // Получаем планы
-                List<(string, DataTable)>? plans = _mainModule.CreatePlans(inputData);
+                List<(int, string, Dictionary<int, List<Estimate>>)>? plans = _mainModule.CreatePlans(inputData);
 
                 if (plans == null)
                 {
@@ -41,21 +39,13 @@ namespace DSS.Controllers.ApiControllers
                     return NotFound("The plans was not found");
                 }
 
-                // Преобразуем список планов в JSON массив
-                JArray result = new JArray(
-                plans.Select(plan => new JObject(new JProperty("Name", plan.Item1),
-                    new JProperty("Plan", JArray.FromObject(plan.Item2.AsEnumerable()
-                    .Select(row => new JObject(plan.Item2.Columns.Cast<DataColumn>()
-                    .Select(col => new JProperty(col.ColumnName, JToken.FromObject(row[col])))
-                    ))
-                    ))
-                ))
-                );
+                // Преобразуем список планов в JSON объект
+                string result = JsonConvert.SerializeObject(plans, Formatting.Indented);
 
                 _logger.LogInformation("HomeApiController/Get/Plans", "Plans have been successfully received.");
 
-                // Возвращаем успешный результат с JSON массивом планов
-                return Ok(result.ToString());
+                // Возвращаем успешный результат с JSON объектом планов
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -72,7 +62,7 @@ namespace DSS.Controllers.ApiControllers
         /// <param name="plans">Данные планов</param>
         /// <returns>Финансовая статистика</returns>
         [HttpGet("get/statistics")]
-        public IActionResult GetStatistics(double budget, List<(string, DataTable)>? plans)
+        public IActionResult GetStatistics(double budget, List<(int, string, Dictionary<int, List<Estimate>>)> plans)
         {
             try
             {

@@ -31,7 +31,7 @@ namespace DSS.Modules
                     .Select(optimalEstimates => optimalEstimates.Key)
                     .FirstOrDefault();
 
-                optimalEstimates.Remove(roadId);
+                optimalEstimates[roadId].RemoveAt(0);
 
                 _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Optimal estimates have been successfully optimized.");
 
@@ -174,9 +174,6 @@ namespace DSS.Modules
                 if (changeTechnicalConditionOfRoad == 0)
                 {
                     combinationsOfLevelsOfWorks.Add(new List<double>(combinationOfLevelsOfWorks));
-
-                    _logger.LogInformation("EstimatesAnalysisModule/GetCombinationOfLevelsOfWorks", "The combination of levels of works was successfully received.");
-
                     return;
                 }
 

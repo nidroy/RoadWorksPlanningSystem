@@ -46,7 +46,7 @@
             <param name="inputData">Входные данные</param>
             <returns>Данные планов</returns>
         </member>
-        <member name="M:DSS.Controllers.ApiControllers.HomeApiController.GetStatistics(System.Double,System.Collections.Generic.List{System.ValueTuple{System.String,System.Data.DataTable}})">
+        <member name="M:DSS.Controllers.ApiControllers.HomeApiController.GetStatistics(System.Double,System.Collections.Generic.List{System.ValueTuple{System.Int32,System.String,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{DSS.Models.Estimate}}}})">
             <summary>
             Получаем финансовую статистику
             </summary>

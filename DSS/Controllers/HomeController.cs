@@ -4,7 +4,6 @@ using DSS.Models;
 using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Data;
 using System.Diagnostics;
 
 namespace DSS.Controllers
@@ -85,11 +84,11 @@ namespace DSS.Controllers
                     return BadRequest(value);
                 }
 
-                var plans = JsonConvert.DeserializeObject<List<(string, DataTable)>>(value.ToString());
+                var plans = JsonConvert.DeserializeObject<List<(int, string, Dictionary<int, List<Estimate>>)>>(value.ToString());
 
                 _logger.LogInformation("HomeController/Planning", "The planning has been successfully carried.");
 
-                return View(viewModel);
+                return View("Index", viewModel);
             }
             catch (Exception ex)
             {

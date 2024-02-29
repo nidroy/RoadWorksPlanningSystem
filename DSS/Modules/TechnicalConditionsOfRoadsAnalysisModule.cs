@@ -18,7 +18,45 @@ namespace DSS.Modules
             _logger = new ApiLogger(logger);
         }
 
-        public Dictionary<int, double>? GetInitialTechnicalConditionsOfRoads(InputDataViewModel inputData)
+        public bool CreateTechnicalConditionsOfRoads(int currentYear, string currentMonth, Dictionary<int, double> predictedTechnicalConditionsOfRoads)
+        {
+            try
+            {
+                _logger.LogInformation("TechnicalConditionsOfRoadsAnalysisModule/CreateTechnicalConditionsOfRoads", "Creating new technical conditions of roads...");
+
+                foreach (var predictedTechnicalConditionOfRoad in predictedTechnicalConditionsOfRoads)
+                {
+                    TechnicalConditionOfRoadViewModel technicalConditionOfRoadData = new()
+                    {
+                        Year = currentYear,
+                        Month = currentMonth,
+                        TechnicalCondition = predictedTechnicalConditionOfRoad.Value,
+                        RoadId = predictedTechnicalConditionOfRoad.Key
+                    };
+
+                    var result = _technicalConditionsOfRoadsApi.Post(technicalConditionOfRoadData);
+                    var statusCode = ((ObjectResult)result).StatusCode;
+                    var value = ((ObjectResult)result).Value;
+
+                    if (statusCode != 200)
+                    {
+                        _logger.LogWarning("TechnicalConditionsOfRoadsAnalysisModule/CreateTechnicalConditionsOfRoads", "Error on the API side of the controller.");
+                        return false;
+                    }
+                }
+
+                _logger.LogInformation("TechnicalConditionsOfRoadsAnalysisModule/CreateTechnicalConditionsOfRoads", "New technical conditions of roads have been successfully created.");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("TechnicalConditionsOfRoadsAnalysisModule/CreateTechnicalConditionsOfRoads", $"Error when creating new technical conditions of roads: {ex.Message}");
+                return false;
+            }
+        }
+
+        public (int, int, Dictionary<int, double>?) GetInitialTechnicalConditionsOfRoads(InputDataViewModel inputData)
         {
             try
             {
@@ -31,7 +69,7 @@ namespace DSS.Modules
                 if (statusCode != 200)
                 {
                     _logger.LogWarning("TechnicalConditionsOfRoadsAnalysisModule/GetInitialTechnicalConditionsOfRoads", "Error on the API side of the controller.");
-                    return null;
+                    return (0, 0, null);
                 }
 
                 var technicalConditionsOfRoads = JsonConvert.DeserializeObject<IEnumerable<TechnicalConditionOfRoad>>(value.ToString());
@@ -50,7 +88,7 @@ namespace DSS.Modules
                 if (technicalConditionsOfRoads.Count() == 0)
                 {
                     _logger.LogWarning("TechnicalConditionsOfRoadsAnalysisModule/GetInitialTechnicalConditionsOfRoads", "The technical conditions of roads were not found.");
-                    return null;
+                    return (0, 0, null);
                 }
 
                 foreach (var technicalConditionOfRoad in technicalConditionsOfRoads)
@@ -58,14 +96,20 @@ namespace DSS.Modules
                     initialTechnicalConditionsOfRoads.Add(technicalConditionOfRoad.RoadId, (double)technicalConditionOfRoad.TechnicalCondition);
                 }
 
+                int currentYear = technicalConditionsOfRoads.First().Year;
+                int currentMonth = inputData.Months.ToList().IndexOf(technicalConditionsOfRoads.First().Month);
+
+                currentMonth = (currentMonth + 1) % inputData.Months.Count();
+                currentYear += (currentMonth == 0) ? 1 : 0;
+
                 _logger.LogInformation("TechnicalConditionsOfRoadsAnalysisModule/GetInitialTechnicalConditionsOfRoads", "All initial technical conditions of roads have been successfully received.");
 
-                return initialTechnicalConditionsOfRoads;
+                return (currentYear, currentMonth, initialTechnicalConditionsOfRoads);
             }
             catch (Exception ex)
             {
                 _logger.LogError("TechnicalConditionsOfRoadsAnalysisModule/GetInitialTechnicalConditionsOfRoads", $"Error in getting all initial technical conditions of roads: {ex.Message}");
-                return null;
+                return (0, 0, null);
             }
         }
 
