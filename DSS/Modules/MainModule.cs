@@ -72,8 +72,7 @@ namespace DSS.Modules
 
                 while (costOfOptimalEstimates > budgets[i])
                 {
-                    // оптимизировать по приоритету и техническому состоянию
-                    (int roadId, optimalEstimates) = _estimatesAnalysisModule.OptimizeOptimalEstimates(optimalEstimates);
+                    (int roadId, double levelOfWorks, optimalEstimates) = _estimatesAnalysisModule.OptimizeOptimalEstimates(optimalEstimates);
 
                     if (optimalEstimates == null)
                     {
@@ -84,12 +83,10 @@ namespace DSS.Modules
 
                     if (costOfOptimalEstimates == null)
                     {
-
                     }
 
-                    predictedTechnicalConditionsOfRoads[roadId] -= changesTechnicalConditionsOfRoads[roadId];
-
-                    changesTechnicalConditionsOfRoads[roadId] = 0;
+                    predictedTechnicalConditionsOfRoads[roadId] -= levelOfWorks;
+                    changesTechnicalConditionsOfRoads[roadId] -= levelOfWorks;
                 }
 
                 if (i == budgets.Count - 1)

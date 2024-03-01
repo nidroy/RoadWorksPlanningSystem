@@ -1,23 +1,44 @@
-﻿using DSS.Models;
+﻿using DSS.Controllers.ApiControllers;
+using DSS.Loggers;
+using DSS.Models;
 using DSS.Models.ViewModels;
 
 namespace DSS.Modules
 {
     public class StatisticsModule
     {
-        public static StatisticsViewModel CalculateFinancialStatistics(double budget, List<(int, string, Dictionary<int, List<Estimate>>)> plans)
+        private readonly ApiLogger _logger;
+
+        public StatisticsModule(ApplicationContext context, ILogger<ApiController> logger)
         {
-            double expenses = plans.Sum(plan => plan.Item3.Values.Sum(estimates => estimates.Sum(estimate => (double)estimate.Cost)));
-            double balance = budget - expenses;
+            _logger = new ApiLogger(logger);
+        }
 
-            StatisticsViewModel statistics = new()
+        public StatisticsViewModel? CalculateFinancialStatistics(double budget, List<(int, string, Dictionary<int, List<Estimate>>)> plans)
+        {
+            try
             {
-                Budget = budget,
-                Expenses = expenses,
-                Balance = balance
-            };
+                _logger.LogInformation("StatisticsModule/CalculateFinancialStatistics", "Calculating financial statistics...");
 
-            return statistics;
+                double expenses = plans.Sum(plan => plan.Item3.Values.Sum(estimates => estimates.Sum(e => (double)e.Cost)));
+                double balance = budget - expenses;
+
+                StatisticsViewModel statistics = new()
+                {
+                    Budget = budget,
+                    Expenses = expenses,
+                    Balance = balance
+                };
+
+                _logger.LogInformation("StatisticsModule/CalculateFinancialStatistics", "The financial statistics have been successfully calculated.");
+
+                return statistics;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("StatisticsModule/CalculateFinancialStatistics", $"Error in calculating the financial statistics: {ex.Message}");
+                return null;
+            }
         }
     }
 }

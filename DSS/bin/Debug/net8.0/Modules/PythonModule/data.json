@@ -46798,5 +46798,2865 @@
       "Priority": 1.0,
       "LinkToPassport": ""
     }
+  },
+  {
+    "Id": 3601,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 4.6,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3602,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3603,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3604,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3605,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 1.8,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3606,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3607,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3608,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 3.5,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3609,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3610,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3611,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3612,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 2.0,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3613,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3614,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3615,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3616,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3617,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3618,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 2.0,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3619,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3620,
+    "Year": 2023,
+    "Month": "Январь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3621,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3622,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3623,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.2,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3624,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3625,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 1.8,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3626,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3627,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3628,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 4.2,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3629,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3630,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3631,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3632,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 2.0,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3633,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3634,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3635,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3636,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3637,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3638,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 1.9,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3639,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3640,
+    "Year": 2023,
+    "Month": "Февраль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3641,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3642,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3643,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3644,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3645,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 1.8,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3646,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3647,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3648,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 4.1,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3649,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3650,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3651,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3652,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 2.0,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3653,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3654,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3655,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3656,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3657,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3658,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 2.0,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3659,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3660,
+    "Year": 2023,
+    "Month": "Март",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3661,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3662,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3663,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3664,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3665,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 1.8,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3666,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3667,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3668,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 4.2,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3669,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3670,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3671,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3672,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 2.0,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3673,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3674,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3675,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3676,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3677,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3678,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 2.0,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3679,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3680,
+    "Year": 2023,
+    "Month": "Апрель",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3681,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3682,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3683,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3684,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3685,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 1.9,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3686,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3687,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3688,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 4.1,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3689,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3690,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3691,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3692,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 2.0,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3693,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3694,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3695,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3696,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3697,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3698,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 2.0,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3699,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3700,
+    "Year": 2023,
+    "Month": "Май",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3701,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3702,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3703,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3704,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3705,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 1.9,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3706,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3707,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3708,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 4.1,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3709,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3710,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3711,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3712,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 2.0,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3713,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3714,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3715,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3716,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3717,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3718,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 2.0,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3719,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3720,
+    "Year": 2023,
+    "Month": "Июнь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3721,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3722,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3723,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3724,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3725,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 1.9,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3726,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3727,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3728,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 4.1,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3729,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3730,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3731,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3732,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 2.0,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3733,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3734,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3735,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3736,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3737,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3738,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 2.0,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3739,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3740,
+    "Year": 2023,
+    "Month": "Июль",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3741,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3742,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3743,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3744,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3745,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 1.9,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3746,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3747,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3748,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 4.1,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3749,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3750,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3751,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3752,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 2.0,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3753,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3754,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3755,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3756,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3757,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3758,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 2.0,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3759,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3760,
+    "Year": 2023,
+    "Month": "Август",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3761,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3762,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3763,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3764,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3765,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 1.9,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3766,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3767,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3768,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 4.0,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3769,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3770,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3771,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3772,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 2.1,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3773,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3774,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3775,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3776,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3777,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3778,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 2.0,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3779,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3780,
+    "Year": 2023,
+    "Month": "Сентябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3781,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3782,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3783,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3784,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3785,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 1.9,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3786,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3787,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3788,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 4.0,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3789,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3790,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3791,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3792,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 2.1,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3793,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3794,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3795,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3796,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3797,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3798,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 2.1,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3799,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3800,
+    "Year": 2023,
+    "Month": "Октябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3801,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 1,
+    "Road": {
+      "Id": 1,
+      "Number": "18 ОП РЗ 18Р-1",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3802,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 2,
+    "Road": {
+      "Id": 2,
+      "Number": "18 ОП РЗ 18Р-1-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3803,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 3,
+    "Road": {
+      "Id": 3,
+      "Number": "18 ОП РЗ 18Р-1-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3804,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 4,
+    "Road": {
+      "Id": 4,
+      "Number": "18 ОП РЗ 18Р-1-3",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3805,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 1.9,
+    "RoadId": 5,
+    "Road": {
+      "Id": 5,
+      "Number": "18 ОП РЗ 18Р-1-4",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3806,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.1,
+    "RoadId": 6,
+    "Road": {
+      "Id": 6,
+      "Number": "18 ОП РЗ 18Р-1-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3807,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 7,
+    "Road": {
+      "Id": 7,
+      "Number": "18 ОП РЗ 18Р-1-6",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3808,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 4.1,
+    "RoadId": 8,
+    "Road": {
+      "Id": 8,
+      "Number": "18 ОП РЗ 18Р-1-7",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3809,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 9,
+    "Road": {
+      "Id": 9,
+      "Number": "18 ОП РЗ 18Р-1-8",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3810,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 10,
+    "Road": {
+      "Id": 10,
+      "Number": "18 ОП РЗ 18Р-2",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3811,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 4.3,
+    "RoadId": 11,
+    "Road": {
+      "Id": 11,
+      "Number": "18 ОП РЗ 18Р-2-1",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3812,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 2.1,
+    "RoadId": 12,
+    "Road": {
+      "Id": 12,
+      "Number": "18 ОП РЗ 18Р-2-2",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3813,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 13,
+    "Road": {
+      "Id": 13,
+      "Number": "18 ОП РЗ 18Р-2-3",
+      "Priority": 3.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3814,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 14,
+    "Road": {
+      "Id": 14,
+      "Number": "18 ОП РЗ 18Р-2-4",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3815,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 15,
+    "Road": {
+      "Id": 15,
+      "Number": "18 ОП РЗ 18Р-2-5",
+      "Priority": 4.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3816,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 4.5,
+    "RoadId": 16,
+    "Road": {
+      "Id": 16,
+      "Number": "18 ОП РЗ 18Р-2-6",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3817,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 17,
+    "Road": {
+      "Id": 17,
+      "Number": "18 ОП РЗ 18Р-2-7",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3818,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 2.1,
+    "RoadId": 18,
+    "Road": {
+      "Id": 18,
+      "Number": "18 ОП РЗ 18Р-2-8",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3819,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.4,
+    "RoadId": 19,
+    "Road": {
+      "Id": 19,
+      "Number": "18 ОП РЗ 18Р-2-9",
+      "Priority": 2.0,
+      "LinkToPassport": ""
+    }
+  },
+  {
+    "Id": 3820,
+    "Year": 2023,
+    "Month": "Ноябрь",
+    "TechnicalCondition": 0.5,
+    "RoadId": 20,
+    "Road": {
+      "Id": 20,
+      "Number": "18 ОП РЗ 18Р-2-10",
+      "Priority": 1.0,
+      "LinkToPassport": ""
+    }
   }
 ]

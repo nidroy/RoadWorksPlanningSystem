@@ -11,10 +11,12 @@ namespace DSS.Controllers.ApiControllers
     public class HomeApiController : ApiController
     {
         private readonly MainModule _mainModule;
+        private readonly StatisticsModule _statisticsModule;
 
         public HomeApiController(ApplicationContext context, ILogger<ApiController> logger) : base(context, logger)
         {
             _mainModule = new(context, logger);
+            _statisticsModule = new(context, logger);
         }
 
         /// <summary>
@@ -71,12 +73,19 @@ namespace DSS.Controllers.ApiControllers
                 // Проверяем входные данные на null
                 if (plans == null)
                 {
-                    _logger.LogWarning("HomeApiController/Put/Statistics", "Incorrect plans data provided.");
+                    _logger.LogWarning("HomeApiController/Get/Statistics", "Incorrect plans data provided.");
                     return BadRequest("Incorrect plans data provided");
                 }
 
                 // Получаем финансовую статистику
-                StatisticsViewModel statistics = StatisticsModule.CalculateFinancialStatistics(budget, plans);
+                StatisticsViewModel? statistics = _statisticsModule.CalculateFinancialStatistics(budget, plans);
+
+                if (statistics == null)
+                {
+                    // Возвращаем 404 Not Found, если финансовая статистика не найдена
+                    _logger.LogWarning("HomeApiController/Get/Statistics", "The financial statistics was not found.");
+                    return NotFound("The financial statistics was not found");
+                }
 
                 // Преобразуем финансовую статистику в JSON объект
                 string result = JsonConvert.SerializeObject(statistics, Formatting.Indented);

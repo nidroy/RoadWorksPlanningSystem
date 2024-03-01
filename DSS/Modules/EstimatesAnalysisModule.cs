@@ -19,28 +19,47 @@ namespace DSS.Modules
             _logger = new ApiLogger(logger);
         }
 
-        public (int, Dictionary<int, List<Estimate>>?) OptimizeOptimalEstimates(Dictionary<int, List<Estimate>> optimalEstimates)
+        public (int, double, Dictionary<int, List<Estimate>>?) OptimizeOptimalEstimates(Dictionary<int, List<Estimate>> optimalEstimates)
         {
             try
             {
+                _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Reading all roads...");
+
+                var result = _roadsApi.Get();
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Error on the API side of the controller.");
+                    return (0, 0, null);
+                }
+
+                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
+
+                _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "All roads have been successfully read.");
+
                 _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Optimization of optimal estimates...");
 
-                var roadId = optimalEstimates.Where(optimalEstimates => optimalEstimates.Value.Any())
-                    .OrderByDescending(optimalEstimates => optimalEstimates.Value.First().Road.Priority)
-                    .ThenBy(optimalEstimates => optimalEstimates.Value.Sum(estimate => estimate.Cost))
-                    .Select(optimalEstimates => optimalEstimates.Key)
-                    .FirstOrDefault();
+                optimalEstimates = optimalEstimates.OrderByDescending(estimates => roads.FirstOrDefault(r => r.Id == estimates.Key).Priority)
+                                   .ToDictionary(estimates => estimates.Key, estimates => estimates.Value.OrderBy(e => e.LevelOfWorks).ToList());
 
-                optimalEstimates[roadId].RemoveAt(0);
+                int roadId = optimalEstimates.FirstOrDefault().Key;
+                double levelOfWorks = (double)optimalEstimates.FirstOrDefault().Value[0].LevelOfWorks;
+                optimalEstimates.FirstOrDefault().Value.RemoveAt(0);
+
+                optimalEstimates = optimalEstimates
+                    .Where(estimates => estimates.Value.Count > 0)
+                    .ToDictionary(estimates => estimates.Key, estimates => estimates.Value);
 
                 _logger.LogInformation("EstimatesAnalysisModule/OptimizeOptimalEstimates", "Optimal estimates have been successfully optimized.");
 
-                return (roadId, optimalEstimates);
+                return (roadId, levelOfWorks, optimalEstimates);
             }
             catch (Exception ex)
             {
                 _logger.LogError("EstimatesAnalysisModule/OptimizeOptimalEstimates", $"Error in optimizing optimal estimates: {ex.Message}");
-                return (0, null);
+                return (0, 0, null);
             }
         }
 
@@ -82,9 +101,6 @@ namespace DSS.Modules
 
                 _logger.LogInformation("EstimatesAnalysisModule/GetOptimalEstimates", "Getting optimal estimates...");
 
-                estimates = estimates.GroupBy(e => e.LevelOfWorks)
-                    .Select(estimates => estimates.OrderBy(e => e.Cost).First());
-
                 var levelsOfWorks = estimates.Select(e => e.LevelOfWorks)
                     .Where(LevelOfWorks => LevelOfWorks.HasValue)
                     .Select(LevelOfWorks => LevelOfWorks.Value)
@@ -93,7 +109,11 @@ namespace DSS.Modules
 
                 var optimalEstimates = roads.ToDictionary(
                     road => road.Id,
-                    road => GetOptimalEstimatesForOneRoad(changesTechnicalConditionsOfRoads[road.Id], levelsOfWorks, estimates));
+                    road => GetOptimalEstimatesForOneRoad(changesTechnicalConditionsOfRoads[road.Id], levelsOfWorks, estimates.Where(e => e.RoadId == road.Id).ToList()));
+
+                optimalEstimates = optimalEstimates
+                    .Where(estimates => estimates.Value.Count > 0)
+                    .ToDictionary(estimates => estimates.Key, estimates => estimates.Value);
 
                 _logger.LogInformation("EstimatesAnalysisModule/GetOptimalEstimates", "Optimal estimates have been successfully received.");
 
@@ -111,6 +131,11 @@ namespace DSS.Modules
             try
             {
                 _logger.LogInformation("EstimatesAnalysisModule/GetOptimalEstimatesForOneRoad", "Getting optimal estimates for one road...");
+
+                estimates = estimates.GroupBy(e => e.LevelOfWorks)
+                    .Select(estimates => estimates
+                    .OrderBy(e => e.Cost)
+                    .First());
 
                 List<List<double>>? combinationsOfLevelsOfWorks = GetCombinationsOfLevelsOfWorks(changeTechnicalConditionOfRoad, levelsOfWorks);
 

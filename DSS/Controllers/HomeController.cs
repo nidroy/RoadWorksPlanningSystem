@@ -19,7 +19,9 @@ namespace DSS.Controllers
             _logger = new ApiLogger(logger);
         }
 
-        private InputDataViewModel viewModel = new()
+        private static List<(int, string, Dictionary<int, List<Estimate>>)>? plans = null;
+
+        private static InputDataViewModel viewModel = new()
         {
             InitialYear = 0,
             InitialMonth = "январь",
@@ -84,7 +86,7 @@ namespace DSS.Controllers
                     return BadRequest(value);
                 }
 
-                var plans = JsonConvert.DeserializeObject<List<(int, string, Dictionary<int, List<Estimate>>)>>(value.ToString());
+                plans = JsonConvert.DeserializeObject<List<(int, string, Dictionary<int, List<Estimate>>)>>(value.ToString());
 
                 _logger.LogInformation("HomeController/Planning", "The planning has been successfully carried.");
 
@@ -93,6 +95,38 @@ namespace DSS.Controllers
             catch (Exception ex)
             {
                 _logger.LogError("HomeController/Planning", $"Planning error: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("statistics")]
+        public IActionResult Statistics()
+        {
+            try
+            {
+                _logger.LogInformation("HomeController/Statistics", "Getting statistics...");
+
+                var result = _homeApi.GetStatistics(viewModel.Budget, plans);
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("HomeController/Statistics", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                var statistics = JsonConvert.DeserializeObject<StatisticsViewModel>(value.ToString());
+
+                _logger.LogInformation("HomeController/Statistics", "Statistics have been successfully received.");
+
+                _logger.LogInformation("HomeController", "Navigating to the page \"Statistics\".");
+
+                return View("Statistics", statistics);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("HomeController", $"Error when navigating to the page \"Statistics\": {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }

@@ -30,7 +30,7 @@ namespace DSS.Modules
                     {
                         Year = currentYear,
                         Month = currentMonth,
-                        TechnicalCondition = predictedTechnicalConditionOfRoad.Value,
+                        TechnicalCondition = Math.Round(predictedTechnicalConditionOfRoad.Value, 1),
                         RoadId = predictedTechnicalConditionOfRoad.Key
                     };
 

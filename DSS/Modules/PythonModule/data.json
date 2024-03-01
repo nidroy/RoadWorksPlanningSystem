@@ -46816,7 +46816,7 @@
     "Id": 3602,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -46829,7 +46829,7 @@
     "Id": 3603,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 1.9,
+    "TechnicalCondition": 0.5,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -46842,7 +46842,7 @@
     "Id": 3604,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.3999999999999999,
+    "TechnicalCondition": 0.4,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -46855,7 +46855,7 @@
     "Id": 3605,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.5,
+    "TechnicalCondition": 1.8,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -46868,7 +46868,7 @@
     "Id": 3606,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -46881,7 +46881,7 @@
     "Id": 3607,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.3,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -46894,7 +46894,7 @@
     "Id": 3608,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 4.3,
+    "TechnicalCondition": 2.7,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -46972,7 +46972,7 @@
     "Id": 3614,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.30000000000000004,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -47011,7 +47011,7 @@
     "Id": 3617,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -47037,7 +47037,7 @@
     "Id": 3619,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -47050,7 +47050,7 @@
     "Id": 3620,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -47076,7 +47076,7 @@
     "Id": 3622,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -47089,7 +47089,7 @@
     "Id": 3623,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.7,
+    "TechnicalCondition": 0.2,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -47102,7 +47102,7 @@
     "Id": 3624,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 1.7,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -47128,7 +47128,7 @@
     "Id": 3626,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -47141,7 +47141,7 @@
     "Id": 3627,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -47154,7 +47154,7 @@
     "Id": 3628,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -47232,7 +47232,7 @@
     "Id": 3634,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -47245,7 +47245,7 @@
     "Id": 3635,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -47271,7 +47271,7 @@
     "Id": 3637,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -47297,7 +47297,7 @@
     "Id": 3639,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -47310,7 +47310,7 @@
     "Id": 3640,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -47336,7 +47336,7 @@
     "Id": 3642,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -47349,7 +47349,7 @@
     "Id": 3643,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 1.9,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -47362,7 +47362,7 @@
     "Id": 3644,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.5999999999999999,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -47388,7 +47388,7 @@
     "Id": 3646,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -47401,7 +47401,7 @@
     "Id": 3647,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -47414,7 +47414,7 @@
     "Id": 3648,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -47492,7 +47492,7 @@
     "Id": 3654,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -47505,7 +47505,7 @@
     "Id": 3655,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -47531,7 +47531,7 @@
     "Id": 3657,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -47557,7 +47557,7 @@
     "Id": 3659,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -47570,7 +47570,7 @@
     "Id": 3660,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -47596,7 +47596,7 @@
     "Id": 3662,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -47609,7 +47609,7 @@
     "Id": 3663,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 1.9,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -47622,7 +47622,7 @@
     "Id": 3664,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 1.7,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -47635,7 +47635,7 @@
     "Id": 3665,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.7,
+    "TechnicalCondition": 1.8,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -47648,7 +47648,7 @@
     "Id": 3666,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -47661,7 +47661,7 @@
     "Id": 3667,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -47674,7 +47674,7 @@
     "Id": 3668,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -47752,7 +47752,7 @@
     "Id": 3674,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -47765,7 +47765,7 @@
     "Id": 3675,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -47791,7 +47791,7 @@
     "Id": 3677,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -47817,7 +47817,7 @@
     "Id": 3679,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -47830,7 +47830,7 @@
     "Id": 3680,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -47856,7 +47856,7 @@
     "Id": 3682,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -47869,7 +47869,7 @@
     "Id": 3683,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 1.9,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -47882,7 +47882,7 @@
     "Id": 3684,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.6000000000000001,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -47895,7 +47895,7 @@
     "Id": 3685,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 1.8,
+    "TechnicalCondition": 1.9,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -47908,7 +47908,7 @@
     "Id": 3686,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -47921,7 +47921,7 @@
     "Id": 3687,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -47934,7 +47934,7 @@
     "Id": 3688,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -48012,7 +48012,7 @@
     "Id": 3694,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -48025,7 +48025,7 @@
     "Id": 3695,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -48051,7 +48051,7 @@
     "Id": 3697,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -48077,7 +48077,7 @@
     "Id": 3699,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -48090,7 +48090,7 @@
     "Id": 3700,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -48116,7 +48116,7 @@
     "Id": 3702,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -48129,7 +48129,7 @@
     "Id": 3703,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 1.9,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -48142,7 +48142,7 @@
     "Id": 3704,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 1.6,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -48155,7 +48155,7 @@
     "Id": 3705,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.7,
+    "TechnicalCondition": 1.9,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -48168,7 +48168,7 @@
     "Id": 3706,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -48181,7 +48181,7 @@
     "Id": 3707,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -48194,7 +48194,7 @@
     "Id": 3708,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -48272,7 +48272,7 @@
     "Id": 3714,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -48285,7 +48285,7 @@
     "Id": 3715,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -48311,7 +48311,7 @@
     "Id": 3717,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -48337,7 +48337,7 @@
     "Id": 3719,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -48350,7 +48350,7 @@
     "Id": 3720,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -48376,7 +48376,7 @@
     "Id": 3722,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -48389,7 +48389,7 @@
     "Id": 3723,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 1.9,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -48402,7 +48402,7 @@
     "Id": 3724,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.6000000000000001,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -48415,7 +48415,7 @@
     "Id": 3725,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 1.8,
+    "TechnicalCondition": 1.9,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -48428,7 +48428,7 @@
     "Id": 3726,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -48441,7 +48441,7 @@
     "Id": 3727,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -48454,7 +48454,7 @@
     "Id": 3728,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -48532,7 +48532,7 @@
     "Id": 3734,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -48545,7 +48545,7 @@
     "Id": 3735,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -48571,7 +48571,7 @@
     "Id": 3737,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -48597,7 +48597,7 @@
     "Id": 3739,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -48610,7 +48610,7 @@
     "Id": 3740,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -48636,7 +48636,7 @@
     "Id": 3742,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -48649,7 +48649,7 @@
     "Id": 3743,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 1.9,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -48662,7 +48662,7 @@
     "Id": 3744,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 1.6,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -48675,7 +48675,7 @@
     "Id": 3745,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.7,
+    "TechnicalCondition": 1.9,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -48688,7 +48688,7 @@
     "Id": 3746,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -48701,7 +48701,7 @@
     "Id": 3747,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -48714,7 +48714,7 @@
     "Id": 3748,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -48792,7 +48792,7 @@
     "Id": 3754,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -48805,7 +48805,7 @@
     "Id": 3755,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -48831,7 +48831,7 @@
     "Id": 3757,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -48857,7 +48857,7 @@
     "Id": 3759,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -48870,7 +48870,7 @@
     "Id": 3760,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -48896,7 +48896,7 @@
     "Id": 3762,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -48909,7 +48909,7 @@
     "Id": 3763,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 2.0,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -48922,7 +48922,7 @@
     "Id": 3764,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.6000000000000001,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -48935,7 +48935,7 @@
     "Id": 3765,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 1.7,
+    "TechnicalCondition": 1.9,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -48948,7 +48948,7 @@
     "Id": 3766,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -48961,7 +48961,7 @@
     "Id": 3767,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -48974,7 +48974,7 @@
     "Id": 3768,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.4,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -49052,7 +49052,7 @@
     "Id": 3774,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -49065,7 +49065,7 @@
     "Id": 3775,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -49091,7 +49091,7 @@
     "Id": 3777,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -49117,7 +49117,7 @@
     "Id": 3779,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -49130,7 +49130,7 @@
     "Id": 3780,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -49156,7 +49156,7 @@
     "Id": 3782,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -49169,7 +49169,7 @@
     "Id": 3783,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 2.0,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -49182,7 +49182,7 @@
     "Id": 3784,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 1.6,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -49195,7 +49195,7 @@
     "Id": 3785,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.5999999999999999,
+    "TechnicalCondition": 1.9,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -49208,7 +49208,7 @@
     "Id": 3786,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -49221,7 +49221,7 @@
     "Id": 3787,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -49234,7 +49234,7 @@
     "Id": 3788,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.7,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -49312,7 +49312,7 @@
     "Id": 3794,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -49325,7 +49325,7 @@
     "Id": 3795,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -49351,7 +49351,7 @@
     "Id": 3797,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -49377,7 +49377,7 @@
     "Id": 3799,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -49390,7 +49390,7 @@
     "Id": 3800,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
@@ -49416,7 +49416,7 @@
     "Id": 3802,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 2,
     "Road": {
       "Id": 2,
@@ -49429,7 +49429,7 @@
     "Id": 3803,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 2.0,
+    "TechnicalCondition": 0.1,
     "RoadId": 3,
     "Road": {
       "Id": 3,
@@ -49442,7 +49442,7 @@
     "Id": 3804,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.6,
+    "TechnicalCondition": 0.1,
     "RoadId": 4,
     "Road": {
       "Id": 4,
@@ -49455,7 +49455,7 @@
     "Id": 3805,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 1.7,
+    "TechnicalCondition": 1.9,
     "RoadId": 5,
     "Road": {
       "Id": 5,
@@ -49468,7 +49468,7 @@
     "Id": 3806,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.1,
     "RoadId": 6,
     "Road": {
       "Id": 6,
@@ -49481,7 +49481,7 @@
     "Id": 3807,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 7,
     "Road": {
       "Id": 7,
@@ -49494,7 +49494,7 @@
     "Id": 3808,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 4.4,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -49572,7 +49572,7 @@
     "Id": 3814,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 14,
     "Road": {
       "Id": 14,
@@ -49585,7 +49585,7 @@
     "Id": 3815,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.10000000000000003,
+    "TechnicalCondition": 0.5,
     "RoadId": 15,
     "Road": {
       "Id": 15,
@@ -49611,7 +49611,7 @@
     "Id": 3817,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 17,
     "Road": {
       "Id": 17,
@@ -49637,7 +49637,7 @@
     "Id": 3819,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.4,
     "RoadId": 19,
     "Road": {
       "Id": 19,
@@ -49650,7 +49650,7 @@
     "Id": 3820,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 0.09999999999999998,
+    "TechnicalCondition": 0.5,
     "RoadId": 20,
     "Road": {
       "Id": 20,
