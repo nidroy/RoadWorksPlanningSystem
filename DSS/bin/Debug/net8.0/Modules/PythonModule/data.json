@@ -46894,7 +46894,7 @@
     "Id": 3608,
     "Year": 2023,
     "Month": "Январь",
-    "TechnicalCondition": 3.5,
+    "TechnicalCondition": 2.7,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -47154,7 +47154,7 @@
     "Id": 3628,
     "Year": 2023,
     "Month": "Февраль",
-    "TechnicalCondition": 4.2,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -47414,7 +47414,7 @@
     "Id": 3648,
     "Year": 2023,
     "Month": "Март",
-    "TechnicalCondition": 4.1,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -47674,7 +47674,7 @@
     "Id": 3668,
     "Year": 2023,
     "Month": "Апрель",
-    "TechnicalCondition": 4.2,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -47934,7 +47934,7 @@
     "Id": 3688,
     "Year": 2023,
     "Month": "Май",
-    "TechnicalCondition": 4.1,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -48194,7 +48194,7 @@
     "Id": 3708,
     "Year": 2023,
     "Month": "Июнь",
-    "TechnicalCondition": 4.1,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -48454,7 +48454,7 @@
     "Id": 3728,
     "Year": 2023,
     "Month": "Июль",
-    "TechnicalCondition": 4.1,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -48714,7 +48714,7 @@
     "Id": 3748,
     "Year": 2023,
     "Month": "Август",
-    "TechnicalCondition": 4.1,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -48974,7 +48974,7 @@
     "Id": 3768,
     "Year": 2023,
     "Month": "Сентябрь",
-    "TechnicalCondition": 4.0,
+    "TechnicalCondition": 2.4,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -49234,7 +49234,7 @@
     "Id": 3788,
     "Year": 2023,
     "Month": "Октябрь",
-    "TechnicalCondition": 4.0,
+    "TechnicalCondition": 2.7,
     "RoadId": 8,
     "Road": {
       "Id": 8,
@@ -49494,7 +49494,7 @@
     "Id": 3808,
     "Year": 2023,
     "Month": "Ноябрь",
-    "TechnicalCondition": 4.1,
+    "TechnicalCondition": 2.8,
     "RoadId": 8,
     "Road": {
       "Id": 8,

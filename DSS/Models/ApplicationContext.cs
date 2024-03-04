@@ -8,6 +8,8 @@ namespace DSS.Models
         public DbSet<Road> Roads { get; set; }
         public DbSet<Estimate> Estimates { get; set; }
         public DbSet<TechnicalConditionOfRoad> TechnicalConditionsOfRoads { get; set; }
+        public DbSet<RoadWorksProgram> RoadWorksPrograms { get; set; }
+        public DbSet<RoadWorksProgramToEstimate> RoadWorksProgramsToEstimates { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
@@ -95,6 +97,12 @@ namespace DSS.Models
             }
 
             CreateTechnicalConditionOfRoadModels(modelBuilder);
+
+            modelBuilder.Entity<RoadWorksProgramToEstimate>()
+                .HasOne(pe => pe.RoadWorksProgram)
+                .WithMany()
+                .HasForeignKey(pe => pe.RoadWorksProgramId)
+                .OnDelete(DeleteBehavior.NoAction);
         }
 
         private Road CreateRoadModel(int id, string number, double priority, ModelBuilder modelBuilder)
@@ -122,7 +130,7 @@ namespace DSS.Models
                     LevelOfWorks = Math.Round(i * 0.1, 1),
                     Cost = Math.Round(i * 0.2 * 100000, 2),
                     Link = "",
-                    RoadId = road.Id,
+                    RoadId = road.Id
                 };
 
                 modelBuilder.Entity<Estimate>().HasData(estimate);

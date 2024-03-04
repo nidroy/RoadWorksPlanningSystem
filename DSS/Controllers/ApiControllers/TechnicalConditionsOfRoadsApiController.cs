@@ -39,7 +39,7 @@ namespace DSS.Controllers.ApiControllers
                     if (road == null)
                     {
                         // Возвращаем 404 Not Found, если дорога не найдена
-                        _logger.LogWarning($"TechnicalConditionsOfRoadsApiController/Get", $"The road with Id {technicalConditionOfRoad.RoadId} was not found.");
+                        _logger.LogWarning("TechnicalConditionsOfRoadsApiController/Get", $"The road with Id {technicalConditionOfRoad.RoadId} was not found.");
                         return NotFound($"The road with Id {technicalConditionOfRoad.RoadId} was not found");
                     }
 

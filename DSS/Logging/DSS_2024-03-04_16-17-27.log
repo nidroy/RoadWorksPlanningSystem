@@ -1,0 +1,9 @@
+Failed executing DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [RoadWorksProgramsToEstimates] (
+    [Id] int NOT NULL IDENTITY,
+    [RoadWorksProgramId] int NOT NULL,
+    [EstimateId] int NOT NULL,
+    CONSTRAINT [PK_RoadWorksProgramsToEstimates] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_RoadWorksProgramsToEstimates_Estimates_EstimateId] FOREIGN KEY ([EstimateId]) REFERENCES [Estimates] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_RoadWorksProgramsToEstimates_RoadWorksPrograms_RoadWorksProgramId] FOREIGN KEY ([RoadWorksProgramId]) REFERENCES [RoadWorksPrograms] ([Id]) ON DELETE CASCADE
+);
