@@ -89,6 +89,41 @@
             <param name="id">Идентификатор дороги</param>
             <returns>Количество оставшихся дорог</returns>
         </member>
+        <member name="M:DSS.Controllers.ApiControllers.RoadWorksProgramsApiController.Get">
+            <summary>
+            Получаем данные всех программ дорожных работ
+            </summary>
+            <returns>Данные всех программ дорожных работ</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.RoadWorksProgramsApiController.Get(System.Int32)">
+            <summary>
+            Получаем данные программы дорожных работ по id
+            </summary>
+            <param name="id">Идентификатор программы дорожных работ</param>
+            <returns>Данные программы дорожных работ</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.RoadWorksProgramsApiController.Post(DSS.Models.ViewModels.RoadWorksProgramViewModel)">
+            <summary>
+            Создаем новую программу дорожных работ
+            </summary>
+            <param name="roadWorksProgramData">Данные новой программы дорожных работ</param>
+            <returns>Идентификатор новой программы дорожных работ</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.RoadWorksProgramsApiController.Put(System.Int32,DSS.Models.ViewModels.RoadWorksProgramViewModel)">
+            <summary>
+            Обновляем данные программы дорожных работ
+            </summary>
+            <param name="id">Идентификатор программы дорожных работ</param>
+            <param name="roadWorksProgramData">Новые данные программы дорожных работ</param>
+            <returns>Данные обновленной программы дорожных работ</returns>
+        </member>
+        <member name="M:DSS.Controllers.ApiControllers.RoadWorksProgramsApiController.Delete(System.Int32)">
+            <summary>
+            Удаляем программу дорожных работ
+            </summary>
+            <param name="id">Идентификатор программы дорожных работ</param>
+            <returns>Количество оставшихся программ дорожных работ</returns>
+        </member>
         <member name="M:DSS.Controllers.ApiControllers.TechnicalConditionsOfRoadsApiController.Get">
             <summary>
             Получаем данные всех технических состояний дорог

@@ -2,7 +2,6 @@
 using DSS.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 
 namespace DSS.Controllers.ApiControllers
 {
@@ -27,9 +26,6 @@ namespace DSS.Controllers.ApiControllers
 
                 // Получаем все программы дорожных работ из контекста данных
                 List<RoadWorksProgram> roadWorksPrograms = _context.RoadWorksPrograms.ToList();
-
-                // Получаем все сметы из контекста данных
-                List<Estimate> estimates = _context.Estimates.ToList();
 
                 // Преобразуем список программ дорожных работ в JSON массив
                 JArray result = new JArray();
@@ -58,9 +54,9 @@ namespace DSS.Controllers.ApiControllers
                         return NotFound("The estimates Id were not found");
                     }
 
-                    estimates = estimates
-                        .Where(e => roadWorksProgramsToEstimates.Any(pe => pe.EstimateId == e.Id))
-                        .ToList();
+                    List<int> estimatesId = roadWorksProgramsToEstimates.Select(pe => pe.EstimateId).ToList();
+
+                    List<Estimate> estimates = _context.Estimates.Where(e => estimatesId.Contains(e.Id)).ToList();
 
                     if (estimates == null)
                     {
@@ -81,7 +77,15 @@ namespace DSS.Controllers.ApiControllers
                             ["Name"] = e.Name,
                             ["LevelOfWorks"] = e.LevelOfWorks,
                             ["Cost"] = e.Cost,
-                            ["Link"] = e.Link
+                            ["Link"] = e.Link,
+                            ["RoadId"] = e.RoadId,
+                            ["Road"] = new JObject
+                            {
+                                ["Id"] = e.Road.Id,
+                                ["Number"] = e.Road.Number,
+                                ["Priority"] = e.Road.Priority,
+                                ["LinkToPassport"] = e.Road.LinkToPassport
+                            }
                         })),
                         ["RoadId"] = roadWorksProgram.RoadId,
                         ["Road"] = new JObject
@@ -151,9 +155,9 @@ namespace DSS.Controllers.ApiControllers
                     return NotFound("The estimates Id were not found");
                 }
 
-                List<Estimate> estimates = _context.Estimates
-                    .Where(e => roadWorksProgramsToEstimates.Any(pe => pe.EstimateId == e.Id))
-                    .ToList();
+                List<int> estimatesId = roadWorksProgramsToEstimates.Select(pe => pe.EstimateId).ToList();
+
+                List<Estimate> estimates = _context.Estimates.Where(e => estimatesId.Contains(e.Id)).ToList();
 
                 if (estimates == null)
                 {
@@ -175,7 +179,15 @@ namespace DSS.Controllers.ApiControllers
                         ["Name"] = e.Name,
                         ["LevelOfWorks"] = e.LevelOfWorks,
                         ["Cost"] = e.Cost,
-                        ["Link"] = e.Link
+                        ["Link"] = e.Link,
+                        ["RoadId"] = e.RoadId,
+                        ["Road"] = new JObject
+                        {
+                            ["Id"] = e.Road.Id,
+                            ["Number"] = e.Road.Number,
+                            ["Priority"] = e.Road.Priority,
+                            ["LinkToPassport"] = e.Road.LinkToPassport
+                        }
                     })),
                     ["RoadId"] = roadWorksProgram.RoadId,
                     ["Road"] = new JObject
@@ -374,9 +386,9 @@ namespace DSS.Controllers.ApiControllers
                     return NotFound("The estimates Id were not found");
                 }
 
-                List<Estimate> estimates = _context.Estimates
-                    .Where(e => roadWorksProgramsToEstimates.Any(pe => pe.EstimateId == e.Id))
-                    .ToList();
+                List<int> estimatesId = roadWorksProgramsToEstimates.Select(pe => pe.EstimateId).ToList();
+
+                List<Estimate> estimates = _context.Estimates.Where(e => estimatesId.Contains(e.Id)).ToList();
 
                 if (estimates == null)
                 {
@@ -398,7 +410,15 @@ namespace DSS.Controllers.ApiControllers
                         ["Name"] = e.Name,
                         ["LevelOfWorks"] = e.LevelOfWorks,
                         ["Cost"] = e.Cost,
-                        ["Link"] = e.Link
+                        ["Link"] = e.Link,
+                        ["RoadId"] = e.RoadId,
+                        ["Road"] = new JObject
+                        {
+                            ["Id"] = e.Road.Id,
+                            ["Number"] = e.Road.Number,
+                            ["Priority"] = e.Road.Priority,
+                            ["LinkToPassport"] = e.Road.LinkToPassport
+                        }
                     })),
                     ["RoadId"] = roadWorksProgram.RoadId,
                     ["Road"] = new JObject
