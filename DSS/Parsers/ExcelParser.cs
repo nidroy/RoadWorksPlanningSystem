@@ -68,5 +68,78 @@ namespace DSS.Parsers
                 return null;
             }
         }
+
+        /// <summary>
+        /// Парсим программы дорожных работ
+        /// </summary>
+        /// <param name="folderPath">Путь к папке с программами дорожных работ</param>
+        /// <returns>Список моделей программ дорожных работ</returns>
+        public static List<RoadWorksProgramViewModel>? ParseRoadWorksPrograms(string folderPath)
+        {
+            try
+            {
+                string year = Path.GetFileName(folderPath);
+
+                List<string>? fileNames = FileHandler.GetExcelFileNames(folderPath);
+
+                if (fileNames == null)
+                {
+                    return null;
+                }
+
+                List<RoadWorksProgramViewModel> roadWorksPrograms = new();
+
+                foreach (var fileName in fileNames)
+                {
+                    string filePath = Path.Combine(folderPath, $"{fileName}.xlsx");
+
+                    var fileInfo = new FileInfo(filePath);
+
+                    if (!fileInfo.Exists)
+                    {
+                        return null;
+                    }
+
+                    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+                    using (var package = new ExcelPackage(fileInfo))
+                    {
+                        var worksheet = package.Workbook.Worksheets[0];
+
+                        RoadWorksProgramViewModel roadWorksProgram = new();
+
+                        for (int c = 1; c <= worksheet.Dimension.Columns; c++)
+                        {
+                            List<int> estimatesId = new();
+
+                            for (int r = 2; r < worksheet.Dimension.Rows; r++)
+                            {
+                                if (!string.IsNullOrEmpty(worksheet.Cells[r, c].Text))
+                                {
+                                    estimatesId.Add(int.Parse(worksheet.Cells[r, c].Text));
+                                }
+                            }
+
+                            roadWorksProgram = new()
+                            {
+                                Year = int.Parse(year),
+                                Month = worksheet.Cells[1, c].Text,
+                                Cost = double.Parse(worksheet.Cells[worksheet.Dimension.Rows, c].Text),
+                                EstimatesId = estimatesId,
+                                RoadId = int.Parse(fileName)
+                            };
+
+                            roadWorksPrograms.Add(roadWorksProgram);
+                        }
+                    }
+                }
+
+                return roadWorksPrograms;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

@@ -56,7 +56,9 @@ namespace DSS.Controllers.ApiControllers
 
                     List<int> estimatesId = roadWorksProgramsToEstimates.Select(pe => pe.EstimateId).ToList();
 
-                    List<Estimate> estimates = _context.Estimates.Where(e => estimatesId.Contains(e.Id)).ToList();
+                    List<Estimate> estimates = _context.Estimates
+                        .Join(estimatesId, e => e.Id, id => id, (e, id) => e)
+                        .ToList();
 
                     if (estimates == null)
                     {
@@ -157,7 +159,9 @@ namespace DSS.Controllers.ApiControllers
 
                 List<int> estimatesId = roadWorksProgramsToEstimates.Select(pe => pe.EstimateId).ToList();
 
-                List<Estimate> estimates = _context.Estimates.Where(e => estimatesId.Contains(e.Id)).ToList();
+                List<Estimate> estimates = _context.Estimates
+                    .Join(estimatesId, e => e.Id, id => id, (e, id) => e)
+                    .ToList();
 
                 if (estimates == null)
                 {
@@ -388,7 +392,9 @@ namespace DSS.Controllers.ApiControllers
 
                 List<int> estimatesId = roadWorksProgramsToEstimates.Select(pe => pe.EstimateId).ToList();
 
-                List<Estimate> estimates = _context.Estimates.Where(e => estimatesId.Contains(e.Id)).ToList();
+                List<Estimate> estimates = _context.Estimates
+                    .Join(estimatesId, e => e.Id, id => id, (e, id) => e)
+                    .ToList();
 
                 if (estimates == null)
                 {
@@ -501,7 +507,7 @@ namespace DSS.Controllers.ApiControllers
                 // Получаем все оставшиеся программы дорожных работ из контекста данных
                 List<RoadWorksProgram> roadWorksPrograms = _context.RoadWorksPrograms.ToList();
 
-                // Возвращаем успешный результат с количеством оставшихся технических состояний дорог
+                // Возвращаем успешный результат с количеством оставшихся программ дорожных работ
                 return Ok(roadWorksPrograms.Count);
             }
             catch (Exception ex)

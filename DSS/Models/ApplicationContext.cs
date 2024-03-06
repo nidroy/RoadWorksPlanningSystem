@@ -1,4 +1,5 @@
-﻿using DSS.Parsers;
+﻿using DSS.Handlers;
+using DSS.Parsers;
 using Microsoft.EntityFrameworkCore;
 
 namespace DSS.Models
@@ -98,11 +99,7 @@ namespace DSS.Models
 
             CreateTechnicalConditionOfRoadModels(modelBuilder);
 
-            modelBuilder.Entity<RoadWorksProgramToEstimate>()
-                .HasOne(pe => pe.RoadWorksProgram)
-                .WithMany()
-                .HasForeignKey(pe => pe.RoadWorksProgramId)
-                .OnDelete(DeleteBehavior.NoAction);
+            CreateRoadWorksProgramModels(modelBuilder);
         }
 
         private Road CreateRoadModel(int id, string number, double priority, ModelBuilder modelBuilder)
@@ -161,6 +158,60 @@ namespace DSS.Models
                 };
 
                 modelBuilder.Entity<TechnicalConditionOfRoad>().HasData(technicalConditionOfRoad);
+            }
+        }
+
+        private void CreateRoadWorksProgramModels(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<RoadWorksProgramToEstimate>()
+                .HasOne(pe => pe.RoadWorksProgram)
+                .WithMany()
+                .HasForeignKey(pe => pe.RoadWorksProgramId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            string folderPath = @"Data\RoadWorksPrograms";
+            var years = FolderHandler.GetSubfolderNames(folderPath);
+
+            int roadWorksProgramId = 1;
+            int roadWorksProgramToEstimateId = 1;
+
+            foreach (var year in years)
+            {
+                var roadWorksPrograms = ExcelParser.ParseRoadWorksPrograms(Path.Combine(folderPath, year));
+
+                if (roadWorksPrograms == null)
+                {
+                    return;
+                }
+
+                for (int i = 0; i < roadWorksPrograms.Count; i++)
+                {
+                    RoadWorksProgram roadWorksProgram = new()
+                    {
+                        Id = roadWorksProgramId,
+                        Year = roadWorksPrograms[i].Year,
+                        Month = roadWorksPrograms[i].Month,
+                        Cost = roadWorksPrograms[i].Cost,
+                        RoadId = roadWorksPrograms[i].RoadId
+                    };
+
+                    modelBuilder.Entity<RoadWorksProgram>().HasData(roadWorksProgram);
+
+                    foreach (var estimateId in roadWorksPrograms[i].EstimatesId)
+                    {
+                        RoadWorksProgramToEstimate roadWorksProgramToEstimate = new()
+                        {
+                            Id = roadWorksProgramToEstimateId,
+                            RoadWorksProgramId = roadWorksProgramId,
+                            EstimateId = estimateId
+                        };
+
+                        modelBuilder.Entity<RoadWorksProgramToEstimate>().HasData(roadWorksProgramToEstimate);
+                        roadWorksProgramToEstimateId++;
+                    }
+
+                    roadWorksProgramId++;
+                }
             }
         }
     }

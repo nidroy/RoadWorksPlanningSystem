@@ -172,6 +172,13 @@
             <param name="folderPath">Путь к папке</param>
             <returns>Список названий файлов Excel в папке</returns>
         </member>
+        <member name="M:DSS.Handlers.FolderHandler.GetSubfolderNames(System.String)">
+            <summary>
+            Получаем названия подпапок в папке
+            </summary>
+            <param name="folderPath">Путь к папке</param>
+            <returns>Список названий подпапок в папке</returns>
+        </member>
         <member name="T:DSS.Migrations.FirstMigration">
             <inheritdoc />
         </member>
@@ -190,6 +197,13 @@
             </summary>
             <param name="folderPath">Путь к папке с техническими состояниями дорог</param>
             <returns>Список моделей технических состояний дорог</returns>
+        </member>
+        <member name="M:DSS.Parsers.ExcelParser.ParseRoadWorksPrograms(System.String)">
+            <summary>
+            Парсим программы дорожных работ
+            </summary>
+            <param name="folderPath">Путь к папке с программами дорожных работ</param>
+            <returns>Список моделей программ дорожных работ</returns>
         </member>
     </members>
 </doc>
