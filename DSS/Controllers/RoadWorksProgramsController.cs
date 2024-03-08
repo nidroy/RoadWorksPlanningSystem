@@ -12,12 +12,14 @@ namespace DSS.Controllers
     public class RoadWorksProgramsController : Controller
     {
         private readonly RoadsApiController _roadsApi;
+        private readonly EstimatesApiController _estimatesApi;
         private readonly RoadWorksProgramsApiController _roadWorksProgramsApi;
         private readonly ApiLogger _logger;
 
         public RoadWorksProgramsController(ApplicationContext context, ILogger<ApiController> logger)
         {
             _roadsApi = new RoadsApiController(context, logger);
+            _estimatesApi = new EstimatesApiController(context, logger);
             _roadWorksProgramsApi = new RoadWorksProgramsApiController(context, logger);
             _logger = new ApiLogger(logger);
         }
@@ -120,6 +122,91 @@ namespace DSS.Controllers
             catch (Exception ex)
             {
                 _logger.LogError("RoadWorksProgramsController", $"Error when navigating to the page \"Read Road Works Program For {year}\": {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("create")]
+        public IActionResult Create()
+        {
+            try
+            {
+                _logger.LogInformation("RoadWorksProgramsController/Create", "Reading all roads...");
+
+                var result = _roadsApi.Get();
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("RoadWorksProgramsController/Create", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
+
+                _logger.LogInformation("RoadWorksProgramsController/Create", "All roads have been successfully read.");
+
+                _logger.LogInformation("RoadWorksProgramsController/Create", "Reading all estimates...");
+
+                result = _estimatesApi.Get();
+                statusCode = ((ObjectResult)result).StatusCode;
+                value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("RoadWorksProgramsController/Create", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                var estimates = JsonConvert.DeserializeObject<IEnumerable<Estimate>>(value.ToString());
+
+                _logger.LogInformation("RoadWorksProgramsController/Create", "All estimates have been successfully read.");
+
+                RoadWorksProgramRoadsEstimatesViewModel viewModel = new()
+                {
+                    RoadWorksProgram = new(),
+                    Roads = roads,
+                    Estimates = estimates,
+                    Months = new List<string>
+                    {
+                        "Январь",
+                        "Февраль",
+                        "Март",
+                        "Апрель",
+                        "Май",
+                        "Июнь",
+                        "Июль",
+                        "Август",
+                        "Сентябрь",
+                        "Октябрь",
+                        "Ноябрь",
+                        "Декабрь"
+                    }
+                };
+
+                _logger.LogInformation("RoadWorksProgramsController", "Navigating to the page \"Create Road Works Program\".");
+
+                return View("Create", viewModel);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("RoadWorksProgramsController", $"Error when navigating to the page \"Create Road Works Program\": {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("create")]
+        public IActionResult Create(RoadWorksProgram roadWorksProgram, string selectedEstimatesId)
+        {
+            try
+            {
+
+                return RedirectToAction("Read");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("TechnicalConditionsOfRoadsController/Create", $"Error when creating a new technical condition of road: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }

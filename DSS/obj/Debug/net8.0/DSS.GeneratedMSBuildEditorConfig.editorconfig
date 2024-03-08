@@ -62,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[H:/RoadWorksPlanningSystem/DSS/Views/RoadWorksPrograms/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZFdvcmtzUHJvZ3JhbXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [H:/RoadWorksPlanningSystem/DSS/Views/RoadWorksPrograms/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZFdvcmtzUHJvZ3JhbXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
