@@ -196,7 +196,7 @@ namespace DSS.Controllers
                     Year = technicalConditionOfRoad.Year,
                     Month = technicalConditionOfRoad.Month,
                     TechnicalCondition = technicalConditionOfRoad.TechnicalCondition,
-                    RoadId = technicalConditionOfRoad.RoadId,
+                    RoadId = technicalConditionOfRoad.RoadId
                 };
 
                 var result = _technicalConditionsOfRoadsApi.Post(technicalConditionOfRoadData);

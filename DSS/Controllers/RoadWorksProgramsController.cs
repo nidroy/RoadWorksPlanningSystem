@@ -201,12 +201,211 @@ namespace DSS.Controllers
         {
             try
             {
+                _logger.LogInformation("RoadWorksProgramsController/Create", "Creating a new road works program...");
+
+                if (roadWorksProgram == null)
+                {
+                    _logger.LogWarning("RoadWorksProgramsController/Create", "Incorrect road works program data provided.");
+                    return BadRequest("Incorrect road works program data provided");
+                }
+
+                List<int> estimatesId = selectedEstimatesId.Split(' ').Select(int.Parse).ToList();
+
+                RoadWorksProgramViewModel roadWorksProgramData = new()
+                {
+                    Year = roadWorksProgram.Year,
+                    Month = roadWorksProgram.Month,
+                    Cost = roadWorksProgram.Cost,
+                    EstimatesId = estimatesId,
+                    RoadId = roadWorksProgram.RoadId
+                };
+
+                var result = _roadWorksProgramsApi.Post(roadWorksProgramData);
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("RoadWorksProgramsController/Create", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                _logger.LogInformation("RoadWorksProgramsController/Create", $"A new road works program with Id {value} has been successfully created.");
 
                 return RedirectToAction("Read");
             }
             catch (Exception ex)
             {
-                _logger.LogError("TechnicalConditionsOfRoadsController/Create", $"Error when creating a new technical condition of road: {ex.Message}");
+                _logger.LogError("RoadWorksProgramsController/Create", $"Error when creating a new road works program: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("update/{id}")]
+        public IActionResult Update(int id)
+        {
+            try
+            {
+                _logger.LogInformation($"RoadWorksProgramsController/Update/{id}", $"Reading a road works program with Id {id}...");
+
+                var result = _roadWorksProgramsApi.Get(id);
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning($"RoadWorksProgramsController/Update/{id}", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                var roadWorksProgram = JsonConvert.DeserializeObject<RoadWorksProgramEstimatesViewModel>(value.ToString());
+
+                _logger.LogInformation($"RoadWorksProgramsController/Update/{id}", $"The road works program with Id {id} was successfully read.");
+
+                _logger.LogInformation($"RoadWorksProgramsController/Update/{id}", "Reading all roads...");
+
+                result = _roadsApi.Get();
+                statusCode = ((ObjectResult)result).StatusCode;
+                value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning($"RoadWorksProgramsController/Update/{id}", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                var roads = JsonConvert.DeserializeObject<IEnumerable<Road>>(value.ToString());
+
+                _logger.LogInformation($"RoadWorksProgramsController/Update/{id}", "All roads have been successfully read.");
+
+                _logger.LogInformation($"RoadWorksProgramsController/Update/{id}", "Reading all estimates...");
+
+                result = _estimatesApi.Get();
+                statusCode = ((ObjectResult)result).StatusCode;
+                value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning($"RoadWorksProgramsController/Update/{id}", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                var estimates = JsonConvert.DeserializeObject<IEnumerable<Estimate>>(value.ToString());
+
+                _logger.LogInformation($"RoadWorksProgramsController/Update/{id}", "All estimates have been successfully read.");
+
+                RoadWorksProgramRoadsEstimatesViewModel viewModel = new()
+                {
+                    RoadWorksProgram = new()
+                    {
+                        Id = roadWorksProgram.Id,
+                        Year = roadWorksProgram.Year,
+                        Month = roadWorksProgram.Month,
+                        Cost = roadWorksProgram.Cost,
+                        RoadId = roadWorksProgram.Id,
+                        Road = roadWorksProgram.Road
+                    },
+                    Roads = roads,
+                    Estimates = estimates,
+                    Months = new List<string>
+                    {
+                        "Январь",
+                        "Февраль",
+                        "Март",
+                        "Апрель",
+                        "Май",
+                        "Июнь",
+                        "Июль",
+                        "Август",
+                        "Сентябрь",
+                        "Октябрь",
+                        "Ноябрь",
+                        "Декабрь"
+                    }
+                };
+
+                _logger.LogInformation("RoadWorksProgramsController", "Navigating to the page \"Update Road Works Program\".");
+
+                return View("Update", viewModel);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("RoadWorksProgramsController", $"Error when navigating to the page \"Update Road Works Program\": {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("update/{id}")]
+        public IActionResult Update(RoadWorksProgram roadWorksProgram, string selectedEstimatesId)
+        {
+            try
+            {
+                _logger.LogInformation($"RoadWorksProgramsController/Update/{roadWorksProgram.Id}", $"Updating the road works program with Id {roadWorksProgram.Id}...");
+
+                if (roadWorksProgram == null)
+                {
+                    _logger.LogWarning($"RoadWorksProgramsController/Update/{roadWorksProgram.Id}", "Incorrect road works program data provided.");
+                    return BadRequest("Incorrect road works program data provided");
+                }
+
+                List<int> estimatesId = selectedEstimatesId.Split(' ').Select(int.Parse).ToList();
+
+                RoadWorksProgramViewModel roadWorksProgramData = new()
+                {
+                    Year = roadWorksProgram.Year,
+                    Month = roadWorksProgram.Month,
+                    Cost = roadWorksProgram.Cost,
+                    EstimatesId = estimatesId,
+                    RoadId = roadWorksProgram.RoadId
+                };
+
+                var result = _roadWorksProgramsApi.Put(roadWorksProgram.Id, roadWorksProgramData);
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning($"RoadWorksProgramsController/Update/{roadWorksProgram.Id}", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                var resultRoadWorksProgram = JsonConvert.DeserializeObject<RoadWorksProgramEstimatesViewModel>(value.ToString());
+
+                _logger.LogInformation($"RoadWorksProgramsController/Update/{roadWorksProgram.Id}", $"The road works program with Id {roadWorksProgram.Id} has been successfully updated.");
+
+                return Read(resultRoadWorksProgram.RoadId, resultRoadWorksProgram.Year);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"RoadWorksProgramsController/Update/{roadWorksProgram.Id}", $"Error updating the road works program with Id {roadWorksProgram.Id}: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _logger.LogInformation($"RoadWorksProgramsController/Delete/{id}", $"Deleting a road works program with Id {id}...");
+
+                var result = _roadWorksProgramsApi.Delete(id);
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning($"RoadWorksProgramsController/Delete/{id}", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                _logger.LogInformation($"RoadWorksProgramsController/Delete/{id}", $"The road works program with Id {id} has been successfully deleted.");
+
+                return RedirectToAction("Read");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"RoadWorksProgramsController/Delete/{id}", $"Error when deleting a road works program with Id {id}: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
