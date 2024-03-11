@@ -14,13 +14,13 @@ namespace DSS.Modules
             _logger = new ApiLogger(logger);
         }
 
-        public StatisticsViewModel? CalculateFinancialStatistics(double budget, List<(int, string, Dictionary<int, List<Estimate>>)> plans)
+        public StatisticsViewModel? CalculateFinancialStatistics(double budget, List<RoadWorksProgramViewModel> roadWorksPrograms)
         {
             try
             {
                 _logger.LogInformation("StatisticsModule/CalculateFinancialStatistics", "Calculating financial statistics...");
 
-                double expenses = plans.Sum(plan => plan.Item3.Values.Sum(estimates => estimates.Sum(e => (double)e.Cost)));
+                double expenses = roadWorksPrograms.Sum(r => r.Cost ?? 0);
                 double balance = budget - expenses;
 
                 StatisticsViewModel statistics = new()

@@ -32,7 +32,7 @@ namespace DSS.Controllers.ApiControllers
                 _logger.LogInformation("HomeApiController/Get/Plans", "Getting plans...");
 
                 // Получаем планы
-                List<(int, string, Dictionary<int, List<Estimate>>)>? plans = _mainModule.CreatePlans(inputData);
+                List<RoadWorksProgramViewModel>? plans = _mainModule.CreatePlans(inputData);
 
                 if (plans == null)
                 {
@@ -57,28 +57,29 @@ namespace DSS.Controllers.ApiControllers
             }
         }
 
+
         /// <summary>
         /// Получаем финансовую статистику
         /// </summary>
         /// <param name="budget">Бюджет</param>
-        /// <param name="plans">Данные планов</param>
+        /// <param name="roadWorksPrograms">Данные программ дорожных работ</param>
         /// <returns>Финансовая статистика</returns>
         [HttpGet("get/statistics")]
-        public IActionResult GetStatistics(double budget, List<(int, string, Dictionary<int, List<Estimate>>)> plans)
+        public IActionResult GetStatistics(double budget, List<RoadWorksProgramViewModel> roadWorksPrograms)
         {
             try
             {
                 _logger.LogInformation("HomeApiController/Get/Statistics", "Getting financial statistics...");
 
                 // Проверяем входные данные на null
-                if (plans == null)
+                if (roadWorksPrograms == null)
                 {
-                    _logger.LogWarning("HomeApiController/Get/Statistics", "Incorrect plans data provided.");
-                    return BadRequest("Incorrect plans data provided");
+                    _logger.LogWarning("HomeApiController/Get/Statistics", "Incorrect road works programs data provided.");
+                    return BadRequest("Incorrect road works programs data provided");
                 }
 
                 // Получаем финансовую статистику
-                StatisticsViewModel? statistics = _statisticsModule.CalculateFinancialStatistics(budget, plans);
+                StatisticsViewModel? statistics = _statisticsModule.CalculateFinancialStatistics(budget, roadWorksPrograms);
 
                 if (statistics == null)
                 {

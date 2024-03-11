@@ -46,12 +46,12 @@
             <param name="inputData">Входные данные</param>
             <returns>Данные планов</returns>
         </member>
-        <member name="M:DSS.Controllers.ApiControllers.HomeApiController.GetStatistics(System.Double,System.Collections.Generic.List{System.ValueTuple{System.Int32,System.String,System.Collections.Generic.Dictionary{System.Int32,System.Collections.Generic.List{DSS.Models.Estimate}}}})">
+        <member name="M:DSS.Controllers.ApiControllers.HomeApiController.GetStatistics(System.Double,System.Collections.Generic.List{DSS.Models.ViewModels.RoadWorksProgramViewModel})">
             <summary>
             Получаем финансовую статистику
             </summary>
             <param name="budget">Бюджет</param>
-            <param name="plans">Данные планов</param>
+            <param name="roadWorksPrograms">Данные программ дорожных работ</param>
             <returns>Финансовая статистика</returns>
         </member>
         <member name="M:DSS.Controllers.ApiControllers.RoadsApiController.Get">

@@ -54,7 +54,7 @@
         </tr>
         <tr>
             <td><label asp-for="RoadWorksProgram.Cost">Стоимость программы</label></td>
-            <td><input asp-for="RoadWorksProgram.Cost" class="form-control" /></td>
+            <td><input asp-for="RoadWorksProgram.Cost" class="form-control" readonly /></td>
         </tr>
     </table>
 
@@ -77,8 +77,10 @@
         var selectedRoadId = document.getElementById("RoadWorksProgram_RoadId").value;
         var allEstimates = JSON.parse(document.getElementById("estimates").value);
         var currentEstimates = document.getElementById("currentEstimates");
+        var cost = document.getElementById("RoadWorksProgram_Cost");
 
         currentEstimates.innerHTML = "";
+        cost.value = 0;
 
         var estimates = allEstimates.filter(function (estimate) {
             return estimate.RoadId == selectedRoadId;
@@ -95,15 +97,29 @@
     function updateSelectedEstimates() {
         var currentEstimates = document.getElementById("currentEstimates");
         var selectedEstimatesId = document.getElementById("selectedEstimatesId");
+        var cost = document.getElementById("RoadWorksProgram_Cost");
+
         var selectedEstimates = [];
+        cost.value = 0;
 
         for (var i = 0; i < currentEstimates.options.length; i++) {
             if (currentEstimates.options[i].selected) {
                 selectedEstimates.push(currentEstimates.options[i].value);
+
+                var estimateCost = getEstimateCost(currentEstimates.options[i].value);
+                cost.value = parseFloat(cost.value) + estimateCost;
             }
         }
 
         selectedEstimatesId.value = selectedEstimates.join(' ');
+    }
+
+    function getEstimateCost(estimateId) {
+        var allEstimates = JSON.parse(document.getElementById("estimates").value);
+        var estimate = allEstimates.find(function (e) {
+            return e.Id === parseInt(estimateId);
+        });
+        return estimate ? parseFloat(estimate.Cost) : 0;
     }
 
     window.onload = function () {

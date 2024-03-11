@@ -19,7 +19,7 @@ namespace DSS.Controllers
             _logger = new ApiLogger(logger);
         }
 
-        private static List<(int, string, Dictionary<int, List<Estimate>>)>? plans = null;
+        private static List<RoadWorksProgramViewModel>? plans = null;
 
         private static InputDataViewModel viewModel = new()
         {
@@ -86,7 +86,7 @@ namespace DSS.Controllers
                     return BadRequest(value);
                 }
 
-                plans = JsonConvert.DeserializeObject<List<(int, string, Dictionary<int, List<Estimate>>)>>(value.ToString());
+                plans = JsonConvert.DeserializeObject<List<RoadWorksProgramViewModel>>(value.ToString());
 
                 _logger.LogInformation("HomeController/Planning", "The planning has been successfully carried.");
 

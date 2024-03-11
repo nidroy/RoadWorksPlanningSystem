@@ -1,0 +1,64 @@
+Hosting starting
+Now listening on: https://localhost:7051
+Now listening on: http://localhost:5155
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: H:\RoadWorksPlanningSystem\DSS
+Hosting started
+An 'IServiceProvider' was created for internal use by Entity Framework.
+Entity Framework Core 8.0.0 initialized 'ApplicationContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.0' with options: None
+Creating DbConnection.
+Created DbConnection. (44ms).
+Opening connection to database 'DSS.db' on server '(localdb)\mssqllocaldb'.
+Opened connection to database 'DSS.db' on server '(localdb)\mssqllocaldb'.
+Creating DbCommand for 'ExecuteNonQuery'.
+Created DbCommand for 'ExecuteNonQuery' (7ms).
+Initialized DbCommand for 'ExecuteNonQuery' (18ms).
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+Closing connection to database 'DSS.db' on server '(localdb)\mssqllocaldb'.
+Closed connection to database 'DSS.db' on server '(localdb)\mssqllocaldb' (7ms).
+Creating DbCommand for 'ExecuteScalar'.
+Created DbCommand for 'ExecuteScalar' (2ms).
+Initialized DbCommand for 'ExecuteScalar' (4ms).
+Opening connection to database 'DSS.db' on server '(localdb)\mssqllocaldb'.
+Opened connection to database 'DSS.db' on server '(localdb)\mssqllocaldb'.
+Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+Closing connection to database 'DSS.db' on server '(localdb)\mssqllocaldb'.
+Closed connection to database 'DSS.db' on server '(localdb)\mssqllocaldb' (2ms).
+'ApplicationContext' disposed.
+Disposing connection to database 'DSS.db' on server '(localdb)\mssqllocaldb'.
+Disposed connection to database '' on server '' (5ms).

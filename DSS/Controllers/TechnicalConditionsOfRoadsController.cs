@@ -220,60 +220,6 @@ namespace DSS.Controllers
             }
         }
 
-        [HttpGet("update")]
-        public IActionResult Update()
-        {
-            try
-            {
-                _logger.LogInformation("TechnicalConditionsOfRoadsController/Update", "Deleting all technical conditions of roads...");
-
-                var result = _technicalConditionsOfRoadsApi.Delete();
-                var statusCode = ((ObjectResult)result).StatusCode;
-                var value = ((ObjectResult)result).Value;
-
-                if (statusCode != 200)
-                {
-                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Update", "Error on the API side of the controller.");
-                    return BadRequest(value);
-                }
-
-                _logger.LogInformation("TechnicalConditionsOfRoadsController/Update", "All technical conditions of roads have been successfully deleted.");
-
-                _logger.LogInformation("TechnicalConditionsOfRoadsController/Update", "Creating the technical conditions of roads...");
-
-                string folderPath = @"Data\TechnicalConditionsOfRoads";
-                var technicalConditionsOfRoadsData = ExcelParser.ParseTechnicalConditionsOfRoads(folderPath);
-
-                if (technicalConditionsOfRoadsData == null)
-                {
-                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Update", "The technical conditions of roads data were not found.");
-                    return NotFound("The technical conditions of roads data were not found");
-                }
-
-                foreach (var technicalConditionOfRoadData in technicalConditionsOfRoadsData)
-                {
-                    result = _technicalConditionsOfRoadsApi.Post(technicalConditionOfRoadData);
-                    statusCode = ((ObjectResult)result).StatusCode;
-                    value = ((ObjectResult)result).Value;
-
-                    if (statusCode != 200)
-                    {
-                        _logger.LogWarning("TechnicalConditionsOfRoadsController/Update", "Error on the API side of the controller.");
-                        return BadRequest(value);
-                    }
-                }
-
-                _logger.LogInformation("TechnicalConditionsOfRoadsController/Update", "The technical conditions of roads have been successfully created.");
-
-                return Read();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("TechnicalConditionsOfRoadsController/Update", $"Error updating all technical conditions of roads: {ex.Message}");
-                return StatusCode(500, "Internal server error");
-            }
-        }
-
         [HttpGet("update/{id}")]
         public IActionResult Update(int id)
         {
@@ -411,6 +357,60 @@ namespace DSS.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"TechnicalConditionsOfRoadsController/Delete/{id}", $"Error when deleting a technical condition of road with Id {id}: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("import")]
+        public IActionResult Import()
+        {
+            try
+            {
+                _logger.LogInformation("TechnicalConditionsOfRoadsController/Import", "Deleting all technical conditions of roads...");
+
+                var result = _technicalConditionsOfRoadsApi.Delete();
+                var statusCode = ((ObjectResult)result).StatusCode;
+                var value = ((ObjectResult)result).Value;
+
+                if (statusCode != 200)
+                {
+                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Import", "Error on the API side of the controller.");
+                    return BadRequest(value);
+                }
+
+                _logger.LogInformation("TechnicalConditionsOfRoadsController/Import", "All technical conditions of roads have been successfully deleted.");
+
+                _logger.LogInformation("TechnicalConditionsOfRoadsController/Import", "Creating the technical conditions of roads...");
+
+                string folderPath = @"Data\TechnicalConditionsOfRoads";
+                var technicalConditionsOfRoadsData = ExcelParser.ParseTechnicalConditionsOfRoads(folderPath);
+
+                if (technicalConditionsOfRoadsData == null)
+                {
+                    _logger.LogWarning("TechnicalConditionsOfRoadsController/Import", "The technical conditions of roads data were not found.");
+                    return NotFound("The technical conditions of roads data were not found");
+                }
+
+                foreach (var technicalConditionOfRoadData in technicalConditionsOfRoadsData)
+                {
+                    result = _technicalConditionsOfRoadsApi.Post(technicalConditionOfRoadData);
+                    statusCode = ((ObjectResult)result).StatusCode;
+                    value = ((ObjectResult)result).Value;
+
+                    if (statusCode != 200)
+                    {
+                        _logger.LogWarning("TechnicalConditionsOfRoadsController/Import", "Error on the API side of the controller.");
+                        return BadRequest(value);
+                    }
+                }
+
+                _logger.LogInformation("TechnicalConditionsOfRoadsController/Import", "The technical conditions of roads have been successfully created.");
+
+                return Read();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("TechnicalConditionsOfRoadsController/Import", $"Error importing all technical conditions of roads: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
