@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Read All Estimates Page";
+}
+
+@model IEnumerable<RoadEstimatesViewModel>
+
+<h2 style="margin-bottom: 15px;">Список смет дорожных работ</h2>
+
+<table border="1">
+    <tr>
+        <th>Идентификационный номер дороги</th>
+        <th>Название смет</th>
+    </tr>
+    @foreach (var viewModel in Model)
+    {
+        <tr>
+            <td>@viewModel.Road.Number</td>
+            <td>
+                @foreach (var estimate in viewModel.Estimates)
+                {
+                    @Html.ActionLink(estimate.Name, "Read", "Estimates", new { id = estimate.Id }, new { @class = "btn btn-link" })
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+<p style="margin-top: 15px;">
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Create", "Estimates")'">Добавить</button>
+</p>
