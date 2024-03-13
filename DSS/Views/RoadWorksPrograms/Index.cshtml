@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Read All Road Works Programs By Year Page";
+}
+
+@model IEnumerable<RoadRoadWorksProgramsViewModel>
+
+<h2 style="margin-bottom: 15px;">Список программ дорожных работ по годам</h2>
+
+<table border="1">
+    <tr>
+        <th>Идентификационный номер дороги</th>
+        <th>Года</th>
+    </tr>
+    @foreach (var viewModel in Model)
+    {
+        <tr>
+            <td>@viewModel.Road.Number</td>
+            <td>
+                @foreach (var dictionary in viewModel.RoadWorksPrograms)
+                {
+                    @Html.ActionLink(
+                             linkText: dictionary.Key.ToString(),
+                             actionName: "Read",
+                             controllerName: "RoadWorksPrograms",
+                             routeValues: new { roadId = viewModel.Road.Id, year = dictionary.Key },
+                             htmlAttributes: new { @class = "btn btn-link" }
+                             )
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+<p style="margin-top: 15px;">
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Create", "RoadWorksPrograms")'">Добавить</button>
+</p>

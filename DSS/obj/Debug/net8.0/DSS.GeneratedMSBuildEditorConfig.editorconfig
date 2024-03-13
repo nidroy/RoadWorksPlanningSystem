@@ -1,0 +1,115 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DSS
+build_property.RootNamespace = DSS
+build_property.ProjectDir = H:\RoadWorksPlanningSystem\DSS\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = H:\RoadWorksPlanningSystem\DSS
+build_property._RazorSourceGeneratorDebug = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXFJlYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Estimates/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXN0aW1hdGVzXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Home/Statistics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdGF0aXN0aWNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Roads/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Roads/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Roads/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcUmVhZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Roads/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZHNcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/RoadWorksPrograms/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZFdvcmtzUHJvZ3JhbXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/RoadWorksPrograms/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZFdvcmtzUHJvZ3JhbXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/RoadWorksPrograms/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZFdvcmtzUHJvZ3JhbXNcUmVhZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/RoadWorksPrograms/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9hZFdvcmtzUHJvZ3JhbXNcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/TechnicalConditionsOfRoads/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2FsQ29uZGl0aW9uc09mUm9hZHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/TechnicalConditionsOfRoads/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2FsQ29uZGl0aW9uc09mUm9hZHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/TechnicalConditionsOfRoads/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2FsQ29uZGl0aW9uc09mUm9hZHNcUmVhZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/TechnicalConditionsOfRoads/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2FsQ29uZGl0aW9uc09mUm9hZHNcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[H:/RoadWorksPlanningSystem/DSS/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-50j0mfelvj

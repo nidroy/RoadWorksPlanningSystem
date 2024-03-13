@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Statistics Page";
+}
+
+@model StatisticsViewModel
+
+<h3 style="margin-bottom: 15px;">Финансовая статистика</h3>
+
+<table border="1">
+    <tr>
+        <td>Текущий бюджет (руб.)</td>
+        <td>@Model.Budget</td>
+    </tr>
+    <tr>
+        <td>Планируемые затраты (руб.)</td>
+        <td>@Model.Expenses</td>
+    </tr>
+    <tr>
+        <td>Остаток от бюджета (руб.)</td>
+        <td>@Model.Balance</td>
+    </tr>
+</table>

@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model InputDataViewModel
+
+<h2 style="margin-bottom: 15px;">Планирование работ по обслуживанию автомобильных дорог</h2>
+
+<form asp-controller="Home" asp-action="Planning" method="post">
+    <table border="1">
+        <tr>
+            <td><label asp-for="InitialYear">Начальный год планирования</label></td>
+            <td><input asp-for="InitialYear" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="InitialMonth">Начальный месяц планирования</label></td>
+            <td>
+                <div class="select-wrapper">
+                    <select asp-for="InitialMonth" class="form-control" style="overflow-y: auto;">
+                        @foreach (var month in Model.Months)
+                        {
+                            <option value="@month">@month</option>
+                        }
+                    </select>
+                    <div class="arrow-down">&#9660;</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><label asp-for="YearCount">Продолжительность планирования (в годах)</label></td>
+            <td><input asp-for="YearCount" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Budget">Текущий бюджет (руб.)</label></td>
+            <td><input asp-for="Budget" class="form-control" /></td>
+        </tr>
+    </table>
+
+    <div style="margin-top: 15px;">
+        <button type="submit" class="btn btn-success" onclick="replacePoints()">Сформировать программу</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Statistics", "Home")'" style="margin-left: 10px;">Показать статистику</button>
+    </div>
+</form>
+
+<script>
+    function replacePoints() {
+        var budget = document.getElementById("Budget");
+        budget.value = budget.value.replace(/\./g, ',');
+        document.getElementById("myForm").submit();
+    }
+</script>
