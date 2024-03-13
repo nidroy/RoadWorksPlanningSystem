@@ -1,8 +1,0 @@
-Failed executing DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
-CREATE TABLE [EstimatePlan] (
-    [EstimatesId] int NOT NULL,
-    [PlansId] int NOT NULL,
-    CONSTRAINT [PK_EstimatePlan] PRIMARY KEY ([EstimatesId], [PlansId]),
-    CONSTRAINT [FK_EstimatePlan_Estimates_EstimatesId] FOREIGN KEY ([EstimatesId]) REFERENCES [Estimates] ([Id]) ON DELETE CASCADE,
-    CONSTRAINT [FK_EstimatePlan_Programs_PlansId] FOREIGN KEY ([PlansId]) REFERENCES [Programs] ([Id]) ON DELETE CASCADE
-);

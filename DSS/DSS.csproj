@@ -28,8 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\RoadWorksPrograms\2021\" />
-    <Folder Include="Data\RoadWorksPrograms\2022\" />
     <Folder Include="Logging\" />
   </ItemGroup>
 

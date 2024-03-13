@@ -172,6 +172,14 @@
             <param name="folderPath">Путь к папке</param>
             <returns>Список названий файлов Excel в папке</returns>
         </member>
+        <member name="M:DSS.Handlers.FileHandler.WriteRoadWorksProgramToExcelFile(System.String,System.Collections.Generic.List{DSS.Models.ViewModels.RoadWorksProgramEstimatesViewModel})">
+            <summary>
+            Записываем программу дорожных работ в файл Excel
+            </summary>
+            <param name="filePath">Путь к файлу Excel</param>
+            <param name="roadWorksProgramsData">Программа дорожных работ</param>
+            <returns>Успешность записи программы дорожных работ в файл Excel</returns>
+        </member>
         <member name="M:DSS.Handlers.FolderHandler.GetSubfolderNames(System.String)">
             <summary>
             Получаем названия подпапок в папке

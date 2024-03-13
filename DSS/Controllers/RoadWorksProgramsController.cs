@@ -4,6 +4,7 @@ using DSS.Models.ViewModels;
 using DSS.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using DSS.Handlers;
 
 namespace DSS.Controllers
 {
@@ -406,6 +407,45 @@ namespace DSS.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"RoadWorksProgramsController/Delete/{id}", $"Error when deleting a road works program with Id {id}: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("export")]
+        public IActionResult Export(string roadWorksPrograms)
+        {
+            try
+            {
+                _logger.LogInformation("RoadWorksProgramsController/Export", "Exporting a road works program...");
+
+                string folderPath = @"Data\RoadWorksPrograms";
+
+                var roadWorksProgramsData = JsonConvert.DeserializeObject<List<RoadWorksProgramEstimatesViewModel>>(roadWorksPrograms);
+
+                if (roadWorksProgramsData == null)
+                {
+                    _logger.LogWarning("RoadWorksProgramsController/Export", "Incorrect road works program data provided.");
+                    return BadRequest("Incorrect road works program data provided");
+                }
+
+                string fileName = $"{roadWorksProgramsData.First().Road.Number} {roadWorksProgramsData.First().Year} год.xlsx";
+                string filePath = Path.Combine(folderPath, fileName);
+
+                bool isWrittenRoadWorksProgramToExcelFile = FileHandler.WriteRoadWorksProgramToExcelFile(filePath, roadWorksProgramsData);
+
+                if (!isWrittenRoadWorksProgramToExcelFile)
+                {
+                    _logger.LogError("RoadWorksProgramsController/Export", "Error when writing a road works program to excel file.");
+                    return StatusCode(500, "Internal server error");
+                }
+
+                _logger.LogInformation("RoadWorksProgramsController/Export", "The road works program has been successfully exported.");
+
+                return Read(roadWorksProgramsData.First().RoadId, roadWorksProgramsData.First().Year);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("RoadWorksProgramsController/Export", $"Error when exporting a road works program: {ex.Message}");
                 return StatusCode(500, "Internal server error");
             }
         }
